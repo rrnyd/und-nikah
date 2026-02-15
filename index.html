@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan - Reren & Yadi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Love+Light:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Pompiere:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script>
@@ -180,7 +180,7 @@
         }
 
         body {
-            font-family: 'Pompiere', sans-serif; 
+            font-family: 'Montserrat', sans-serif; 
             background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
             color: #ffffff;
             overflow-x: hidden;
@@ -188,7 +188,7 @@
         }
         
         /* ============================================
-           FONT VARIABLES PER SECTION - INDEPENDENT
+           FONT VARIABLES PER SECTION - UPDATED
            ============================================ */
         
         /* Opening Section - Great Vibes */
@@ -196,41 +196,43 @@
             font-family: 'Great Vibes', cursive;
         }
         
-        /* Hero Section - Dancing Script */
+        /* Hero Section - Great Vibes (CHANGED) */
         .font-hero {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
         }
         
-        /* Countdown Section - Love Light */
+        /* Countdown Section - Montserrat (CHANGED) */
         .font-countdown {
-            font-family: 'Love Light', serif;
-        }
-        
-        /* Couple Section - Playfair Display */
-        .font-couple-section {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Bride Section - Cormorant Garamond */
-        .font-bride {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        /* Groom Section - Montserrat */
-        .font-groom {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
         
-        /* Quote Section - Pompiere (default) but larger */
+        /* Couple Section - Great Vibes (CHANGED) */
+        .font-couple-section {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        /* Bride Section - Great Vibes (CHANGED) */
+        .font-bride {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        /* Groom Section - Great Vibes (CHANGED) */
+        .font-groom {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        /* Quote Section - Montserrat (default) */
         .font-quote {
-            font-family: 'Pompiere', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.25rem;
             line-height: 1.6;
+            font-weight: 300;
         }
         
-        /* Event Section - Love Light */
+        /* Event Section - Great Vibes (CHANGED) */
         .font-event {
-            font-family: 'Love Light', serif;
+            font-family: 'Great Vibes', cursive;
         }
         
         /* Gallery Section - Great Vibes */
@@ -243,14 +245,14 @@
             font-family: 'Montserrat', sans-serif;
         }
         
-        /* Gift Section - Playfair Display */
+        /* Gift Section - Great Vibes (CHANGED) */
         .font-gift {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Great Vibes', cursive;
         }
         
-        /* Footer Section - Dancing Script */
+        /* Footer Section - Great Vibes (CHANGED) */
         .font-footer {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Great Vibes', cursive;
         }
         
         .text-gradient-1 {
@@ -862,7 +864,7 @@
     <!-- Main Content dengan Scroll Snap -->
     <main id="main-content" class="hidden snap-container">
         
-        <!-- Hero Section - Font: Dancing Script -->
+        <!-- Hero Section - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
@@ -906,7 +908,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Countdown Section - Font: Love Light -->
+        <!-- Countdown Section - Font: Montserrat -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center mb-8">
@@ -937,7 +939,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Couple Section - Font: Playfair Display -->
+        <!-- Couple Section - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
             <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
@@ -967,7 +969,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Bride Section - Font: Cormorant Garamond -->
+        <!-- Bride Section - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow opacity-30">💖</div>
             <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
@@ -1013,7 +1015,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Groom Section - Font: Montserrat -->
+        <!-- Groom Section - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
             <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
@@ -1059,7 +1061,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Quote Section - Font: Pompiere (default) -->
+        <!-- Quote Section - Font: Montserrat -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center max-w-2xl mx-auto">
@@ -1077,7 +1079,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- AKAD NIKAH SECTION - Font: Love Light -->
+        <!-- AKAD NIKAH SECTION - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center mb-6">
@@ -1142,7 +1144,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- RESEPSI SECTION - Font: Love Light -->
+        <!-- RESEPSI SECTION - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center mb-6">
@@ -1356,7 +1358,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- WEDDING GIFT - DANA SECTION - Font: Playfair Display -->
+        <!-- WEDDING GIFT - DANA SECTION - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
@@ -1385,7 +1387,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- WEDDING GIFT - KADO SECTION - Font: Playfair Display -->
+        <!-- WEDDING GIFT - KADO SECTION - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
@@ -1414,7 +1416,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Footer - Font: Dancing Script -->
+        <!-- Footer - Font: Great Vibes -->
         <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 text-center compact-content">
                 <div class="inline-block p-3 rounded-full glass-pink mb-4">
