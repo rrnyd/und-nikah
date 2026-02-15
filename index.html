@@ -813,6 +813,85 @@
             overflow-y: auto;
             padding-right: 8px;
         }
+
+        /* ============================================
+           CUSTOM FRAME STYLES - ASPECT RATIO
+           ============================================ */
+        
+        /* Gallery Cover Frame - Aspect Ratio 531:674 (1062x1348) */
+        .gallery-frame {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            aspect-ratio: 531/674;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
+        .gallery-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Couple Photo Frame - Aspect Ratio 2:3 (954x1431) */
+        .couple-frame {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            aspect-ratio: 2/3;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+            border: 4px solid rgba(255,255,255,0.15);
+        }
+
+        .couple-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .couple-frame:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Bride & Groom Photo - Slightly Larger */
+        .mempelai-photo {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .mempelai-photo:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-frame {
+                max-width: 280px;
+            }
+            .couple-frame {
+                max-width: 260px;
+            }
+            .mempelai-photo {
+                width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -958,7 +1037,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Couple Section - Font: Great Vibes -->
+        <!-- Couple Section - Font: Great Vibes - DENGAN FRAME ASPECT RATIO 2:3 -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
             <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
@@ -969,18 +1048,14 @@
                     <h2 class="font-couple-section text-4xl md:text-5xl text-gradient-2 mb-2">Reren & Yadi</h2>
                 </div>
 
-                <div class="max-w-sm mx-auto mb-4">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full opacity-30 group-hover:opacity-50 transition-all duration-700 blur-2xl"></div>
-                        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-                            <img id="couplePhoto" src="couple.jpg" alt="Reren & Yadi" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22><rect fill=%22%23ff006e%22 width=%22400%22 height=%22500%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-0 right-0 text-center">
-                                <p class="font-couple-section text-2xl text-white">Reren & Yadi</p>
-                                <p class="text-white/80 text-xs mt-1">30 Mei 2028</p>
-                            </div>
-                        </div>
+                <!-- FRAME DENGAN ASPECT RATIO 2:3 UNTUK FOTO 954x1431 -->
+                <div class="couple-frame group">
+                    <img id="couplePhoto" src="couple.jpg" alt="Reren & Yadi" 
+                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff006e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-0 right-0 text-center">
+                        <p class="font-couple-section text-2xl text-white">Reren & Yadi</p>
+                        <p class="text-white/80 text-xs mt-1">30 Mei 2028</p>
                     </div>
                 </div>
             </div>
@@ -988,7 +1063,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Bride Section - Font: Great Vibes - TANPA ICON KECIL -->
+        <!-- Bride Section - Font: Great Vibes - PHOTO LEBIH BESAR -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow opacity-30">💖</div>
             <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
@@ -998,14 +1073,14 @@
                     <span class="section-badge">Mempelai Wanita</span>
                 </div>
 
+                <!-- PHOTO LEBIH BESAR: 240px (mobile: 200px) -->
                 <div class="max-w-xs mx-auto mb-4">
                     <div class="relative group">
                         <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
-                        <div class="relative w-56 h-56 mx-auto">
-                            <div class="absolute inset-0 border-2 border-pink-500/30 rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-700"></div>
-                            <div class="absolute -inset-2 border border-pink-500/20 rounded-full -rotate-3 group-hover:-rotate-6 transition-transform duration-700"></div>
-                            <img id="bridePhoto" src="bride.jpg" alt="Reren" class="relative w-full h-full rounded-full object-cover shadow-2xl border-4 border-pink-500/20">
-                            <!-- ICON KECIL DIHAPUS DARI SINI -->
+                        <div class="relative mx-auto flex justify-center">
+                            <div class="absolute inset-0 border-2 border-pink-500/30 rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-700" style="width: 260px; height: 260px; top: -10px; left: 50%; transform: translateX(-50%) rotate(6deg);"></div>
+                            <div class="absolute -inset-2 border border-pink-500/20 rounded-full -rotate-3 group-hover:-rotate-6 transition-transform duration-700" style="width: 280px; height: 280px; top: -20px; left: 50%; transform: translateX(-50%) rotate(-3deg);"></div>
+                            <img id="bridePhoto" src="bride.jpg" alt="Reren" class="mempelai-photo border-pink-500/20 relative z-10">
                         </div>
                     </div>
                 </div>
@@ -1032,7 +1107,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Groom Section - Font: Great Vibes - TANPA ICON KECIL -->
+        <!-- Groom Section - Font: Great Vibes - PHOTO LEBIH BESAR -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
             <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
@@ -1042,14 +1117,14 @@
                     <span class="section-badge">Mempelai Pria</span>
                 </div>
 
+                <!-- PHOTO LEBIH BESAR: 240px (mobile: 200px) -->
                 <div class="max-w-xs mx-auto mb-4">
                     <div class="relative group">
                         <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
-                        <div class="relative w-56 h-56 mx-auto">
-                            <div class="absolute inset-0 border-2 border-blue-500/30 rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-700"></div>
-                            <div class="absolute -inset-2 border border-blue-500/20 rounded-full rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
-                            <img id="groomPhoto" src="groom.jpg" alt="Yadi" class="relative w-full h-full rounded-full object-cover shadow-2xl border-4 border-blue-500/20">
-                            <!-- ICON KECIL DIHAPUS DARI SINI -->
+                        <div class="relative mx-auto flex justify-center">
+                            <div class="absolute inset-0 border-2 border-blue-500/30 rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-700" style="width: 260px; height: 260px; top: -10px; left: 50%; transform: translateX(-50%) rotate(-6deg);"></div>
+                            <div class="absolute -inset-2 border border-blue-500/20 rounded-full rotate-3 group-hover:rotate-6 transition-transform duration-700" style="width: 280px; height: 280px; top: -20px; left: 50%; transform: translateX(-50%) rotate(3deg);"></div>
+                            <img id="groomPhoto" src="groom.jpg" alt="Yadi" class="mempelai-photo border-blue-500/20 relative z-10">
                         </div>
                     </div>
                 </div>
@@ -1227,24 +1302,24 @@
 
         <div class="section-divider"></div>
 
-        <!-- GALLERY SECTION - Font: Great Vibes -->
+        <!-- GALLERY SECTION - Font: Great Vibes - DENGAN FRAME ASPECT RATIO 531:674 -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10"></div>
-            </div>
+            <div class="container mx-auto px-6 relative z-10 compact-content">
+                <div class="text-center mb-6">
+                    <span class="section-badge">Galeri</span>
+                </div>
 
-            <div class="gallery-cover-container" onclick="openGalleryLightbox()">
-                <img id="galleryCover" src="" alt="Galeri Reren & Yadi" class="gallery-cover-img">
-                <div class="gallery-cover-overlay">
-                    <div class="gallery-cover-icon">
-                        <span>📷</span>
+                <!-- FRAME DENGAN ASPECT RATIO 531:674 UNTUK FOTO 1062x1348 -->
+                <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
+                    <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col items-center justify-end pb-8">
+                        <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
+                        <p class="text-white/80 text-sm mb-2">Momen Bahagia Kami</p>
+                        <p class="text-white/60 text-xs flex items-center gap-2">
+                            <span>Ketuk untuk melihat</span>
+                            <span class="animate-bounce">👆</span>
+                        </p>
                     </div>
-                    <h2 class="font-gallery text-4xl md:text-6xl text-white mb-2">Galeri</h2>
-                    <p class="text-white/80 text-lg mb-4">Momen Bahagia Kami</p>
-                    <p class="text-white/60 text-sm flex items-center gap-2">
-                        <span>Ketuk untuk melihat</span>
-                        <span class="animate-bounce">👆</span>
-                    </p>
                 </div>
             </div>
         </section>
