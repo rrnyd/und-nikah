@@ -28,6 +28,10 @@
                 photo: "groom.jpg",
                 instagram: "#"
             },
+            // VARIABEL FOTO COUPLE BARU
+            couple: {
+                photo: "couple.jpg"
+            },
             event: {
                 date: "30 Mei 2028",
                 dateFull: "Selasa, 30 Mei 2028",
@@ -63,10 +67,20 @@
                     landmark: "Dekat Masjid Raya Sinuruik"
                 }
             },
-            gallery: [
-                "gallery1.jpg", "gallery2.jpg", "gallery3.jpg", "gallery4.jpg",
-                "gallery5.jpg", "gallery6.jpg", "gallery7.jpg", "gallery8.jpg"
-            ],
+            // VARIABEL GALLERY COVER BARU
+            gallery: {
+                cover: "cover.jpg",
+                photos: [
+                    "gallery1.jpg", "gallery2.jpg", "gallery3.jpg", "gallery4.jpg",
+                    "gallery5.jpg", "gallery6.jpg", "gallery7.jpg", "gallery8.jpg"
+                ]
+            },
+            // VARIABEL KUTIPAN AL-QURAN BARU
+            quote: {
+                text: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya",
+                source: "QS. Ar-Rum: 21",
+                font: "'Great Vibes', cursive"
+            },
             music: {
                 file: "musik.mp3",
                 volume: 0.5,
@@ -104,9 +118,10 @@
                 this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%233a86ff" width="400" height="400"/><text fill="white" font-family="serif" font-size="120" x="50%" y="50%" text-anchor="middle" dy=".3em">🤵</text></svg>';
             };
             
+            // MENGGUNAKAN VARIABEL COUPLE.PHOTO
             const couplePhoto = document.getElementById('couplePhoto');
             if (couplePhoto) {
-                couplePhoto.src = 'couple.jpg';
+                couplePhoto.src = CONFIG.couple.photo;
                 couplePhoto.onerror = function() {
                     this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500"><rect fill="%23ff006e" width="400" height="500"/><text fill="white" font-family="serif" font-size="100" x="50%" y="50%" text-anchor="middle" dy=".3em">💑</text></svg>';
                 };
@@ -153,11 +168,16 @@
             document.getElementById('footerDate').textContent = CONFIG.event.date;
             document.getElementById('footerCouple').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
             
+            // MENGGUNAKAN VARIABEL GALLERY.COVER
             const galleryCover = document.getElementById('galleryCover');
-            galleryCover.src = CONFIG.gallery[0];
+            galleryCover.src = CONFIG.gallery.cover;
             galleryCover.onerror = function() {
                 this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect fill="%230f0c29" width="800" height="600"/><rect fill="%23ff006e" x="200" y="150" width="400" height="300" rx="20"/><text fill="white" font-family="serif" font-size="60" x="50%" y="50%" text-anchor="middle" dy=".3em">📷 Galeri</text></svg>';
             };
+
+            // MENGISI KUTIPAN AL-QURAN DARI VARIABEL
+            document.getElementById('quoteText').textContent = `"${CONFIG.quote.text}"`;
+            document.getElementById('quoteSource').textContent = CONFIG.quote.source;
         }
     </script>
 
@@ -222,12 +242,11 @@
             font-family: 'Great Vibes', cursive;
         }
         
-        /* Quote Section - Montserrat (default) */
+        /* Quote Section - Great Vibes (CHANGED) */
         .font-quote {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.25rem;
-            line-height: 1.6;
-            font-weight: 300;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5rem;
+            line-height: 1.8;
         }
         
         /* Event Section - Great Vibes (CHANGED) */
@@ -969,7 +988,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Bride Section - Font: Great Vibes -->
+        <!-- Bride Section - Font: Great Vibes - TANPA ICON KECIL -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow opacity-30">💖</div>
             <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
@@ -986,9 +1005,7 @@
                             <div class="absolute inset-0 border-2 border-pink-500/30 rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-700"></div>
                             <div class="absolute -inset-2 border border-pink-500/20 rounded-full -rotate-3 group-hover:-rotate-6 transition-transform duration-700"></div>
                             <img id="bridePhoto" src="bride.jpg" alt="Reren" class="relative w-full h-full rounded-full object-cover shadow-2xl border-4 border-pink-500/20">
-                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-xl shadow-lg animate-pulse">
-                                👰
-                            </div>
+                            <!-- ICON KECIL DIHAPUS DARI SINI -->
                         </div>
                     </div>
                 </div>
@@ -1015,7 +1032,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- Groom Section - Font: Great Vibes -->
+        <!-- Groom Section - Font: Great Vibes - TANPA ICON KECIL -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
             <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
@@ -1032,9 +1049,7 @@
                             <div class="absolute inset-0 border-2 border-blue-500/30 rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-700"></div>
                             <div class="absolute -inset-2 border border-blue-500/20 rounded-full rotate-3 group-hover:rotate-6 transition-transform duration-700"></div>
                             <img id="groomPhoto" src="groom.jpg" alt="Yadi" class="relative w-full h-full rounded-full object-cover shadow-2xl border-4 border-blue-500/20">
-                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-xl shadow-lg animate-pulse">
-                                🤵
-                            </div>
+                            <!-- ICON KECIL DIHAPUS DARI SINI -->
                         </div>
                     </div>
                 </div>
@@ -1061,17 +1076,20 @@
 
         <div class="section-divider"></div>
 
-        <!-- Quote Section - Font: Montserrat -->
+        <!-- Quote Section - Font: Great Vibes - SEKSI BARU TERPISAH -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center max-w-2xl mx-auto">
-                    <div class="relative p-6 glass-color rounded-3xl border border-pink-500/20">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-serif shadow-lg">"</div>
-                        <p class="font-quote text-white mb-4 mt-2">
+                <div class="text-center max-w-3xl mx-auto">
+                    <div class="relative p-8 glass-color rounded-3xl border border-pink-500/20">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-serif shadow-lg">"</div>
+                        
+                        <!-- KUTIPAN AL-QURAN DENGAN FONT GREAT VIBES -->
+                        <p id="quoteText" class="font-quote text-white mb-6 mt-4 text-2xl md:text-3xl leading-relaxed">
                             "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya"
                         </p>
-                        <div class="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-2"></div>
-                        <p class="text-white font-semibold tracking-widest text-sm">QS. Ar-Rum: 21</p>
+                        
+                        <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-4"></div>
+                        <p id="quoteSource" class="text-white font-semibold tracking-widest text-base">QS. Ar-Rum: 21</p>
                     </div>
                 </div>
             </div>
@@ -1699,9 +1717,9 @@
             const total = document.getElementById('galleryTotal');
             
             currentGalleryIndex = 0;
-            img.src = CONFIG.gallery[currentGalleryIndex];
+            img.src = CONFIG.gallery.photos[currentGalleryIndex];
             counter.textContent = currentGalleryIndex + 1;
-            total.textContent = CONFIG.gallery.length;
+            total.textContent = CONFIG.gallery.photos.length;
             
             lightbox.classList.add('active');
             galleryLightboxOpen = true;
@@ -1721,7 +1739,7 @@
         }
 
         function changeGalleryImage(direction) {
-            currentGalleryIndex = (currentGalleryIndex + direction + CONFIG.gallery.length) % CONFIG.gallery.length;
+            currentGalleryIndex = (currentGalleryIndex + direction + CONFIG.gallery.photos.length) % CONFIG.gallery.photos.length;
             const img = document.getElementById('lightboxGalleryImg');
             const counter = document.getElementById('galleryCounter');
             
@@ -1729,7 +1747,7 @@
             img.style.transform = 'scale(0.95)';
             
             setTimeout(() => {
-                img.src = CONFIG.gallery[currentGalleryIndex];
+                img.src = CONFIG.gallery.photos[currentGalleryIndex];
                 img.onload = () => {
                     img.style.opacity = '1';
                     img.style.transform = 'scale(1)';
