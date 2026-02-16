@@ -814,10 +814,11 @@
             padding-right: 8px;
         }
 
+        /* MODIFIKASI: Gallery frame diperbesar 1x (dari 400px ke 480px, mobile 280px ke 340px) */
         .gallery-frame {
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 480px;
             margin: 0 auto;
             aspect-ratio: 531/674;
             border-radius: 24px;
@@ -837,6 +838,7 @@
             transform: scale(1.05);
         }
 
+        /* MODIFIKASI: Couple frame tanpa efek gradien */
         .couple-frame {
             position: relative;
             width: 100%;
@@ -856,6 +858,7 @@
             transition: transform 0.7s ease;
         }
 
+        /* MODIFIKASI: Hover efek hanya scale, tanpa gradien overlay tambahan */
         .couple-frame:hover img {
             transform: scale(1.08);
         }
@@ -885,9 +888,10 @@
             top: -20px;
         }
 
+        /* MODIFIKASI: Gallery frame mobile diperbesar */
         @media (max-width: 768px) {
             .gallery-frame {
-                max-width: 280px;
+                max-width: 340px;
             }
             .couple-frame {
                 max-width: 260px;
@@ -1022,13 +1026,14 @@
                     <span class="section-badge">Pernikahan</span>
                 </div>
 
-                <h1 class="font-hero text-6xl md:text-[6rem] mb-2 leading-tight" style="line-height: 1.2;">
+                <!-- MODIFIKASI: Font Reren & Yadi diperbesar 1x (dari text-6xl md:text-[6rem] ke text-7xl md:text-[7rem]) -->
+                <h1 class="font-hero text-7xl md:text-[7rem] mb-2 leading-tight" style="line-height: 1.2;">
                    <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
                 </h1>
                 
                 <div class="text-4xl md:text-5xl font-hero italic my-4 text-gradient-2 heart-beat" style="line-height: 1;">&</div>
 
-                <h1 class="font-hero text-6xl md:text-[6rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
+                <h1 class="font-hero text-7xl md:text-[7rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
                     <span class="block text-gradient-3 inline-block" id="heroGroom" style="padding: 0.05em 0;">Yadi</span>
                 </h1>
 
@@ -1092,10 +1097,10 @@
                     </h2>
                 </div>
                 
-                <div class="couple-frame group mb-6">
+                <!-- MODIFIKASI: Hilang efek gradien pada photo couple (dihapus class group dan overlay gradien) -->
+                <div class="couple-frame mb-6">
                     <img id="couplePhoto" src="couple.jpg" alt="Reren & Yadi" 
                          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
 
                 <!-- PERUBAHAN 3: Font date di couple section diubah ke font label seksi -->
@@ -1230,7 +1235,8 @@
                                 <span class="text-3xl">🕌</span>
                             </div>
                             
-                            <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
+                            <!-- MODIFIKASI: Font AKAD NIKAH diperkecil 1x (dari text-2xl md:text-3xl ke text-xl md:text-2xl) -->
+                            <h3 class="font-event text-xl md:text-2xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
                             
                             <div class="space-y-3">
@@ -1295,7 +1301,8 @@
                                 <span class="text-3xl">🎉</span>
                             </div>
                             
-                            <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
+                            <!-- MODIFIKASI: Font RESEPSI PERNIKAHAN diperkecil 1x (dari text-2xl md:text-3xl ke text-xl md:text-2xl) -->
+                            <h3 class="font-event text-xl md:text-2xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
                             
                             <div class="space-y-3">
