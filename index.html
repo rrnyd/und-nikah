@@ -948,6 +948,38 @@
             gap: 0.5rem;
             pointer-events: none;
         }
+
+        /* PERUBAHAN BARU: Style untuk font DANA yang lebih kecil agar muat di box */
+        .dana-text {
+            font-family: 'Pompiere', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 768px) {
+            .dana-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* PERUBAHAN BARU: Style untuk emoji gift yang lebih besar tapi tidak lebih dari box */
+        .gift-emoji {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .gift-emoji {
+                font-size: 2rem;
+            }
+        }
+
+        /* PERUBAHAN BARU: Warna footer date yang lebih cerah */
+        .footer-date-bright {
+            color: #ff80b3 !important; /* Warna pink yang lebih cerah */
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1038,14 +1070,14 @@
                     <span class="section-badge">Pernikahan</span>
                 </div>
 
-                <!-- MODIFIKASI: Font Reren & Yadi diperbesar 1x (dari text-6xl md:text-[6rem] ke text-7xl md:text-[7rem]) -->
-                <h1 class="font-hero text-7xl md:text-[7rem] mb-2 leading-tight" style="line-height: 1.2;">
+                <!-- PERUBAHAN 1: Font Reren & Yadi diperbesar 1x (dari text-7xl md:text-[7rem] ke text-8xl md:text-[8rem]) -->
+                <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2;">
                    <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
                 </h1>
                 
                 <div class="text-4xl md:text-5xl font-hero italic my-4 text-gradient-2 heart-beat" style="line-height: 1;">&</div>
 
-                <h1 class="font-hero text-7xl md:text-[7rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
+                <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
                     <span class="block text-gradient-3 inline-block" id="heroGroom" style="padding: 0.05em 0;">Yadi</span>
                 </h1>
 
@@ -1070,8 +1102,8 @@
                 <div class="text-center mb-8">
                     <!-- PERUBAHAN: "MENUKU HARI BAHAGIA" menjadi "COUNTDOWN" -->
                     <span class="section-badge">Countdown</span>
-                    <!-- PERUBAHAN: "SISA WAKTU" diperkecil 1x (dari text-5xl md:text-6xl ke text-4xl md:text-5xl) -->
-                    <h2 class="font-countdown text-4xl md:text-5xl text-gradient-1 mb-2">Sisa Waktu</h2>
+                    <!-- PERUBAHAN 2: Font "SISA WAKTU" diubah ke Pompiere -->
+                    <h2 class="font-pompiere text-4xl md:text-5xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
                     <!-- PERUBAHAN: Tambahan teks "Menuju Hari Bahagia" -->
                     <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
                 </div>
@@ -1400,8 +1432,8 @@
                 <div class="max-w-xl mx-auto">
                     <div class="text-center mb-6">
                         <span class="section-badge">RSVP</span>
-                        <!-- PERUBAHAN: Font Konfirmasi Kehadiran diubah ke Pompiere -->
-                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">Konfirmasi Kehadiran</h2>
+                        <!-- PERUBAHAN 3: Font Konfirmasi Kehadiran diubah ke Pompiere dan di-CAPS -->
+                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
                         <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
                     </div>
 
@@ -1443,7 +1475,7 @@
                             </div>
 
                             <div>
-                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Ucapan & Doa</label>
+                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Ucapan & Do'a</label>
                                 <textarea rows="2" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors resize-none placeholder-white/50" placeholder="Tulis ucapan untuk Reren & Yadi..."></textarea>
                             </div>
 
@@ -1465,8 +1497,8 @@
                 <div class="max-w-xl mx-auto">
                     <div class="text-center mb-6">
                         <span class="section-badge">RSVP</span>
-                        <!-- PERUBAHAN: Font Ucapan & Do'a diubah ke Pompiere -->
-                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">Ucapan & Do'a</h2>
+                        <!-- PERUBAHAN 3: Font Ucapan & Do'a diubah ke Pompiere dan di-CAPS -->
+                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
                         <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
                     </div>
 
@@ -1525,14 +1557,15 @@
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
-                <!-- PERUBAHAN: Font Kirim Hadiah Digital diubah ke Pompiere -->
-                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">Kirim Hadiah Digital</h2>
+                <!-- PERUBAHAN 4: Font Kirim Hadiah Digital diubah ke Pompiere dan di-CAPS -->
+                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
 
                 <div class="max-w-sm mx-auto">
                     <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            DANA
+                        <!-- PERUBAHAN 5: Font DANA diubah ke Pompiere dengan ukuran lebih kecil -->
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <span class="dana-text">DANA</span>
                         </div>
                         <div class="space-y-1 mb-4">
                             <p id="bankNumber" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
@@ -1554,14 +1587,15 @@
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
-                <!-- PERUBAHAN: Font Kirim Hadiah Fisik diubah ke Pompiere -->
-                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">Kirim Hadiah Fisik</h2>
+                <!-- PERUBAHAN 4: Font Kirim Hadiah Fisik diubah ke Pompiere dan di-CAPS -->
+                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
 
                 <div class="max-w-sm mx-auto">
                     <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
-                            📦
+                        <!-- PERUBAHAN 5: Emoji gift diperbesar -->
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <span class="gift-emoji">🎁</span>
                         </div>
                         <h3 class="font-gift text-xl mb-3 text-white font-semibold">Alamat Pengiriman</h3>
                         <div class="text-left glass-color rounded-xl p-4 mb-4 border border-white/10">
@@ -1589,7 +1623,8 @@
                 
                 <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
                 
-                <p id="footerDate" class="text-pink-400/60 text-lg md:text-xl mb-6">30 Mei 2028</p>
+                <!-- PERUBAHAN 6: Warna font 30 Mei 2028 dipercerah -->
+                <p id="footerDate" class="footer-date-bright text-lg md:text-xl mb-6">30 Mei 2028</p>
                 
                 <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
                 
