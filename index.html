@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Pernikahan - Reren & Yadi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Tambahan Font Pompiere -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Pompiere&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script>
@@ -218,6 +219,11 @@
             display: inline-block;
         }
         
+        /* Font Pompiere untuk tanggal */
+        .font-pompiere {
+            font-family: 'Pompiere', cursive;
+        }
+        
         /* Countdown Section - Font angka diubah ke font label */
         .font-countdown {
             font-family: 'Montserrat', sans-serif;
@@ -252,8 +258,7 @@
         
         /* Event Section */
         .font-event {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
         }
         
         /* Gallery Section */
@@ -263,12 +268,12 @@
         
         /* RSVP Section */
         .font-rsvp {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
         }
         
         /* Gift Section */
         .font-gift {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
         }
         
         /* Footer Section */
@@ -927,14 +932,21 @@
             justify-content: center;
         }
 
-        .gallery-text-container {
+        /* Style baru untuk overlay galeri */
+        .gallery-overlay-text {
             position: absolute;
-            bottom: 0;
+            bottom: 20px;
             left: 0;
             right: 0;
-            padding: 2rem;
             text-align: center;
-            z-index: 2;
+            z-index: 10;
+            color: white;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -1038,8 +1050,8 @@
                 </h1>
 
                 <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
-                    <!-- PERUBAHAN 1: Font hero date diubah ke font label seksi (Montserrat) -->
-                    <p class="font-countdown text-2xl md:text-3xl text-white mb-2" id="heroDate">30 Mei 2028</p>
+                    <!-- PERUBAHAN 1: Font hero date diubah ke font Pompiere -->
+                    <p class="font-pompiere text-3xl md:text-4xl text-white mb-2" id="heroDate">30 Mei 2028</p>
                     <div class="flex items-center justify-center gap-4 text-white mb-2">
                         <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
                         <span class="text-pink-400">♥</span>
@@ -1056,8 +1068,12 @@
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center mb-8">
-                    <span class="section-badge">Menuju Hari Bahagia</span>
-                    <h2 class="font-countdown text-5xl md:text-6xl text-gradient-1 mb-2">Sisa Waktu</h2>
+                    <!-- PERUBAHAN: "MENUKU HARI BAHAGIA" menjadi "COUNTDOWN" -->
+                    <span class="section-badge">Countdown</span>
+                    <!-- PERUBAHAN: "SISA WAKTU" diperkecil 1x (dari text-5xl md:text-6xl ke text-4xl md:text-5xl) -->
+                    <h2 class="font-countdown text-4xl md:text-5xl text-gradient-1 mb-2">Sisa Waktu</h2>
+                    <!-- PERUBAHAN: Tambahan teks "Menuju Hari Bahagia" -->
+                    <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
@@ -1103,9 +1119,9 @@
                          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
                 </div>
 
-                <!-- PERUBAHAN 3: Font date di couple section diubah ke font label seksi -->
+                <!-- PERUBAHAN 3: Font date di couple section diubah ke font Pompiere -->
                 <div class="text-center">
-                    <p class="font-countdown text-2xl text-white/90">30 Mei 2028</p>
+                    <p class="font-pompiere text-2xl md:text-3xl text-white/90">30 Mei 2028</p>
                 </div>
             </div>
         </section>
@@ -1210,7 +1226,8 @@
                         </p>
                         
                         <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-                        <p id="quoteSource" class="text-white font-semibold tracking-widest text-base md:text-lg">QS. Ar-Rum: 21</p>
+                        <!-- PERUBAHAN: Font QS. Ar-Rum:21 diubah ke Pompiere -->
+                        <p id="quoteSource" class="font-pompiere text-white font-semibold tracking-widest text-base md:text-lg">QS. Ar-Rum: 21</p>
                     </div>
                 </div>
             </div>
@@ -1235,8 +1252,8 @@
                                 <span class="text-3xl">🕌</span>
                             </div>
                             
-                            <!-- MODIFIKASI: Font AKAD NIKAH diperkecil 1x (dari text-2xl md:text-3xl ke text-xl md:text-2xl) -->
-                            <h3 class="font-event text-xl md:text-2xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
+                            <!-- PERUBAHAN: Font AKAD NIKAH diubah ke Pompiere -->
+                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
                             
                             <div class="space-y-3">
@@ -1301,8 +1318,8 @@
                                 <span class="text-3xl">🎉</span>
                             </div>
                             
-                            <!-- MODIFIKASI: Font RESEPSI PERNIKAHAN diperkecil 1x (dari text-2xl md:text-3xl ke text-xl md:text-2xl) -->
-                            <h3 class="font-event text-xl md:text-2xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
+                            <!-- PERUBAHAN: Font RESEPSI PERNIKAHAN diubah ke Pompiere -->
+                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
                             
                             <div class="space-y-3">
@@ -1357,17 +1374,20 @@
                     <span class="section-badge">Galeri</span>
                 </div>
 
+                <!-- PERUBAHAN: Overlay "Ketuk untuk melihat 👆" dipindahkan ke dalam frame sebagai overlay -->
                 <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
                     <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
-                </div>
-
-                <div class="text-center mt-6">
-                    <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
-                    <p class="text-white/80 text-sm mb-2">Momen Bahagia Kami</p>
-                    <p class="text-white/60 text-xs flex items-center justify-center gap-2">
+                    <!-- Overlay dipindahkan ke sini -->
+                    <div class="gallery-overlay-text">
                         <span>Ketuk untuk melihat</span>
                         <span class="animate-bounce">👆</span>
-                    </p>
+                    </div>
+                </div>
+
+                <!-- Teks "Galeri" dan "Momen Bahagia Kami" tetap di bawah photo cover -->
+                <div class="text-center mt-6">
+                    <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
+                    <p class="text-white/80 text-sm">Momen Bahagia Kami</p>
                 </div>
             </div>
         </section>
@@ -1380,6 +1400,7 @@
                 <div class="max-w-xl mx-auto">
                     <div class="text-center mb-6">
                         <span class="section-badge">RSVP</span>
+                        <!-- PERUBAHAN: Font Konfirmasi Kehadiran diubah ke Pompiere -->
                         <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">Konfirmasi Kehadiran</h2>
                         <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
                     </div>
@@ -1444,7 +1465,8 @@
                 <div class="max-w-xl mx-auto">
                     <div class="text-center mb-6">
                         <span class="section-badge">RSVP</span>
-                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">Ucapan & Doa</h2>
+                        <!-- PERUBAHAN: Font Ucapan & Do'a diubah ke Pompiere -->
+                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">Ucapan & Do'a</h2>
                         <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
                     </div>
 
@@ -1503,6 +1525,7 @@
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
+                <!-- PERUBAHAN: Font Kirim Hadiah Digital diubah ke Pompiere -->
                 <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">Kirim Hadiah Digital</h2>
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
 
@@ -1531,6 +1554,7 @@
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
+                <!-- PERUBAHAN: Font Kirim Hadiah Fisik diubah ke Pompiere -->
                 <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">Kirim Hadiah Fisik</h2>
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
 
