@@ -272,9 +272,12 @@
             font-family: 'Great Vibes', cursive;
         }
         
-        /* Footer Section - Great Vibes - DIPERBESAR */
+        /* Footer Section - Great Vibes - DIPERBESAR & FIX CLIPPING */
         .font-footer {
             font-family: 'Great Vibes', cursive;
+            line-height: 1.5; /* Perbaikan untuk huruf R dan Y yang terpotong */
+            padding-top: 0.3em; /* Extra space untuk ascenders (bagian atas huruf) */
+            padding-bottom: 0.2em; /* Extra space untuk descenders (bagian bawah huruf) */
         }
         
         .text-gradient-1 {
@@ -1098,13 +1101,19 @@
 
         <div class="section-divider"></div>
 
-        <!-- Couple Section - Font: Great Vibes - HANYA TANGGAL DI BAWAH PHOTO -->
+        <!-- Couple Section - Font: Great Vibes - NAMA DIPINDAH KE ATAS PHOTO -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
             <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
 
             <div class="container mx-auto px-6 relative z-10 compact-content">
-                <!-- HILANG: Badge Mempelai dan nama Reren & Yadi yang kedua -->
+                <!-- UPDATE: Label Mempelai dan nama dipindah ke atas photo -->
+                <div class="text-center mb-6">
+                    <span class="section-badge">Mempelai</span>
+                    <h2 class="font-couple-section text-5xl md:text-6xl text-gradient-1 mt-2" style="line-height: 1.2; padding-top: 0.1em;">
+                        Reren & Yadi
+                    </h2>
+                </div>
                 
                 <!-- FRAME DENGAN ASPECT RATIO 2:3 UNTUK FOTO 954x1431 -->
                 <div class="couple-frame group mb-6">
@@ -1113,7 +1122,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 </div>
 
-                <!-- UPDATE: Hanya tanggal di bawah photo, nama dihapus -->
+                <!-- UPDATE: Hanya tanggal di bawah photo -->
                 <div class="text-center">
                     <p class="font-couple-section text-2xl text-white/90">30 Mei 2028</p>
                 </div>
@@ -1577,21 +1586,20 @@
 
         <div class="section-divider"></div>
 
-        <!-- Footer - Font: Great Vibes - DIPERBESAR SEMUA 1x -->
+        <!-- Footer - Font: Great Vibes - FIX CLIPPING HURUF R DAN Y -->
         <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 text-center compact-content">
-                <div class="inline-block p-4 rounded-full glass-pink mb-6"> <!-- p-3 jadi p-4 -->
-                    <span class="text-5xl md:text-6xl">💕</span> <!-- text-4xl jadi text-5xl/6xl -->
+                <div class="inline-block p-4 rounded-full glass-pink mb-6">
+                    <span class="text-5xl md:text-6xl">💕</span>
                 </div>
                 
-                <!-- DIPERBESAR: text-4xl/6xl jadi text-5xl/7xl -->
-                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1">Reren & Yadi</h3>
-                <!-- DIPERBESAR: text-base jadi text-lg/xl -->
+                <!-- FIX: line-height dan padding untuk mencegah clipping huruf R dan Y -->
+                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
+                
                 <p id="footerDate" class="text-pink-400/60 text-lg md:text-xl mb-6">30 Mei 2028</p>
                 
-                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div> <!-- w-20 jadi w-24 -->
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
                 
-                <!-- DIPERBESAR: text-xs jadi text-sm/base -->
                 <p class="text-white text-sm md:text-base">Made with <span class="text-pink-500">❤️</span> by <span id="footerCouple" class="text-pink-400">Reren & Yadi</span></p>
                 <p class="text-white text-sm md:text-base mt-2">© 2028 All Rights Reserved</p>
             </div>
