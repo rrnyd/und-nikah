@@ -244,23 +244,22 @@
             line-height: 1.3;
         }
         
-        /* Quote Section - Great Vibes - DIPERKECIL SETENGAH */
+        /* Quote Section - Great Vibes - DIPERBESAR 1x */
         .font-quote {
             font-family: 'Great Vibes', cursive;
-            font-size: 1.5rem; /* Dikurangi setengah dari 3rem ke 1.5rem */
+            font-size: 3rem; /* Diperbesar dari 1.5rem ke 3rem */
             line-height: 1.4;
         }
         
-        /* Event Section - Montserrat */
+        /* Event Section - Great Vibes */
         .font-event {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Diubah ke Montserrat */
             font-weight: 600;
         }
         
-        /* Gallery Section - Great Vibes - DIPERBESAR 1x */
+        /* Gallery Section - Great Vibes */
         .font-gallery {
             font-family: 'Great Vibes', cursive;
-            font-size: 1.5rem; /* Base size diperbesar */
         }
         
         /* RSVP Section - Montserrat */
@@ -273,11 +272,9 @@
             font-family: 'Great Vibes', cursive;
         }
         
-        /* Footer Section - Great Vibes - FIX CLIPPING */
+        /* Footer Section - Great Vibes - DIPERBESAR */
         .font-footer {
             font-family: 'Great Vibes', cursive;
-            line-height: 1.4; /* Tambah line-height */
-            padding: 0.1em 0; /* Tambah padding vertikal */
         }
         
         .text-gradient-1 {
@@ -919,7 +916,7 @@
             }
             /* Font quote lebih kecil di mobile tapi tetap besar */
             .font-quote {
-                font-size: 1.25rem;
+                font-size: 2rem;
             }
             /* Footer text lebih besar */
             footer .text-4xl {
@@ -939,30 +936,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        /* ============================================
-           GIFT SECTION - KOTAK DIPERBESAR
-           ============================================ */
-        .gift-box-large {
-            padding: 2rem; /* Diperbesar dari default */
-            min-height: 320px; /* Minimum height untuk kontainer */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .gift-box-large .w-16 {
-            width: 5rem; /* 80px */
-            height: 5rem; /* 80px */
-        }
-
-        .gift-box-large h3 {
-            font-size: 2rem; /* Diperbesar */
-        }
-
-        .gift-box-large p {
-            font-size: 1.125rem; /* Diperbesar */
         }
 
         /* ============================================
@@ -1080,8 +1053,7 @@
                 </h1>
 
                 <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
-                    <!-- UPDATE: Font disamakan dengan "akad & nikah" (Montserrat) -->
-                    <p class="text-2xl md:text-3xl font-event text-white mb-2" id="heroDate">30 Mei 2028</p>
+                    <p class="text-2xl md:text-3xl font-hero text-white mb-2" id="heroDate">30 Mei 2028</p>
                     <div class="flex items-center justify-center gap-4 text-white mb-2">
                         <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
                         <span class="text-pink-400">♥</span>
@@ -1143,8 +1115,7 @@
 
                 <!-- UPDATE: Hanya tanggal di bawah photo, nama dihapus -->
                 <div class="text-center">
-                    <!-- UPDATE: Font disamakan dengan nama seksi (Montserrat) -->
-                    <p class="font-event text-2xl text-white/90">30 Mei 2028</p>
+                    <p class="font-couple-section text-2xl text-white/90">30 Mei 2028</p>
                 </div>
             </div>
         </section>
@@ -1241,14 +1212,14 @@
 
         <div class="section-divider"></div>
 
-        <!-- Quote Section - Font: Great Vibes - DIPERKECIL SETENGAH -->
+        <!-- Quote Section - Font: Great Vibes - DIPERBESAR 1x -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
                 <div class="text-center max-w-4xl mx-auto"> <!-- max-w diperbesar untuk font yang lebih besar -->
                     <div class="relative p-8 md:p-12 glass-color rounded-3xl border border-pink-500/20">
                         <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-serif shadow-lg">"</div>
                         
-                        <!-- KUTIPAN AL-QURAN DIPERKECIL SETENGAH (dari 3rem ke 1.5rem) -->
+                        <!-- KUTIPAN AL-QURAN DIPERBESAR 1x (dari 1.5rem ke 3rem) -->
                         <p id="quoteText" class="font-quote text-white mb-6 mt-4 leading-relaxed">
                             "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya"
                         </p>
@@ -1279,6 +1250,7 @@
                                 <span class="text-3xl">🕌</span>
                             </div>
                             
+                            <!-- UPDATE: Font diubah ke Montserrat -->
                             <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
                             
@@ -1344,6 +1316,7 @@
                                 <span class="text-3xl">🎉</span>
                             </div>
                             
+                            <!-- UPDATE: Font diubah ke Montserrat -->
                             <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
                             <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
                             
@@ -1392,26 +1365,27 @@
 
         <div class="section-divider"></div>
 
-        <!-- GALLERY SECTION - Font: Great Vibes - DIPERBESAR 1x -->
+        <!-- GALLERY SECTION - Font: Great Vibes - TEXT DIPINDAH KE BAWAH PHOTO -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 compact-content">
-                <!-- UPDATE: Semua font diperbesar 1x -->
-                <div class="text-center mb-8">
-                    <span class="section-badge text-sm tracking-[0.3em]">Galeri</span>
-                    <h2 class="font-gallery text-5xl md:text-6xl text-white mb-4">Galeri</h2>
-                    <p class="text-white/80 text-lg mb-2">Momen Bahagia Kami</p>
+                <!-- UPDATE: Badge Galeri dipindah ke atas photo -->
+                <div class="text-center mb-6">
+                    <span class="section-badge">Galeri</span>
                 </div>
 
                 <!-- FRAME DENGAN ASPECT RATIO 531:674 UNTUK FOTO 1062x1348 -->
                 <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
                     <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
+                    <!-- UPDATE: Text dipindah ke bawah photo -->
                 </div>
 
-                <!-- UPDATE: Text di bawah photo diperbesar -->
-                <div class="text-center mt-8">
-                    <p class="text-white/60 text-base flex items-center justify-center gap-2">
+                <!-- UPDATE: Text "Galeri", "momen bahagia kami", dan "ketuk untuk melihat" di bawah photo -->
+                <div class="text-center mt-6">
+                    <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
+                    <p class="text-white/80 text-sm mb-2">Momen Bahagia Kami</p>
+                    <p class="text-white/60 text-xs flex items-center justify-center gap-2">
                         <span>Ketuk untuk melihat</span>
-                        <span class="animate-bounce text-lg">👆</span>
+                        <span class="animate-bounce">👆</span>
                     </p>
                 </div>
             </div>
@@ -1545,7 +1519,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- WEDDING GIFT - DANA SECTION - Font: Great Vibes - KOTAK DIPERBESAR -->
+        <!-- WEDDING GIFT - DANA SECTION - Font: Great Vibes - DANA TEXT DIHILANGKAN -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
@@ -1553,17 +1527,17 @@
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
 
                 <div class="max-w-sm mx-auto">
-                    <!-- UPDATE: Kotak diperbesar dengan class gift-box-large -->
-                    <div class="glass-pink rounded-3xl p-8 border border-pink-500/20 card-glow gift-box-large">
-                        <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-lg">
+                    <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                             DANA
                         </div>
-                        <div class="space-y-2 mb-6">
-                            <p id="bankNumber" class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
-                            <p id="bankName" class="text-white/80 text-sm">E-Wallet</p>
-                            <p id="bankAccount" class="text-sm text-pink-400">a.n. Reni Pionika</p>
+                        <!-- HILANG: <h3 class="font-gift text-xl mb-2 text-white font-semibold">DANA</h3> -->
+                        <div class="space-y-1 mb-4">
+                            <p id="bankNumber" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
+                            <p id="bankName" class="text-white/80 text-xs">E-Wallet</p>
+                            <p id="bankAccount" class="text-xs text-pink-400">a.n. Reni Pionika</p>
                         </div>
-                        <button onclick="copyToClipboard('085763410286')" class="w-full py-3 border-2 border-pink-500 text-pink-400 rounded-xl hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-base">
+                        <button onclick="copyToClipboard('085763410286')" class="w-full py-2 border-2 border-pink-500 text-pink-400 rounded-xl hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
                             <span>📋</span>
                             Salin Nomor DANA
                         </button>
@@ -1574,7 +1548,7 @@
 
         <div class="section-divider"></div>
 
-        <!-- WEDDING GIFT - KADO SECTION - Font: Great Vibes - KOTAK DIPERBESAR -->
+        <!-- WEDDING GIFT - KADO SECTION - Font: Great Vibes -->
         <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 text-center compact-content">
                 <span class="section-badge">Wedding Gift</span>
@@ -1582,18 +1556,17 @@
                 <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
 
                 <div class="max-w-sm mx-auto">
-                    <!-- UPDATE: Kotak diperbesar dengan class gift-box-large -->
-                    <div class="glass-blue rounded-3xl p-8 border border-blue-500/20 card-glow gift-box-large">
-                        <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-3xl shadow-lg">
+                    <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg">
                             📦
                         </div>
-                        <h3 class="font-gift text-2xl mb-4 text-white font-semibold">Alamat Pengiriman</h3>
-                        <div class="text-left glass-color rounded-xl p-5 mb-6 border border-white/10">
-                            <p id="giftAddress" class="text-white leading-relaxed text-sm">
+                        <h3 class="font-gift text-xl mb-3 text-white font-semibold">Alamat Pengiriman</h3>
+                        <div class="text-left glass-color rounded-xl p-4 mb-4 border border-white/10">
+                            <p id="giftAddress" class="text-white leading-relaxed text-xs">
                                 <!-- Filled by JS -->
                             </p>
                         </div>
-                        <button onclick="copyToClipboard('Reni Pionika, Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat 26561')" class="w-full py-3 border-2 border-blue-500 text-blue-400 rounded-xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-base">
+                        <button onclick="copyToClipboard('Reni Pionika, Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat 26561')" class="w-full py-2 border-2 border-blue-500 text-blue-400 rounded-xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
                             <span>📋</span>
                             Salin Alamat Lengkap
                         </button>
@@ -1604,19 +1577,21 @@
 
         <div class="section-divider"></div>
 
-        <!-- Footer - Font: Great Vibes - FIX CLIPPING -->
+        <!-- Footer - Font: Great Vibes - DIPERBESAR SEMUA 1x -->
         <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
             <div class="container mx-auto px-6 relative z-10 text-center compact-content">
-                <div class="inline-block p-4 rounded-full glass-pink mb-6">
-                    <span class="text-5xl md:text-6xl">💕</span>
+                <div class="inline-block p-4 rounded-full glass-pink mb-6"> <!-- p-3 jadi p-4 -->
+                    <span class="text-5xl md:text-6xl">💕</span> <!-- text-4xl jadi text-5xl/6xl -->
                 </div>
                 
-                <!-- FIX: line-height dan padding untuk mencegah huruf R dan Y terpotong -->
-                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.4; padding: 0.1em 0;">Reren & Yadi</h3>
+                <!-- DIPERBESAR: text-4xl/6xl jadi text-5xl/7xl -->
+                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1">Reren & Yadi</h3>
+                <!-- DIPERBESAR: text-base jadi text-lg/xl -->
                 <p id="footerDate" class="text-pink-400/60 text-lg md:text-xl mb-6">30 Mei 2028</p>
                 
-                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div> <!-- w-20 jadi w-24 -->
                 
+                <!-- DIPERBESAR: text-xs jadi text-sm/base -->
                 <p class="text-white text-sm md:text-base">Made with <span class="text-pink-500">❤️</span> by <span id="footerCouple" class="text-pink-400">Reren & Yadi</span></p>
                 <p class="text-white text-sm md:text-base mt-2">© 2028 All Rights Reserved</p>
             </div>
