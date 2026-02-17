@@ -1,2133 +1,2133 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan - Reren & Yadi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Lokal dari folder yang sama -->
-    <style>
-        /* Great Vibes - Font Script untuk nama-nama */
-        @font-face {
-            font-family: 'Great Vibes';
-            src: url('fonts/GreatVibes-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Undangan Pernikahan - Reren & Yadi</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   
+   <!-- Font Lokal dari folder yang sama -->
+   <style>
+       /* Great Vibes - Font Script untuk nama-nama */
+       @font-face {
+           font-family: 'Great Vibes';
+           src: url('fonts/GreatVibes-Regular.ttf') format('truetype');
+           font-weight: normal;
+           font-style: normal;
+           font-display: swap;
+       }
 
-        /* Montserrat - Font Sans-serif untuk body */
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-        }
+       /* Montserrat - Font Sans-serif untuk body */
+       @font-face {
+           font-family: 'Montserrat';
+           src: url('fonts/Montserrat-Light.ttf') format('truetype');
+           font-weight: 300;
+           font-style: normal;
+           font-display: swap;
+       }
 
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
+       @font-face {
+           font-family: 'Montserrat';
+           src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+           font-weight: 400;
+           font-style: normal;
+           font-display: swap;
+       }
 
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
+       @font-face {
+           font-family: 'Montserrat';
+           src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+           font-weight: 500;
+           font-style: normal;
+           font-display: swap;
+       }
 
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
+       @font-face {
+           font-family: 'Montserrat';
+           src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+           font-weight: 600;
+           font-style: normal;
+           font-display: swap;
+       }
 
-        /* Pompiere - Font Display untuk tanggal dan heading */
-        @font-face {
-            font-family: 'Pompiere';
-            src: url('fonts/Pompiere-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-    </style>
+       /* Pompiere - Font Display untuk tanggal dan heading */
+       @font-face {
+           font-family: 'Pompiere';
+           src: url('fonts/Pompiere-Regular.ttf') format('truetype');
+           font-weight: normal;
+           font-style: normal;
+           font-display: swap;
+       }
+   </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    
-    <script>
-        const CONFIG = {
-            bride: {
-                name: "Reni Pionika",
-                shortName: "Reren",
-                childOrder: "Putri kedua dari",
-                father: "Alm. Amir Hamzah",
-                mother: "Maiyus Farida",
-                photo: "bride.jpg",
-                instagram: "#"
-            },
-            groom: {
-                name: "Yadi Hartono",
-                shortName: "Yadi",
-                childOrder: "Putra pertama dari",
-                father: "Alm. Tarlan Manaf",
-                mother: "Almh. Jumiatie",
-                photo: "groom.jpg",
-                instagram: "#"
-            },
-            couple: {
-                photo: "couple.jpg"
-            },
-            event: {
-                date: "30 Mei 2028",
-                dateFull: "Selasa, 30 Mei 2028",
-                timeAkad: "08:00 - 10:00 WIB",
-                timeResepsi: "11:00 - 14:00 WIB",
-                countDownDate: "May 30, 2028 08:00:00"
-            },
-            venue: {
-                akad: {
-                    name: "Masjid Raya Sinuruik",
-                    address: "Sinuruik, Kec. Talamau, Kabupaten Pasaman Barat, Sumatera Barat 26561",
-                    mapsQuery: "Masjid+Raya+Sinuruik+Pasaman+Barat",
-                    mapsEmbed: "https://www.google.com/maps/embed/v1/place?q=Masjid%20Raya%20Sinuruik&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&maptype=satellite"
-                },
-                resepsi: {
-                    name: "Rumah Mempelai",
-                    address: "Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat",
-                    mapsQuery: "Rumah+Maiyus+Farida+Sinuruik+Pasaman+Barat",
-                    mapsEmbed: "https://www.google.com/maps/embed/v1/search?q=6XR8%2B4GR%20Reni%20%26%20Yadi%2C%20Sinuruik%2C%20Kec.%20Talamau%2C%20Kabupaten%20Pasaman%20Barat%2C%20Sumatera%20Barat&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&maptype=satellite"
-                }
-            },
-            gift: {
-                bank: {
-                    name: "DANA (E-Wallet)",
-                    accountNumber: "085763410286",
-                    accountName: "Reni Pionika"
-                },
-                address: {
-                    name: "Reni Pionika / Yadi Hartono",
-                    street: "Kp. Marapak Jorong Benteng Nagari Sinuruik",
-                    city: "Kec. Talamau, Kab. Pasaman Barat",
-                    postalCode: "Sumatera Barat 26561",
-                    landmark: "Dekat Masjid Raya Sinuruik"
-                }
-            },
-            gallery: {
-                cover: "cover.jpg",
-                photos: [
-                    "gallery1.jpg", "gallery2.jpg", "gallery3.jpg", "gallery4.jpg",
-                    "gallery5.jpg", "gallery6.jpg", "gallery7.jpg", "gallery8.jpg"
-                ]
-            },
-            quote: {
-                text: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya",
-                source: "QS. Ar-Rum: 21",
-                font: "'Great Vibes', cursive"
-            },
-            music: {
-                file: "musik.mp3",
-                volume: 0.5,
-                autoplay: true
-            },
-            theme: {
-                bgPrimary: "#0f0c29",
-                bgSecondary: "#302b63",
-                bgAccent: "#24243e",
-                accent1: "#ff4d9e",  /* DIPERCERAHKAN */
-                accent2: "#a855f7",  /* DIPERCERAHKAN */
-                accent3: "#60a5fa",  /* DIPERCERAHKAN */
-                accent4: "#fb923c",  /* DIPERCERAHKAN */
-                accent5: "#fbbf24"   /* DIPERCERAHKAN */
-            }
-        };
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+   
+   <script>
+       const CONFIG = {
+           bride: {
+               name: "Reni Pionika",
+               shortName: "Reren",
+               childOrder: "Putri kedua dari",
+               father: "Alm. Amir Hamzah",
+               mother: "Maiyus Farida",
+               photo: "bride.jpg",
+               instagram: "#"
+           },
+           groom: {
+               name: "Yadi Hartono",
+               shortName: "Yadi",
+               childOrder: "Putra pertama dari",
+               father: "Alm. Tarlan Manaf",
+               mother: "Almh. Jumiatie",
+               photo: "groom.jpg",
+               instagram: "#"
+           },
+           couple: {
+               photo: "couple.jpg"
+           },
+           event: {
+               date: "30 Mei 2028",
+               dateFull: "Selasa, 30 Mei 2028",
+               timeAkad: "08:00 - 10:00 WIB",
+               timeResepsi: "11:00 - 14:00 WIB",
+               countDownDate: "May 30, 2028 08:00:00"
+           },
+           venue: {
+               akad: {
+                   name: "Masjid Raya Sinuruik",
+                   address: "Sinuruik, Kec. Talamau, Kabupaten Pasaman Barat, Sumatera Barat 26561",
+                   mapsQuery: "Masjid+Raya+Sinuruik+Pasaman+Barat",
+                   mapsEmbed: "https://www.google.com/maps/embed/v1/place?q=Masjid%20Raya%20Sinuruik&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&maptype=satellite"
+               },
+               resepsi: {
+                   name: "Rumah Mempelai",
+                   address: "Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat",
+                   mapsQuery: "Rumah+Maiyus+Farida+Sinuruik+Pasaman+Barat",
+                   mapsEmbed: "https://www.google.com/maps/embed/v1/search?q=6XR8%2B4GR%20Reni%20%26%20Yadi%2C%20Sinuruik%2C%20Kec.%20Talamau%2C%20Kabupaten%20Pasaman%20Barat%2C%20Sumatera%20Barat&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&maptype=satellite"
+               }
+           },
+           gift: {
+               bank: {
+                   name: "DANA (E-Wallet)",
+                   accountNumber: "085763410286",
+                   accountName: "Reni Pionika"
+               },
+               address: {
+                   name: "Reni Pionika / Yadi Hartono",
+                   street: "Kp. Marapak Jorong Benteng Nagari Sinuruik",
+                   city: "Kec. Talamau, Kab. Pasaman Barat",
+                   postalCode: "Sumatera Barat 26561",
+                   landmark: "Dekat Masjid Raya Sinuruik"
+               }
+           },
+           gallery: {
+               cover: "cover.jpg",
+               photos: [
+                   "gallery1.jpg", "gallery2.jpg", "gallery3.jpg", "gallery4.jpg",
+                   "gallery5.jpg", "gallery6.jpg", "gallery7.jpg", "gallery8.jpg"
+               ]
+           },
+           quote: {
+               text: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya",
+               source: "QS. Ar-Rum: 21",
+               font: "'Great Vibes', cursive"
+           },
+           music: {
+               file: "musik.mp3",
+               volume: 0.5,
+               autoplay: true
+           },
+           theme: {
+               bgPrimary: "#0f0c29",
+               bgSecondary: "#302b63",
+               bgAccent: "#24243e",
+               accent1: "#ff4d9e",  /* DIPERCERAHKAN */
+               accent2: "#a855f7",  /* DIPERCERAHKAN */
+               accent3: "#60a5fa",  /* DIPERCERAHKAN */
+               accent4: "#fb923c",  /* DIPERCERAHKAN */
+               accent5: "#fbbf24"   /* DIPERCERAHKAN */
+           }
+       };
 
-        function fillContent() {
-            document.title = `Undangan Pernikahan ${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
-            
-            document.getElementById('coupleNames').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
-            document.getElementById('heroBride').textContent = CONFIG.bride.shortName;
-            document.getElementById('heroGroom').textContent = CONFIG.groom.shortName;
-            document.getElementById('heroDate').textContent = CONFIG.event.date;
-            
-            const bridePhoto = document.getElementById('bridePhoto');
-            bridePhoto.src = CONFIG.bride.photo;
-            bridePhoto.onerror = function() {
-                this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23ff4d9e" width="400" height="400"/><text fill="white" font-family="serif" font-size="120" x="50%" y="50%" text-anchor="middle" dy=".3em">👰</text></svg>';
-            };
-            
-            const groomPhoto = document.getElementById('groomPhoto');
-            groomPhoto.src = CONFIG.groom.photo;
-            groomPhoto.onerror = function() {
-                this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%2360a5fa" width="400" height="400"/><text fill="white" font-family="serif" font-size="120" x="50%" y="50%" text-anchor="middle" dy=".3em">🤵</text></svg>';
-            };
-            
-            const couplePhoto = document.getElementById('couplePhoto');
-            if (couplePhoto) {
-                couplePhoto.src = CONFIG.couple.photo;
-                couplePhoto.onerror = function() {
-                    this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500"><rect fill="%23ff4d9e" width="400" height="500"/><text fill="white" font-family="serif" font-size="100" x="50%" y="50%" text-anchor="middle" dy=".3em">💑</text></svg>';
-                };
-            }
-            
-            document.getElementById('brideName').textContent = CONFIG.bride.name;
-            document.getElementById('brideOrder').textContent = CONFIG.bride.childOrder;
-            document.getElementById('brideFather').textContent = CONFIG.bride.father;
-            document.getElementById('brideMother').textContent = CONFIG.bride.mother;
-            
-            document.getElementById('groomName').textContent = CONFIG.groom.name;
-            document.getElementById('groomOrder').textContent = CONFIG.groom.childOrder;
-            document.getElementById('groomFather').textContent = CONFIG.groom.father;
-            document.getElementById('groomMother').textContent = CONFIG.groom.mother;
-            
-            document.getElementById('akadDate').textContent = CONFIG.event.dateFull;
-            document.getElementById('akadTime').textContent = CONFIG.event.timeAkad;
-            document.getElementById('akadVenue').textContent = CONFIG.venue.akad.name;
-            document.getElementById('akadAddress').textContent = CONFIG.venue.akad.address;
-            
-            document.getElementById('resepsiDate').textContent = CONFIG.event.dateFull;
-            document.getElementById('resepsiTime').textContent = CONFIG.event.timeResepsi;
-            document.getElementById('resepsiVenue').textContent = CONFIG.venue.resepsi.name;
-            document.getElementById('resepsiAddress').textContent = CONFIG.venue.resepsi.address;
-            
-            document.getElementById('mapTitle').textContent = CONFIG.venue.resepsi.name;
-            document.getElementById('mapAddress').textContent = CONFIG.venue.resepsi.address;
-            document.getElementById('mapFrame').src = CONFIG.venue.resepsi.mapsEmbed;
-            document.getElementById('mapLink').href = `https://maps.google.com/?q=${CONFIG.venue.resepsi.mapsQuery}`;
-            
-            document.getElementById('bankNumber').textContent = CONFIG.gift.bank.accountNumber;
-            document.getElementById('bankName').textContent = CONFIG.gift.bank.name;
-            document.getElementById('bankAccount').textContent = `a.n. ${CONFIG.gift.bank.accountName}`;
-            
-            document.getElementById('giftAddress').innerHTML = `
-                ${CONFIG.gift.address.name}<br>
-                ${CONFIG.gift.address.street}<br>
-                ${CONFIG.gift.address.city}<br>
-                ${CONFIG.gift.address.postalCode}<br>
-                <span style="color: ${CONFIG.theme.accent1}">(${CONFIG.gift.address.landmark})</span>
-            `;
-            
-            document.getElementById('footerNames').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
-            document.getElementById('footerDate').textContent = CONFIG.event.date;
-            document.getElementById('footerCouple').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
-            
-            const galleryCover = document.getElementById('galleryCover');
-            galleryCover.src = CONFIG.gallery.cover;
-            galleryCover.onerror = function() {
-                this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect fill="%230f0c29" width="800" height="600"/><rect fill="%23ff4d9e" x="200" y="150" width="400" height="300" rx="20"/><text fill="white" font-family="serif" font-size="60" x="50%" y="50%" text-anchor="middle" dy=".3em">📷 Galeri</text></svg>';
-            };
+       function fillContent() {
+           document.title = `Undangan Pernikahan ${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
+           
+           document.getElementById('coupleNames').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
+           document.getElementById('heroBride').textContent = CONFIG.bride.shortName;
+           document.getElementById('heroGroom').textContent = CONFIG.groom.shortName;
+           document.getElementById('heroDate').textContent = CONFIG.event.date;
+           
+           const bridePhoto = document.getElementById('bridePhoto');
+           bridePhoto.src = CONFIG.bride.photo;
+           bridePhoto.onerror = function() {
+               this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%23ff4d9e" width="400" height="400"/><text fill="white" font-family="serif" font-size="120" x="50%" y="50%" text-anchor="middle" dy=".3em">👰</text></svg>';
+           };
+           
+           const groomPhoto = document.getElementById('groomPhoto');
+           groomPhoto.src = CONFIG.groom.photo;
+           groomPhoto.onerror = function() {
+               this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><rect fill="%2360a5fa" width="400" height="400"/><text fill="white" font-family="serif" font-size="120" x="50%" y="50%" text-anchor="middle" dy=".3em">🤵</text></svg>';
+           };
+           
+           const couplePhoto = document.getElementById('couplePhoto');
+           if (couplePhoto) {
+               couplePhoto.src = CONFIG.couple.photo;
+               couplePhoto.onerror = function() {
+                   this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500"><rect fill="%23ff4d9e" width="400" height="500"/><text fill="white" font-family="serif" font-size="100" x="50%" y="50%" text-anchor="middle" dy=".3em">💑</text></svg>';
+               };
+           }
+           
+           document.getElementById('brideName').textContent = CONFIG.bride.name;
+           document.getElementById('brideOrder').textContent = CONFIG.bride.childOrder;
+           document.getElementById('brideFather').textContent = CONFIG.bride.father;
+           document.getElementById('brideMother').textContent = CONFIG.bride.mother;
+           
+           document.getElementById('groomName').textContent = CONFIG.groom.name;
+           document.getElementById('groomOrder').textContent = CONFIG.groom.childOrder;
+           document.getElementById('groomFather').textContent = CONFIG.groom.father;
+           document.getElementById('groomMother').textContent = CONFIG.groom.mother;
+           
+           document.getElementById('akadDate').textContent = CONFIG.event.dateFull;
+           document.getElementById('akadTime').textContent = CONFIG.event.timeAkad;
+           document.getElementById('akadVenue').textContent = CONFIG.venue.akad.name;
+           document.getElementById('akadAddress').textContent = CONFIG.venue.akad.address;
+           
+           document.getElementById('resepsiDate').textContent = CONFIG.event.dateFull;
+           document.getElementById('resepsiTime').textContent = CONFIG.event.timeResepsi;
+           document.getElementById('resepsiVenue').textContent = CONFIG.venue.resepsi.name;
+           document.getElementById('resepsiAddress').textContent = CONFIG.venue.resepsi.address;
+           
+           document.getElementById('mapTitle').textContent = CONFIG.venue.resepsi.name;
+           document.getElementById('mapAddress').textContent = CONFIG.venue.resepsi.address;
+           document.getElementById('mapFrame').src = CONFIG.venue.resepsi.mapsEmbed;
+           document.getElementById('mapLink').href = `https://maps.google.com/?q=${CONFIG.venue.resepsi.mapsQuery}`;
+           
+           document.getElementById('bankNumber').textContent = CONFIG.gift.bank.accountNumber;
+           document.getElementById('bankName').textContent = CONFIG.gift.bank.name;
+           document.getElementById('bankAccount').textContent = `a.n. ${CONFIG.gift.bank.accountName}`;
+           
+           document.getElementById('giftAddress').innerHTML = `
+               ${CONFIG.gift.address.name}<br>
+               ${CONFIG.gift.address.street}<br>
+               ${CONFIG.gift.address.city}<br>
+               ${CONFIG.gift.address.postalCode}<br>
+               <span style="color: ${CONFIG.theme.accent1}">(${CONFIG.gift.address.landmark})</span>
+           `;
+           
+           document.getElementById('footerNames').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
+           document.getElementById('footerDate').textContent = CONFIG.event.date;
+           document.getElementById('footerCouple').textContent = `${CONFIG.bride.shortName} & ${CONFIG.groom.shortName}`;
+           
+           const galleryCover = document.getElementById('galleryCover');
+           galleryCover.src = CONFIG.gallery.cover;
+           galleryCover.onerror = function() {
+               this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect fill="%230f0c29" width="800" height="600"/><rect fill="%23ff4d9e" x="200" y="150" width="400" height="300" rx="20"/><text fill="white" font-family="serif" font-size="60" x="50%" y="50%" text-anchor="middle" dy=".3em">📷 Galeri</text></svg>';
+           };
 
-            document.getElementById('quoteText').textContent = `"${CONFIG.quote.text}"`;
-            document.getElementById('quoteSource').textContent = CONFIG.quote.source;
-        }
-    </script>
+           document.getElementById('quoteText').textContent = `"${CONFIG.quote.text}"`;
+           document.getElementById('quoteSource').textContent = CONFIG.quote.source;
+       }
+   </script>
 
-    <style>
-        :root {
-            --bg-primary: #0f0c29;
-            --bg-secondary: #302b63;
-            --bg-accent: #24243e;
-            /* WARNA DIPERCERAHKAN */
-            --accent1: #ff4d9e;
-            --accent2: #a855f7;
-            --accent3: #60a5fa;
-            --accent4: #fb923c;
-            --accent5: #fbbf24;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+   <style>
+       :root {
+           --bg-primary: #0f0c29;
+           --bg-secondary: #302b63;
+           --bg-accent: #24243e;
+           /* WARNA DIPERCERAHKAN */
+           --accent1: #ff4d9e;
+           --accent2: #a855f7;
+           --accent3: #60a5fa;
+           --accent4: #fb923c;
+           --accent5: #fbbf24;
+       }
+       
+       * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+       html {
+           scroll-behavior: smooth;
+       }
 
-        body {
-            font-family: 'Montserrat', sans-serif; 
-            background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
-            color: #ffffff;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        
-        /* Opening Section */
-        .font-opening {
-            font-family: 'Great Vibes', cursive;
-            line-height: 1.4;
-            padding-top: 0.2em;
-            padding-bottom: 0.1em;
-        }
-        
-        /* Hero Section */
-        .font-hero {
-            font-family: 'Great Vibes', cursive;
-            line-height: 1.3;
-            padding-top: 0.15em;
-            display: inline-block;
-        }
-        
-        /* Font Pompiere untuk tanggal */
-        .font-pompiere {
-            font-family: 'Pompiere', cursive;
-        }
-        
-        /* Countdown Section - Font angka diubah ke font label */
-        .font-countdown {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-        
-        /* Couple Section */
-        .font-couple-section {
-            font-family: 'Great Vibes', cursive;
-        }
-        
-        /* Bride Section */
-        .font-bride {
-            font-family: 'Great Vibes', cursive;
-            line-height: 1.3;
-        }
-        
-        /* Groom Section */
-        .font-groom {
-            font-family: 'Great Vibes', cursive;
-            line-height: 1.3;
-        }
-        
-        /* Quote Section */
-        .font-quote {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            line-height: 1.4;
-        }
-        
-        /* Event Section */
-        .font-event {
-            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
-        }
-        
-        /* Gallery Section */
-        .font-gallery {
-            font-family: 'Great Vibes', cursive;
-        }
-        
-        /* RSVP Section */
-        .font-rsvp {
-            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
-        }
-        
-        /* Gift Section */
-        .font-gift {
-            font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
-        }
-        
-        /* Footer Section */
-        .font-footer {
-            font-family: 'Great Vibes', cursive;
-            line-height: 1.5;
-            padding-top: 0.3em;
-            padding-bottom: 0.2em;
-        }
-        
-        /* Gradients dengan warna cerah */
-        .text-gradient-1 {
-            background: linear-gradient(45deg, #ff4d9e, #a855f7, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradientShift 3s ease infinite;
-        }
-        
-        .text-gradient-2 {
-            background: linear-gradient(45deg, #fb923c, #fbbf24, #ff4d9e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradientShift 4s ease infinite;
-        }
-        
-        .text-gradient-3 {
-            background: linear-gradient(45deg, #60a5fa, #a855f7, #ff4d9e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradientShift 5s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .float-slow { animation: floatSlow 6s ease-in-out infinite; }
-        .float-medium { animation: floatMedium 4s ease-in-out infinite; }
-        .float-fast { animation: floatFast 3s ease-in-out infinite; }
-        
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(5deg); }
-        }
-        
-        @keyframes floatMedium {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes floatFast {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-15px) scale(1.05); }
-        }
-        
-        .glass-color {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .glass-pink {
-            background: rgba(255, 77, 158, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 77, 158, 0.3);
-        }
-        
-        .glass-purple {
-            background: rgba(168, 85, 247, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-        }
-        
-        .glass-blue {
-            background: rgba(96, 165, 250, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-        }
-        
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            margin: 0 auto;
-            max-width: 200px;
-        }
-        
-        .card-glow {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            transition: all 0.4s ease;
-        }
-        
-        .card-glow:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 77, 158, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .btn-gradient {
-            background: linear-gradient(45deg, #ff4d9e, #a855f7, #60a5fa);
-            background-size: 200% 200%;
-            animation: gradientShift 3s ease infinite;
-            color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-gradient:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 77, 158, 0.4);
-        }
-        
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: blobFloat 10s ease-in-out infinite;
-        }
-        
-        .blob-1 { width: 400px; height: 400px; background: #ff4d9e; top: -100px; left: -100px; animation-delay: 0s; }
-        .blob-2 { width: 300px; height: 300px; background: #a855f7; top: 50%; right: -100px; animation-delay: 2s; }
-        .blob-3 { width: 350px; height: 350px; background: #60a5fa; bottom: -100px; left: 30%; animation-delay: 4s; }
-        
-        @keyframes blobFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
-            z-index: 100;
-            transition: width 0.1s;
-        }
-        
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            transition: opacity 0.5s ease;
-        }
-        
-        .loader.hidden-loader {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loader-ring {
-            width: 80px;
-            height: 80px;
-            border: 4px solid transparent;
-            border-top-color: #ff4d9e;
-            border-right-color: #a855f7;
-            border-bottom-color: #60a5fa;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin { to { transform: rotate(360deg); } }
-        
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f0c29; }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #ff4d9e, #a855f7, #60a5fa);
-            border-radius: 4px;
-        }
-        
-        .heart-beat { animation: heartBeat 1.5s ease-in-out infinite; }
-        
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            14% { transform: scale(1.3); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.3); }
-            70% { transform: scale(1); }
-        }
-        
-        .shine {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .shine::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
-            transform: rotate(30deg);
-            animation: shineMove 3s infinite;
-        }
-        
-        @keyframes shineMove {
-            0% { transform: translateX(-100%) rotate(30deg); }
-            100% { transform: translateX(100%) rotate(30deg); }
-        }
+       body {
+           font-family: 'Montserrat', sans-serif; 
+           background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
+           color: #ffffff;
+           overflow-x: hidden;
+           min-height: 100vh;
+       }
+       
+       /* Opening Section */
+       .font-opening {
+           font-family: 'Great Vibes', cursive;
+           line-height: 1.4;
+           padding-top: 0.2em;
+           padding-bottom: 0.1em;
+       }
+       
+       /* Hero Section */
+       .font-hero {
+           font-family: 'Great Vibes', cursive;
+           line-height: 1.3;
+           padding-top: 0.15em;
+           display: inline-block;
+       }
+       
+       /* Font Pompiere untuk tanggal */
+       .font-pompiere {
+           font-family: 'Pompiere', cursive;
+       }
+       
+       /* Countdown Section - Font angka diubah ke font label */
+       .font-countdown {
+           font-family: 'Montserrat', sans-serif;
+           font-weight: 600;
+           letter-spacing: 0.2em;
+           text-transform: uppercase;
+       }
+       
+       /* Couple Section */
+       .font-couple-section {
+           font-family: 'Great Vibes', cursive;
+       }
+       
+       /* Bride Section */
+       .font-bride {
+           font-family: 'Great Vibes', cursive;
+           line-height: 1.3;
+       }
+       
+       /* Groom Section */
+       .font-groom {
+           font-family: 'Great Vibes', cursive;
+           line-height: 1.3;
+       }
+       
+       /* Quote Section */
+       .font-quote {
+           font-family: 'Great Vibes', cursive;
+           font-size: 3rem;
+           line-height: 1.4;
+       }
+       
+       /* Event Section */
+       .font-event {
+           font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
+       }
+       
+       /* Gallery Section */
+       .font-gallery {
+           font-family: 'Great Vibes', cursive;
+       }
+       
+       /* RSVP Section */
+       .font-rsvp {
+           font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
+       }
+       
+       /* Gift Section */
+       .font-gift {
+           font-family: 'Pompiere', cursive; /* Diubah ke Pompiere */
+       }
+       
+       /* Footer Section */
+       .font-footer {
+           font-family: 'Great Vibes', cursive;
+           line-height: 1.5;
+           padding-top: 0.3em;
+           padding-bottom: 0.2em;
+       }
+       
+       /* Gradients dengan warna cerah */
+       .text-gradient-1 {
+           background: linear-gradient(45deg, #ff4d9e, #a855f7, #60a5fa);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+           background-size: 200% 200%;
+           animation: gradientShift 3s ease infinite;
+       }
+       
+       .text-gradient-2 {
+           background: linear-gradient(45deg, #fb923c, #fbbf24, #ff4d9e);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+           background-size: 200% 200%;
+           animation: gradientShift 4s ease infinite;
+       }
+       
+       .text-gradient-3 {
+           background: linear-gradient(45deg, #60a5fa, #a855f7, #ff4d9e);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+           background-size: 200% 200%;
+           animation: gradientShift 5s ease infinite;
+       }
+       
+       @keyframes gradientShift {
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
+       }
+       
+       .float-slow { animation: floatSlow 6s ease-in-out infinite; }
+       .float-medium { animation: floatMedium 4s ease-in-out infinite; }
+       .float-fast { animation: floatFast 3s ease-in-out infinite; }
+       
+       @keyframes floatSlow {
+           0%, 100% { transform: translateY(0px) rotate(0deg); }
+           50% { transform: translateY(-30px) rotate(5deg); }
+       }
+       
+       @keyframes floatMedium {
+           0%, 100% { transform: translateY(0px); }
+           50% { transform: translateY(-20px); }
+       }
+       
+       @keyframes floatFast {
+           0%, 100% { transform: translateY(0px) scale(1); }
+           50% { transform: translateY(-15px) scale(1.05); }
+       }
+       
+       .glass-color {
+           background: rgba(255, 255, 255, 0.03);
+           backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+       }
+       
+       .glass-pink {
+           background: rgba(255, 77, 158, 0.08);
+           backdrop-filter: blur(20px);
+           border: 1px solid rgba(255, 77, 158, 0.3);
+       }
+       
+       .glass-purple {
+           background: rgba(168, 85, 247, 0.08);
+           backdrop-filter: blur(20px);
+           border: 1px solid rgba(168, 85, 247, 0.3);
+       }
+       
+       .glass-blue {
+           background: rgba(96, 165, 250, 0.08);
+           backdrop-filter: blur(20px);
+           border: 1px solid rgba(96, 165, 250, 0.3);
+       }
+       
+       .section-divider {
+           height: 1px;
+           background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+           margin: 0 auto;
+           max-width: 200px;
+       }
+       
+       .card-glow {
+           background: rgba(255, 255, 255, 0.03);
+           border: 1px solid rgba(255, 255, 255, 0.1);
+           border-radius: 24px;
+           transition: all 0.4s ease;
+       }
+       
+       .card-glow:hover {
+           transform: translateY(-5px);
+           border-color: rgba(255, 77, 158, 0.3);
+           background: rgba(255, 255, 255, 0.05);
+       }
+       
+       .btn-gradient {
+           background: linear-gradient(45deg, #ff4d9e, #a855f7, #60a5fa);
+           background-size: 200% 200%;
+           animation: gradientShift 3s ease infinite;
+           color: white;
+           padding: 16px 40px;
+           border-radius: 50px;
+           font-weight: 600;
+           letter-spacing: 2px;
+           text-transform: uppercase;
+           transition: all 0.3s ease;
+           border: none;
+           cursor: pointer;
+       }
+       
+       .btn-gradient:hover {
+           transform: translateY(-3px) scale(1.05);
+           box-shadow: 0 10px 30px rgba(255, 77, 158, 0.4);
+       }
+       
+       .blob {
+           position: absolute;
+           border-radius: 50%;
+           filter: blur(80px);
+           opacity: 0.4;
+           animation: blobFloat 10s ease-in-out infinite;
+       }
+       
+       .blob-1 { width: 400px; height: 400px; background: #ff4d9e; top: -100px; left: -100px; animation-delay: 0s; }
+       .blob-2 { width: 300px; height: 300px; background: #a855f7; top: 50%; right: -100px; animation-delay: 2s; }
+       .blob-3 { width: 350px; height: 350px; background: #60a5fa; bottom: -100px; left: 30%; animation-delay: 4s; }
+       
+       @keyframes blobFloat {
+           0%, 100% { transform: translate(0, 0) scale(1); }
+           33% { transform: translate(30px, -30px) scale(1.1); }
+           66% { transform: translate(-20px, 20px) scale(0.9); }
+       }
+       
+       .scroll-progress {
+           position: fixed;
+           top: 0;
+           left: 0;
+           height: 3px;
+           background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
+           z-index: 100;
+           transition: width 0.1s;
+       }
+       
+       .loader {
+           position: fixed;
+           inset: 0;
+           background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
+           z-index: 9999;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           flex-direction: column;
+           transition: opacity 0.5s ease;
+       }
+       
+       .loader.hidden-loader {
+           opacity: 0;
+           pointer-events: none;
+       }
+       
+       .loader-ring {
+           width: 80px;
+           height: 80px;
+           border: 4px solid transparent;
+           border-top-color: #ff4d9e;
+           border-right-color: #a855f7;
+           border-bottom-color: #60a5fa;
+           border-radius: 50%;
+           animation: spin 1s linear infinite;
+       }
+       
+       @keyframes spin { to { transform: rotate(360deg); } }
+       
+       #particle-canvas {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           pointer-events: none;
+           z-index: 1;
+       }
+       
+       ::-webkit-scrollbar { width: 8px; }
+       ::-webkit-scrollbar-track { background: #0f0c29; }
+       ::-webkit-scrollbar-thumb {
+           background: linear-gradient(180deg, #ff4d9e, #a855f7, #60a5fa);
+           border-radius: 4px;
+       }
+       
+       .heart-beat { animation: heartBeat 1.5s ease-in-out infinite; }
+       
+       @keyframes heartBeat {
+           0%, 100% { transform: scale(1); }
+           14% { transform: scale(1.3); }
+           28% { transform: scale(1); }
+           42% { transform: scale(1.3); }
+           70% { transform: scale(1); }
+       }
+       
+       .shine {
+           position: relative;
+           overflow: hidden;
+       }
+       
+       .shine::after {
+           content: '';
+           position: absolute;
+           top: -50%;
+           left: -50%;
+           width: 200%;
+           height: 200%;
+           background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+           transform: rotate(30deg);
+           animation: shineMove 3s infinite;
+       }
+       
+       @keyframes shineMove {
+           0% { transform: translateX(-100%) rotate(30deg); }
+           100% { transform: translateX(100%) rotate(30deg); }
+       }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+       @keyframes fadeInUp {
+           from { opacity: 0; transform: translateY(30px); }
+           to { opacity: 1; transform: translateY(0); }
+       }
+       .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
 
-        .music-control {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 77, 158, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 77, 158, 0.5);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 999;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 77, 158, 0.3);
-            opacity: 0;
-            pointer-events: none;
-        }
+       .music-control {
+           position: fixed;
+           bottom: 30px;
+           right: 30px;
+           width: 60px;
+           height: 60px;
+           background: rgba(255, 77, 158, 0.2);
+           backdrop-filter: blur(10px);
+           border: 2px solid rgba(255, 77, 158, 0.5);
+           border-radius: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           cursor: pointer;
+           z-index: 999;
+           transition: all 0.3s ease;
+           box-shadow: 0 4px 15px rgba(255, 77, 158, 0.3);
+           opacity: 0;
+           pointer-events: none;
+       }
 
-        .music-control.visible {
-            opacity: 1;
-            pointer-events: all;
-        }
+       .music-control.visible {
+           opacity: 1;
+           pointer-events: all;
+       }
 
-        .music-control.playing {
-            animation: musicPulse 2s infinite;
-            background: rgba(76, 175, 80, 0.3);
-            border-color: rgba(76, 175, 80, 0.6);
-        }
+       .music-control.playing {
+           animation: musicPulse 2s infinite;
+           background: rgba(76, 175, 80, 0.3);
+           border-color: rgba(76, 175, 80, 0.6);
+       }
 
-        @keyframes musicPulse {
-            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
-        }
+       @keyframes musicPulse {
+           0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+           70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); }
+           100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+       }
 
-        /* PERUBAHAN: Warna label lebih cerah */
-        .section-badge {
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            background: rgba(255, 77, 158, 0.15);
-            border: 1px solid rgba(255, 77, 158, 0.4);
-            color: #ff80b3;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
+       /* PERUBAHAN: Warna label lebih cerah */
+       .section-badge {
+           display: inline-block;
+           padding: 6px 20px;
+           border-radius: 50px;
+           font-size: 0.7rem;
+           letter-spacing: 0.2em;
+           text-transform: uppercase;
+           margin-bottom: 1rem;
+           background: rgba(255, 77, 158, 0.15);
+           border: 1px solid rgba(255, 77, 158, 0.4);
+           color: #ff80b3;
+           font-family: 'Montserrat', sans-serif;
+           font-weight: 600;
+       }
 
-        .snap-container {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
-            scroll-behavior: smooth;
-        }
+       .snap-container {
+           scroll-snap-type: y mandatory;
+           overflow-y: scroll;
+           height: 100vh;
+           scroll-behavior: smooth;
+       }
 
-        .snap-section {
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-            min-height: 100vh;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+       .snap-section {
+           scroll-snap-align: start;
+           scroll-snap-stop: always;
+           min-height: 100vh;
+           height: 100vh;
+           width: 100%;
+           position: relative;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           overflow: hidden;
+       }
 
-        .compact-content {
-            transform: scale(0.9);
-            transform-origin: center center;
-        }
-        
-        .compact-text {
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-        }
+       .compact-content {
+           transform: scale(0.9);
+           transform-origin: center center;
+       }
+       
+       .compact-text {
+           line-height: 1.4;
+           margin-bottom: 0.5rem;
+       }
 
-        .gallery-cover-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+       .gallery-cover-container {
+           position: relative;
+           width: 100%;
+           height: 100%;
+           overflow: hidden;
+           cursor: pointer;
+           transition: transform 0.3s ease;
+       }
 
-        .gallery-cover-container:hover {
-            transform: scale(1.02);
-        }
+       .gallery-cover-container:hover {
+           transform: scale(1.02);
+       }
 
-        .gallery-cover-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
-            z-index: 1;
-            transition: opacity 0.3s ease;
-        }
+       .gallery-cover-container::before {
+           content: '';
+           position: absolute;
+           inset: 0;
+           background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+           z-index: 1;
+           transition: opacity 0.3s ease;
+       }
 
-        .gallery-cover-container:hover::before {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
-        }
+       .gallery-cover-container:hover::before {
+           background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+       }
 
-        .gallery-cover-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
+       .gallery-cover-img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.7s ease;
+       }
 
-        .gallery-cover-container:hover .gallery-cover-img {
-            transform: scale(1.1);
-        }
+       .gallery-cover-container:hover .gallery-cover-img {
+           transform: scale(1.1);
+       }
 
-        .gallery-cover-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            text-align: center;
-            padding: 2rem;
-        }
+       .gallery-cover-overlay {
+           position: absolute;
+           inset: 0;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           z-index: 2;
+           text-align: center;
+           padding: 2rem;
+       }
 
-        .gallery-cover-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
+       .gallery-cover-icon {
+           width: 80px;
+           height: 80px;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           border: 2px solid rgba(255, 255, 255, 0.3);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 2rem;
+           margin-bottom: 1rem;
+           transition: all 0.3s ease;
+       }
 
-        .gallery-cover-container:hover .gallery-cover-icon {
-            background: rgba(255, 77, 158, 0.3);
-            border-color: rgba(255, 77, 158, 0.6);
-            transform: scale(1.1);
-        }
+       .gallery-cover-container:hover .gallery-cover-icon {
+           background: rgba(255, 77, 158, 0.3);
+           border-color: rgba(255, 77, 158, 0.6);
+           transform: scale(1.1);
+       }
 
-        .lightbox-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 9999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+       .lightbox-overlay {
+           position: fixed;
+           inset: 0;
+           background: rgba(0, 0, 0, 0.95);
+           backdrop-filter: blur(10px);
+           z-index: 9999;
+           display: none;
+           align-items: center;
+           justify-content: center;
+           opacity: 0;
+           transition: opacity 0.3s ease;
+       }
 
-        .lightbox-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
+       .lightbox-overlay.active {
+           display: flex;
+           opacity: 1;
+       }
 
-        .lightbox-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+       .lightbox-content {
+           position: relative;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           padding: 20px;
+       }
 
-        .lightbox-image {
-            max-width: 90%;
-            max-height: 85vh;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
+       .lightbox-image {
+           max-width: 90%;
+           max-height: 85vh;
+           object-fit: contain;
+           border-radius: 12px;
+           box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+           transform: scale(0.9);
+           transition: transform 0.3s ease;
+       }
 
-        .lightbox-overlay.active .lightbox-image {
-            transform: scale(1);
-        }
+       .lightbox-overlay.active .lightbox-image {
+           transform: scale(1);
+       }
 
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
+       .lightbox-nav {
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           width: 50px;
+           height: 50px;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           border: 2px solid rgba(255, 255, 255, 0.3);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           color: white;
+           font-size: 1.5rem;
+           z-index: 10;
+       }
 
-        .lightbox-nav:hover {
-            background: rgba(255, 77, 158, 0.3);
-            border-color: rgba(255, 77, 158, 0.6);
-            transform: translateY(-50%) scale(1.1);
-        }
+       .lightbox-nav:hover {
+           background: rgba(255, 77, 158, 0.3);
+           border-color: rgba(255, 77, 158, 0.6);
+           transform: translateY(-50%) scale(1.1);
+       }
 
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
+       .lightbox-prev { left: 20px; }
+       .lightbox-next { right: 20px; }
 
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
+       .lightbox-close {
+           position: absolute;
+           top: 20px;
+           right: 20px;
+           width: 50px;
+           height: 50px;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           border: 2px solid rgba(255, 255, 255, 0.3);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           color: white;
+           font-size: 1.5rem;
+           z-index: 10;
+       }
 
-        .lightbox-close:hover {
-            background: rgba(255, 77, 158, 0.3);
-            border-color: rgba(255, 77, 158, 0.6);
-            transform: rotate(90deg);
-        }
+       .lightbox-close:hover {
+           background: rgba(255, 77, 158, 0.3);
+           border-color: rgba(255, 77, 158, 0.6);
+           transform: rotate(90deg);
+       }
 
-        .lightbox-counter {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+       .lightbox-counter {
+           position: absolute;
+           bottom: 30px;
+           left: 50%;
+           transform: translateX(-50%);
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(10px);
+           padding: 8px 20px;
+           border-radius: 20px;
+           font-size: 0.9rem;
+           color: white;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+       }
 
-        @media (max-width: 768px) {
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                width: 40px;
-                height: 40px;
-            }
-            
-            .snap-section {
-                min-height: 100vh;
-                min-height: 100dvh;
-                height: auto;
-            }
-        }
+       @media (max-width: 768px) {
+           .lightbox-nav {
+               width: 40px;
+               height: 40px;
+               font-size: 1.2rem;
+           }
+           .lightbox-prev { left: 10px; }
+           .lightbox-next { right: 10px; }
+           .lightbox-close {
+               top: 10px;
+               right: 10px;
+               width: 40px;
+               height: 40px;
+           }
+           
+           .snap-section {
+               min-height: 100vh;
+               min-height: 100dvh;
+               height: auto;
+           }
+       }
 
-        #messagesContainer::-webkit-scrollbar {
-            width: 6px;
-        }
-        #messagesContainer::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
-            border-radius: 3px;
-        }
-        #messagesContainer::-webkit-scrollbar-thumb {
-            background: rgba(255, 77, 158, 0.3);
-            border-radius: 3px;
-        }
+       #messagesContainer::-webkit-scrollbar {
+           width: 6px;
+       }
+       #messagesContainer::-webkit-scrollbar-track {
+           background: rgba(255,255,255,0.05);
+           border-radius: 3px;
+       }
+       #messagesContainer::-webkit-scrollbar-thumb {
+           background: rgba(255, 77, 158, 0.3);
+           border-radius: 3px;
+       }
 
-        .messages-scroll-box {
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 8px;
-        }
+       .messages-scroll-box {
+           max-height: 400px;
+           overflow-y: auto;
+           padding-right: 8px;
+       }
 
-        /* MODIFIKASI: Gallery frame diperbesar 1x (dari 400px ke 480px, mobile 280px ke 340px) */
-        .gallery-frame {
-            position: relative;
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            aspect-ratio: 531/674;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            border: 4px solid rgba(255,255,255,0.1);
-        }
+       /* MODIFIKASI: Gallery frame diperbesar 1x (dari 400px ke 480px, mobile 280px ke 340px) */
+       .gallery-frame {
+           position: relative;
+           width: 100%;
+           max-width: 480px;
+           margin: 0 auto;
+           aspect-ratio: 531/674;
+           border-radius: 24px;
+           overflow: hidden;
+           box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+           border: 4px solid rgba(255,255,255,0.1);
+       }
 
-        .gallery-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+       .gallery-frame img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.5s ease;
+       }
 
-        .gallery-frame:hover img {
-            transform: scale(1.05);
-        }
+       .gallery-frame:hover img {
+           transform: scale(1.05);
+       }
 
-        /* MODIFIKASI: Couple frame tanpa efek gradien */
-        .couple-frame {
-            position: relative;
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto;
-            aspect-ratio: 2/3;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
-            border: 4px solid rgba(255,255,255,0.15);
-        }
+       /* MODIFIKASI: Couple frame tanpa efek gradien */
+       .couple-frame {
+           position: relative;
+           width: 100%;
+           max-width: 320px;
+           margin: 0 auto;
+           aspect-ratio: 2/3;
+           border-radius: 24px;
+           overflow: hidden;
+           box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+           border: 4px solid rgba(255,255,255,0.15);
+       }
 
-        .couple-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
+       .couple-frame img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.7s ease;
+       }
 
-        /* MODIFIKASI: Hover efek hanya scale, tanpa gradien overlay tambahan */
-        .couple-frame:hover img {
-            transform: scale(1.08);
-        }
+       /* MODIFIKASI: Hover efek hanya scale, tanpa gradien overlay tambahan */
+       .couple-frame:hover img {
+           transform: scale(1.08);
+       }
 
-        .mempelai-photo {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid;
-            transition: transform 0.3s ease;
-        }
+       .mempelai-photo {
+           width: 280px;
+           height: 280px;
+           border-radius: 50%;
+           object-fit: cover;
+           border: 4px solid;
+           transition: transform 0.3s ease;
+       }
 
-        .mempelai-photo:hover {
-            transform: scale(1.05);
-        }
+       .mempelai-photo:hover {
+           transform: scale(1.05);
+       }
 
-        .photo-ring-1 {
-            width: 300px;
-            height: 300px;
-            top: -10px;
-        }
+       .photo-ring-1 {
+           width: 300px;
+           height: 300px;
+           top: -10px;
+       }
 
-        .photo-ring-2 {
-            width: 320px;
-            height: 320px;
-            top: -20px;
-        }
+       .photo-ring-2 {
+           width: 320px;
+           height: 320px;
+           top: -20px;
+       }
 
-        /* MODIFIKASI: Gallery frame mobile diperbesar */
-        @media (max-width: 768px) {
-            .gallery-frame {
-                max-width: 340px;
-            }
-            .couple-frame {
-                max-width: 260px;
-            }
-            .mempelai-photo {
-                width: 240px;
-                height: 240px;
-            }
-            .photo-ring-1 {
-                width: 260px;
-                height: 260px;
-            }
-            .photo-ring-2 {
-                width: 280px;
-                height: 280px;
-            }
-            .font-quote {
-                font-size: 2rem;
-            }
-            footer .text-4xl {
-                font-size: 2.5rem;
-            }
-            footer .text-base {
-                font-size: 1.1rem;
-            }
-        }
+       /* MODIFIKASI: Gallery frame mobile diperbesar */
+       @media (max-width: 768px) {
+           .gallery-frame {
+               max-width: 340px;
+           }
+           .couple-frame {
+               max-width: 260px;
+           }
+           .mempelai-photo {
+               width: 240px;
+               height: 240px;
+           }
+           .photo-ring-1 {
+               width: 260px;
+               height: 260px;
+           }
+           .photo-ring-2 {
+               width: 280px;
+               height: 280px;
+           }
+           .font-quote {
+               font-size: 2rem;
+           }
+           footer .text-4xl {
+               font-size: 2.5rem;
+           }
+           footer .text-base {
+               font-size: 1.1rem;
+           }
+       }
 
-        .countdown-box {
-            aspect-ratio: 1/1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+       .countdown-box {
+           aspect-ratio: 1/1;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+       }
 
-        /* Style baru untuk overlay galeri */
-        .gallery-overlay-text {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-            color: white;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            pointer-events: none;
-        }
+       /* Style baru untuk overlay galeri */
+       .gallery-overlay-text {
+           position: absolute;
+           bottom: 20px;
+           left: 0;
+           right: 0;
+           text-align: center;
+           z-index: 10;
+           color: white;
+           font-size: 0.9rem;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 0.5rem;
+           pointer-events: none;
+       }
 
-        /* PERUBAHAN BARU: Style untuk font DANA yang lebih kecil agar muat di box */
-        .dana-text {
-            font-family: 'Pompiere', cursive;
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 0.1em;
-        }
+       /* PERUBAHAN BARU: Style untuk font DANA yang lebih kecil agar muat di box */
+       .dana-text {
+           font-family: 'Pompiere', cursive;
+           font-size: 1.5rem;
+           font-weight: bold;
+           letter-spacing: 0.1em;
+       }
 
-        @media (max-width: 768px) {
-            .dana-text {
-                font-size: 1.25rem;
-            }
-        }
+       @media (max-width: 768px) {
+           .dana-text {
+               font-size: 1.25rem;
+           }
+       }
 
-        /* PERUBAHAN BARU: Style untuk emoji gift yang lebih besar tapi tidak lebih dari box */
-        .gift-emoji {
-            font-size: 2.5rem;
-            line-height: 1;
-        }
+       /* PERUBAHAN BARU: Style untuk emoji gift yang lebih besar tapi tidak lebih dari box */
+       .gift-emoji {
+           font-size: 2.5rem;
+           line-height: 1;
+       }
 
-        @media (max-width: 768px) {
-            .gift-emoji {
-                font-size: 2rem;
-            }
-        }
+       @media (max-width: 768px) {
+           .gift-emoji {
+               font-size: 2rem;
+           }
+       }
 
-        /* PERUBAHAN BARU: Warna footer date yang lebih cerah */
-        .footer-date-bright {
-            color: #ff80b3 !important; /* Warna pink yang lebih cerah */
-            font-weight: 600;
-        }
-    </style>
+       /* PERUBAHAN BARU: Warna footer date yang lebih cerah */
+       .footer-date-bright {
+           color: #ff80b3 !important; /* Warna pink yang lebih cerah */
+           font-weight: 600;
+       }
+   </style>
 </head>
 <body>
-    <audio id="bgMusic" loop preload="metadata">
-        <source src="musik.mp3" type="audio/mpeg">
-        <source src="musik.ogg" type="audio/ogg">
-    </audio>
+   <audio id="bgMusic" loop preload="metadata">
+       <source src="musik.mp3" type="audio/mpeg">
+       <source src="musik.ogg" type="audio/ogg">
+   </audio>
 
-    <div class="music-control" id="musicToggle" onclick="toggleMusic()">
-        <span class="music-icon" id="musicIcon" style="font-size: 28px;">🔇</span>
-    </div>
+   <div class="music-control" id="musicToggle" onclick="toggleMusic()">
+       <span class="music-icon" id="musicIcon" style="font-size: 28px;">🔇</span>
+   </div>
 
-    <div class="loader" id="loader">
-        <div class="loader-ring mb-6"></div>
-        <p class="font-opening text-3xl text-gradient-1 mb-2" id="coupleNames">Reren & Yadi</p>
-        <p class="text-xl text-white">Memuat undangan...</p>
-    </div>
+   <div class="loader" id="loader">
+       <div class="loader-ring mb-6"></div>
+       <p class="font-opening text-3xl text-gradient-1 mb-2" id="coupleNames">Reren & Yadi</p>
+       <p class="text-xl text-white">Memuat undangan...</p>
+   </div>
 
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <canvas id="particle-canvas"></canvas>
+   <div class="scroll-progress" id="scrollProgress"></div>
+   <canvas id="particle-canvas"></canvas>
 
-    <!-- Opening Overlay -->
-    <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+   <!-- Opening Overlay -->
+   <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+       <div class="blob blob-1"></div>
+       <div class="blob blob-2"></div>
+       <div class="blob blob-3"></div>
 
-        <div class="absolute top-20 left-20 text-pink-500 text-4xl float-slow opacity-60">💕</div>
-        <div class="absolute top-40 right-32 text-purple-500 text-3xl float-medium opacity-60">💜</div>
-        <div class="absolute bottom-40 left-40 text-blue-500 text-5xl float-fast opacity-60">💙</div>
-        <div class="absolute bottom-20 right-20 text-orange-500 text-4xl float-slow opacity-60">🧡</div>
+       <div class="absolute top-20 left-20 text-pink-500 text-4xl float-slow opacity-60">💕</div>
+       <div class="absolute top-40 right-32 text-purple-500 text-3xl float-medium opacity-60">💜</div>
+       <div class="absolute bottom-40 left-40 text-blue-500 text-5xl float-fast opacity-60">💙</div>
+       <div class="absolute bottom-20 right-20 text-orange-500 text-4xl float-slow opacity-60">🧡</div>
 
-        <div class="relative z-10 text-center text-white px-6 max-w-3xl">
-            <div class="mb-6">
-                <div class="inline-block p-3 rounded-full glass-pink mb-4 animate-fade-in">
-                    <span class="text-4xl">💍</span>
-                </div>
-                <p class="text-white tracking-[0.5em] text-sm mb-3 uppercase animate-fade-in" style="animation-delay: 0.3s;">Undangan Pernikahan</p>
+       <div class="relative z-10 text-center text-white px-6 max-w-3xl">
+           <div class="mb-6">
+               <div class="inline-block p-3 rounded-full glass-pink mb-4 animate-fade-in">
+                   <span class="text-4xl">💍</span>
+               </div>
+               <p class="text-white tracking-[0.5em] text-sm mb-3 uppercase animate-fade-in" style="animation-delay: 0.3s;">Undangan Pernikahan</p>
 
-                <h1 class="font-opening text-6xl md:text-7xl mb-2 animate-fade-in" style="animation-delay: 0.5s; line-height: 1.2; padding-top: 0.1em;">
-               <span class="text-gradient-1 inline-block" style="padding: 0.05em 0;">Reren</span>
+               <h1 class="font-opening text-6xl md:text-7xl mb-2 animate-fade-in" style="animation-delay: 0.5s; line-height: 1.2; padding-top: 0.1em;">
+              <span class="text-gradient-1 inline-block" style="padding: 0.05em 0;">Reren</span>
+              </h1>
+               
+               <div class="text-4xl md:text-5xl font-opening italic my-3 text-gradient-2 animate-fade-in heart-beat" style="animation-delay: 0.7s; line-height: 1;">&</div>
+               
+               <h1 class="font-opening text-6xl md:text-7xl animate-fade-in" style="animation-delay: 0.9s; line-height: 1.2; padding-top: 0.1em;">
+                   <span class="text-gradient-3 inline-block" style="padding: 0.05em 0;">Yadi</span>
                </h1>
-                
-                <div class="text-4xl md:text-5xl font-opening italic my-3 text-gradient-2 animate-fade-in heart-beat" style="animation-delay: 0.7s; line-height: 1;">&</div>
-                
-                <h1 class="font-opening text-6xl md:text-7xl animate-fade-in" style="animation-delay: 0.9s; line-height: 1.2; padding-top: 0.1em;">
-                    <span class="text-gradient-3 inline-block" style="padding: 0.05em 0;">Yadi</span>
-                </h1>
-            </div>
-
-            <div class="mb-8 glass-color rounded-3xl p-6 inline-block animate-fade-in" style="animation-delay: 1.1s;">
-                <p class="text-white text-xl mb-2">Kepada Yth.</p>
-                <p class="text-lg font-opening text-white">Bapak/Ibu/Saudara/i</p>
-                <div class="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <br>
-
-            <button onclick="openInvitationAndPlayMusic()" class="btn-gradient shine animate-fade-in" style="animation-delay: 1.3s;">
-                <span class="flex items-center gap-3">
-                    <span class="text-2xl">💌</span>
-                    Buka Undangan
-                </span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main-content" class="hidden snap-container">
-        
-        <!-- Hero Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-
-            <div class="absolute inset-0 z-0 opacity-20">
-                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-            </div>
-
-            <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow">✨</div>
-            <div class="absolute top-48 right-20 text-purple-500 text-5xl float-medium">💖</div>
-            <div class="absolute bottom-40 left-20 text-blue-500 text-4xl float-fast">⭐</div>
-            <div class="absolute bottom-32 right-32 text-orange-500 text-5xl float-slow">🌟</div>
-
-            <div class="relative z-10 text-center text-white px-6 max-w-5xl mx-auto compact-content">
-                <div class="mb-4">
-                    <span class="section-badge">Pernikahan</span>
-                </div>
-
-                <!-- PERUBAHAN 1: Font Reren & Yadi diperbesar 1x (dari text-7xl md:text-[7rem] ke text-8xl md:text-[8rem]) -->
-                <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2;">
-                   <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
-                </h1>
-                
-                <div class="text-4xl md:text-5xl font-hero italic my-4 text-gradient-2 heart-beat" style="line-height: 1;">&</div>
-
-                <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
-                    <span class="block text-gradient-3 inline-block" id="heroGroom" style="padding: 0.05em 0;">Yadi</span>
-                </h1>
-
-                <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
-                    <!-- PERUBAHAN 1: Font hero date diubah ke font Pompiere -->
-                    <p class="font-pompiere text-3xl md:text-4xl text-white mb-2" id="heroDate">30 Mei 2028</p>
-                    <div class="flex items-center justify-center gap-4 text-white mb-2">
-                        <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
-                        <span class="text-pink-400">♥</span>
-                        <div class="h-px w-16 bg-gradient-to-l from-transparent to-purple-500"></div>
-                    </div>
-                    <p class="tracking-[0.3em] text-xs text-white uppercase">Akad & Resepsi</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Countdown Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-8">
-                    <!-- PERUBAHAN: "MENUKU HARI BAHAGIA" menjadi "COUNTDOWN" -->
-                    <span class="section-badge">Countdown</span>
-                    <!-- PERUBAHAN 2: Font "SISA WAKTU" diubah ke Pompiere -->
-                    <h2 class="font-pompiere text-4xl md:text-5xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
-                    <!-- PERUBAHAN: Tambahan teks "Menuju Hari Bahagia" -->
-                    <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
-                    <div class="glass-pink rounded-3xl p-4 card-glow text-center countdown-box">
-                        <!-- PERUBAHAN 2: Font angka countdown diubah ke font label seksi -->
-                        <div id="days" class="font-countdown text-4xl md:text-6xl text-gradient-1 mb-1">00</div>
-                        <div class="text-pink-300 tracking-widest text-xs uppercase">Hari</div>
-                    </div>
-                    <div class="glass-purple rounded-3xl p-4 card-glow text-center countdown-box">
-                        <div id="hours" class="font-countdown text-4xl md:text-6xl text-gradient-2 mb-1">00</div>
-                        <div class="text-purple-300 tracking-widest text-xs uppercase">Jam</div>
-                    </div>
-                    <div class="glass-blue rounded-3xl p-4 card-glow text-center countdown-box">
-                        <div id="minutes" class="font-countdown text-4xl md:text-6xl text-gradient-3 mb-1">00</div>
-                        <div class="text-blue-300 tracking-widest text-xs uppercase">Menit</div>
-                    </div>
-                    <div class="glass-color rounded-3xl p-4 card-glow text-center border-orange-500/30 countdown-box">
-                        <div id="seconds" class="font-countdown text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-1">00</div>
-                        <div class="text-orange-300 tracking-widest text-xs uppercase">Detik</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Couple Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
-            <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
-
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-6">
-                    <span class="section-badge">Mempelai</span>
-                    <h2 class="font-couple-section text-5xl md:text-6xl text-gradient-1 mt-2" style="line-height: 1.2; padding-top: 0.1em;">
-                        Reren & Yadi
-                    </h2>
-                </div>
-                
-                <!-- MODIFIKASI: Hilang efek gradien pada photo couple (dihapus class group dan overlay gradien) -->
-                <div class="couple-frame mb-6">
-                    <img id="couplePhoto" src="couple.jpg" alt="Reren & Yadi" 
-                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
-                </div>
-
-                <!-- PERUBAHAN 3: Font date di couple section diubah ke font Pompiere -->
-                <div class="text-center">
-                    <p class="font-pompiere text-2xl md:text-3xl text-white/90">30 Mei 2028</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Bride Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow opacity-30">💖</div>
-            <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
-
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-4">
-                    <span class="section-badge">Mempelai Wanita</span>
-                </div>
-
-                <div class="max-w-xs mx-auto mb-4">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
-                        <div class="relative mx-auto flex justify-center">
-                            <div class="absolute border-2 border-pink-500/30 rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-700 photo-ring-1" style="left: 50%; transform: translateX(-50%) rotate(6deg);"></div>
-                            <div class="absolute border border-pink-500/20 rounded-full -rotate-3 group-hover:-rotate-6 transition-transform duration-700 photo-ring-2" style="left: 50%; transform: translateX(-50%) rotate(-3deg);"></div>
-                            <img id="bridePhoto" src="bride.jpg" alt="Reren" class="mempelai-photo border-pink-500/20 relative z-10">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center max-w-md mx-auto">
-                    <h3 id="brideName" class="font-bride text-4xl md:text-5xl text-white mb-2">Reni Pionika</h3>
-                    <p id="brideOrder" class="text-white/80 mb-3 text-base">Putri kedua dari</p>
-                    
-                    <div class="glass-pink rounded-3xl p-4 inline-block max-w-xs border border-pink-500/30">
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="h-px w-12 bg-gradient-to-r from-transparent to-pink-500"></div>
-                            <span class="text-pink-400 text-xl">❦</span>
-                            <div class="h-px w-12 bg-gradient-to-l from-transparent to-pink-500"></div>
-                        </div>
-                        <p class="text-white leading-relaxed text-sm">
-                            <span class="text-white font-semibold text-base block mt-1" id="brideFather">Almarhum Amir Hamzah</span>
-                            <span class="text-pink-400">&</span><br>
-                            <span class="text-white font-semibold text-base" id="brideMother">Maiyus Farida</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Groom Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
-            <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
-
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-4">
-                    <span class="section-badge">Mempelai Pria</span>
-                </div>
-
-                <div class="max-w-xs mx-auto mb-4">
-                    <div class="relative group">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
-                        <div class="relative mx-auto flex justify-center">
-                            <div class="absolute border-2 border-blue-500/30 rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-700 photo-ring-1" style="left: 50%; transform: translateX(-50%) rotate(-6deg);"></div>
-                            <div class="absolute border border-blue-500/20 rounded-full rotate-3 group-hover:rotate-6 transition-transform duration-700 photo-ring-2" style="left: 50%; transform: translateX(-50%) rotate(3deg);"></div>
-                            <img id="groomPhoto" src="groom.jpg" alt="Yadi" class="mempelai-photo border-blue-500/20 relative z-10">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center max-w-md mx-auto">
-                    <h3 id="groomName" class="font-groom text-3xl md:text-4xl text-white mb-2">Yadi Hartono</h3>
-                    <p id="groomOrder" class="text-white/80 mb-3 text-base">Putra pertama dari</p>
-                    
-                    <div class="glass-blue rounded-3xl p-4 inline-block max-w-xs border border-blue-500/30">
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <div class="h-px w-12 bg-gradient-to-r from-transparent to-blue-500"></div>
-                            <span class="text-blue-400 text-xl">❦</span>
-                            <div class="h-px w-12 bg-gradient-to-l from-transparent to-blue-500"></div>
-                        </div>
-                        <p class="text-white leading-relaxed text-sm">
-                            <span class="text-white font-semibold text-base block mt-1" id="groomFather">Almarhum Tarlan Manaf</span>
-                            <span class="text-blue-400">&</span><br>
-                            <span class="text-white font-semibold text-base" id="groomMother">Almh. Jumiatie</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Quote Section -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center max-w-4xl mx-auto">
-                    <div class="relative p-8 md:p-12 glass-color rounded-3xl border border-pink-500/20">
-                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-serif shadow-lg">"</div>
-                        
-                        <p id="quoteText" class="font-quote text-white mb-6 mt-4 leading-relaxed">
-                            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya"
-                        </p>
-                        
-                        <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-                        <!-- PERUBAHAN: Font QS. Ar-Rum:21 diubah ke Pompiere -->
-                        <p id="quoteSource" class="font-pompiere text-white font-semibold tracking-widest text-base md:text-lg">QS. Ar-Rum: 21</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- AKAD NIKAH SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-6">
-                    <span class="section-badge">Save The Date</span>
-                </div>
-
-                <div class="max-w-xl mx-auto">
-                    <div class="glass-pink rounded-3xl p-6 md:p-8 card-glow border-pink-500/20 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-transparent rounded-bl-full"></div>
-                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-500/20 to-transparent rounded-tr-full"></div>
-                        
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                                <span class="text-3xl">🕌</span>
-                            </div>
-                            
-                            <!-- PERUBAHAN: Font AKAD NIKAH diubah ke Pompiere -->
-                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
-                            <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
-                            
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">📅</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-pink-300 font-semibold text-sm">Hari & Tanggal</p>
-                                        <p id="akadDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">⏰</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-pink-300 font-semibold text-sm">Waktu</p>
-                                        <p id="akadTime" class="text-white text-base">08:00 - 10:00 WIB</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">📍</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-pink-300 font-semibold text-sm">Tempat</p>
-                                        <p id="akadVenue" class="text-white text-base mb-1">Masjid Raya Sinuruik</p>
-                                        <p id="akadAddress" class="text-white/70 text-xs leading-relaxed">Sinuruik, Kec. Talamau, Kabupaten Pasaman Barat, Sumatera Barat 26561</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button onclick="openMap('akad')" class="mt-6 w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all flex items-center justify-center gap-2 text-base">
-                                <span>🗺️</span>
-                                Lihat Lokasi Akad
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- RESEPSI SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-6">
-                    <span class="section-badge">Save The Date</span>
-                </div>
-
-                <div class="max-w-xl mx-auto">
-                    <div class="glass-blue rounded-3xl p-6 md:p-8 card-glow border-blue-500/20 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full"></div>
-                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-tr-full"></div>
-                        
-                        <div class="relative z-10">
-                            <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                                <span class="text-3xl">🎉</span>
-                            </div>
-                            
-                            <!-- PERUBAHAN: Font RESEPSI PERNIKAHAN diubah ke Pompiere -->
-                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
-                            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
-                            
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">📅</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-blue-300 font-semibold text-sm">Hari & Tanggal</p>
-                                        <p id="resepsiDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">⏰</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-blue-300 font-semibold text-sm">Waktu</p>
-                                        <p id="resepsiTime" class="text-white text-base">11:00 - 14:00 WIB</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
-                                    <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                        <span class="text-xl">📍</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-blue-300 font-semibold text-sm">Tempat</p>
-                                        <p id="resepsiVenue" class="text-white text-base mb-1">Rumah Mempelai</p>
-                                        <p id="resepsiAddress" class="text-white/70 text-xs leading-relaxed">Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button onclick="openMap('resepsi')" class="mt-6 w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 text-base">
-                                <span>🗺️</span>
-                                Lihat Lokasi Resepsi
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- GALLERY SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="text-center mb-6">
-                    <span class="section-badge">Galeri</span>
-                </div>
-
-                <!-- PERUBAHAN: Overlay "Ketuk untuk melihat 👆" dipindahkan ke dalam frame sebagai overlay -->
-                <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
-                    <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
-                    <!-- Overlay dipindahkan ke sini -->
-                    <div class="gallery-overlay-text">
-                        <span>Ketuk untuk melihat</span>
-                        <span class="animate-bounce">👆</span>
-                    </div>
-                </div>
-
-                <!-- Teks "Galeri" dan "Momen Bahagia Kami" tetap di bawah photo cover -->
-                <div class="text-center mt-6">
-                    <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
-                    <p class="text-white/80 text-sm">Momen Bahagia Kami</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- RSVP INPUT SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="max-w-xl mx-auto">
-                    <div class="text-center mb-6">
-                        <span class="section-badge">RSVP</span>
-                        <!-- PERUBAHAN 3: Font Konfirmasi Kehadiran diubah ke Pompiere dan di-CAPS -->
-                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
-                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
-                    </div>
-
-                    <div class="glass-color rounded-3xl p-6 border border-pink-500/20">
-                        <form id="rsvpForm" class="space-y-4">
-                            <div>
-                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Nama Lengkap</label>
-                                <input type="text" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors placeholder-white/50" placeholder="Masukkan nama Anda">
-                            </div>
-
-                            <div>
-                                <label class="block text-pink-400 text-xs mb-2 tracking-wider uppercase">Konfirmasi</label>
-                                <div class="grid grid-cols-2 gap-2">
-                                    <label class="cursor-pointer group">
-                                        <input type="radio" name="attendance" value="hadir" class="hidden peer" checked>
-                                        <div class="px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl text-center peer-checked:bg-gradient-to-r peer-checked:from-pink-500 peer-checked:to-rose-500 peer-checked:border-pink-500 transition-all group-hover:border-pink-400">
-                                            <div class="text-lg mb-1">🎉</div>
-                                            <div class="text-xs font-semibold text-white peer-checked:text-white">Hadir</div>
-                                        </div>
-                                    </label>
-                                    <label class="cursor-pointer group">
-                                        <input type="radio" name="attendance" value="tidak" class="hidden peer">
-                                        <div class="px-3 py-2 bg-white/5 border border-white/30 rounded-xl text-center peer-checked:bg-gradient-to-r peer-checked:from-white/60 peer-checked:to-white/70 peer-checked:border-white/50 transition-all group-hover:border-white/40">
-                                            <div class="text-lg mb-1">😢</div>
-                                            <div class="text-xs font-semibold text-white peer-checked:text-white">Berhalangan</div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Jumlah Tamu</label>
-                                <select class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors">
-                                    <option value="1" class="bg-[#0f0c29]">1 Orang</option>
-                                    <option value="2" class="bg-[#0f0c29]">2 Orang</option>
-                                    <option value="3" class="bg-[#0f0c29]">3 Orang</option>
-                                    <option value="4" class="bg-[#0f0c29]">4 Orang</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Ucapan & Do'a</label>
-                                <textarea rows="2" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors resize-none placeholder-white/50" placeholder="Tulis ucapan untuk Reren & Yadi..."></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-pink-500/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 text-sm">
-                                <span>💌</span>
-                                Kirim Konfirmasi
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- RSVP RESULTS SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 compact-content">
-                <div class="max-w-xl mx-auto">
-                    <div class="text-center mb-6">
-                        <span class="section-badge">RSVP</span>
-                        <!-- PERUBAHAN 3: Font Ucapan & Do'a diubah ke Pompiere dan di-CAPS -->
-                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
-                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
-                    </div>
-
-                    <div class="glass-color rounded-3xl p-4 border border-pink-500/20">
-                        <div class="messages-scroll-box space-y-3" id="messagesContainer">
-                            <div class="glass-pink rounded-2xl p-4 border border-pink-500/20">
-                                <div class="flex justify-between items-start mb-2">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-rsvp text-sm">K</div>
-                                        <div>
-                                            <p class="font-semibold text-pink-300 text-sm">Keluarga Besar</p>
-                                            <p class="text-xs text-white/70">2 jam yang lalu</p>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Hadir</span>
-                                </div>
-                                <p class="text-white leading-relaxed text-sm">Selamat menempuh hidup baru Reren & Yadi! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. 🎉✨</p>
-                            </div>
-
-                            <div class="glass-color rounded-2xl p-4 border border-white/10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-rsvp text-sm">A</div>
-                                        <div>
-                                            <p class="font-semibold text-blue-300 text-sm">Ahmad Rizky</p>
-                                            <p class="text-xs text-white/70">5 jam yang lalu</p>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Hadir</span>
-                                </div>
-                                <p class="text-white leading-relaxed text-sm">Barakallah, semoga lancar sampai hari H! Mohon maaf saya datang dengan 2 orang ya. 🙏</p>
-                            </div>
-
-                            <div class="glass-color rounded-2xl p-4 border border-white/10">
-                                <div class="flex justify-between items-start mb-2">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-rsvp text-sm">S</div>
-                                        <div>
-                                            <p class="font-semibold text-purple-300 text-sm">Siti Aminah</p>
-                                            <p class="text-xs text-white/70">1 hari yang lalu</p>
-                                        </div>
-                                    </div>
-                                    <span class="px-2 py-1 bg-white/20 text-white text-xs rounded-full">Berhalangan</span>
-                                </div>
-                                <p class="text-white leading-relaxed text-sm">Maaf ya Reren & Yadi, saya tidak bisa hadir karena ada urusan di luar kota. Selamat berbahagia! 💕</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- WEDDING GIFT - DANA SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 text-center compact-content">
-                <span class="section-badge">Wedding Gift</span>
-                <!-- PERUBAHAN 4: Font Kirim Hadiah Digital diubah ke Pompiere dan di-CAPS -->
-                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
-                <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
-
-                <div class="max-w-sm mx-auto">
-                    <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
-                        <!-- PERUBAHAN 5: Font DANA diubah ke Pompiere dengan ukuran lebih kecil -->
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                            <span class="dana-text">DANA</span>
-                        </div>
-                        <div class="space-y-1 mb-4">
-                            <p id="bankNumber" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
-                            <p id="bankName" class="text-white/80 text-xs">E-Wallet</p>
-                            <p id="bankAccount" class="text-xs text-pink-400">a.n. Reni Pionika</p>
-                        </div>
-                        <button onclick="copyToClipboard('085763410286')" class="w-full py-2 border-2 border-pink-500 text-pink-400 rounded-xl hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
-                            <span>📋</span>
-                            Salin Nomor DANA
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- WEDDING GIFT - KADO SECTION -->
-        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 text-center compact-content">
-                <span class="section-badge">Wedding Gift</span>
-                <!-- PERUBAHAN 4: Font Kirim Hadiah Fisik diubah ke Pompiere dan di-CAPS -->
-                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
-                <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
-
-                <div class="max-w-sm mx-auto">
-                    <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
-                        <!-- PERUBAHAN 5: Emoji gift diperbesar -->
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                            <span class="gift-emoji">🎁</span>
-                        </div>
-                        <h3 class="font-gift text-xl mb-3 text-white font-semibold">Alamat Pengiriman</h3>
-                        <div class="text-left glass-color rounded-xl p-4 mb-4 border border-white/10">
-                            <p id="giftAddress" class="text-white leading-relaxed text-xs">
-                                <!-- Filled by JS -->
-                            </p>
-                        </div>
-                        <button onclick="copyToClipboard('Reni Pionika, Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat 26561')" class="w-full py-2 border-2 border-blue-500 text-blue-400 rounded-xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
-                            <span>📋</span>
-                            Salin Alamat Lengkap
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <!-- Footer -->
-        <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
-            <div class="container mx-auto px-6 relative z-10 text-center compact-content">
-                <div class="inline-block p-4 rounded-full glass-pink mb-6">
-                    <span class="text-5xl md:text-6xl">💕</span>
-                </div>
-                
-                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
-                
-                <!-- PERUBAHAN 6: Warna font 30 Mei 2028 dipercerah -->
-                <p id="footerDate" class="footer-date-bright text-lg md:text-xl mb-6">30 Mei 2028</p>
-                
-                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
-                
-                <p class="text-white text-sm md:text-base">Made with <span class="text-pink-500">❤️</span> by <span id="footerCouple" class="text-pink-400">Reren & Yadi</span></p>
-                <p class="text-white text-sm md:text-base mt-2">© 2028 All Rights Reserved</p>
-            </div>
-        </footer>
-    </main>
-
-    <!-- Gallery Lightbox -->
-    <div id="galleryLightbox" class="lightbox-overlay">
-        <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
-        <button class="lightbox-nav lightbox-prev" onclick="changeGalleryImage(-1)">‹</button>
-        <button class="lightbox-nav lightbox-next" onclick="changeGalleryImage(1)">›</button>
-        
-        <div class="lightbox-content">
-            <img id="lightboxGalleryImg" src="" alt="Gallery" class="lightbox-image">
-        </div>
-        
-        <div class="lightbox-counter">
-            <span id="galleryCounter">1</span> / <span id="galleryTotal">8</span>
-        </div>
-    </div>
-
-    <!-- Map Modal -->
-    <div id="mapModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm">
-        <div class="glass-color rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 border border-pink-500/20" id="mapContent">
-            <div class="p-4 border-b border-pink-500/20 flex justify-between items-center">
-                <div>
-                    <h3 id="mapTitle" class="font-event text-xl text-gradient-1">Lokasi</h3>
-                    <p id="mapAddress" class="text-white text-xs">Alamat</p>
-                </div>
-                <button onclick="closeMap()" class="w-8 h-8 rounded-full glass-pink flex items-center justify-center hover:bg-pink-500 transition-colors text-lg">✕</button>
-            </div>
-            <div class="h-[400px] bg-[#0f0c29]">
-                <iframe id="mapFrame" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="p-4 flex gap-3 bg-[#0f0c29]">
-                <a id="mapLink" href="#" target="_blank" class="flex-1 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-center rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all text-sm">Buka di Google Maps</a>
-                <button onclick="closeMap()" class="px-4 py-2 border-2 border-white/60 text-white rounded-xl hover:border-pink-500 hover:text-pink-400 transition-colors text-sm">Tutup</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast -->
-    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-pink text-white px-6 py-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2 border-pink-500/50 text-sm">
-        <span class="text-xl">✅</span>
-        <span class="font-medium">Berhasil disalin!</span>
-    </div>
-
-    <script>
-        (function() {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initApp);
-            } else {
-                initApp();
-            }
-        })();
-
-        function initApp() {
-            try {
-                fillContent();
-                initParticles();
-                
-                const audio = document.getElementById('bgMusic');
-                if (audio) {
-                    audio.volume = CONFIG.music.volume;
-                    audio.preload = 'metadata';
-                }
-                
-                setTimeout(hideLoader, 1000);
-                setTimeout(hideLoader, 5000);
-            } catch (e) {
-                console.error('Init error:', e);
-                hideLoader();
-            }
-        }
-
-        function hideLoader() {
-            const loader = document.getElementById('loader');
-            if (loader && !loader.classList.contains('hidden-loader')) {
-                loader.classList.add('hidden-loader');
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
-        }
-
-        let audio = document.getElementById('bgMusic');
-        let isMusicPlaying = false;
-        let hasMusicStarted = false;
-
-        function openInvitationAndPlayMusic() {
-            playMusic();
-            openInvitation();
-        }
-
-        function playMusic() {
-            if (hasMusicStarted) return;
-            hasMusicStarted = true;
-
-            const playPromise = audio.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    isMusicPlaying = true;
-                    document.getElementById('musicIcon').textContent = '🔊';
-                    document.getElementById('musicToggle').classList.add('playing');
-                    document.getElementById('musicToggle').classList.add('visible');
-                }).catch(error => {
-                    console.log('Autoplay blocked:', error);
-                    document.getElementById('musicToggle').classList.add('visible');
-                });
-            }
-        }
-
-        function toggleMusic() {
-            if (!hasMusicStarted) {
-                playMusic();
-                return;
-            }
-
-            if (isMusicPlaying) {
-                audio.pause();
-                document.getElementById('musicIcon').textContent = '🔇';
-                document.getElementById('musicToggle').classList.remove('playing');
-            } else {
-                audio.play();
-                document.getElementById('musicIcon').textContent = '🔊';
-                document.getElementById('musicToggle').classList.add('playing');
-            }
-            isMusicPlaying = !isMusicPlaying;
-        }
-
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const colors = ['#ff4d9e', '#a855f7', '#60a5fa', '#fb923c', '#fbbf24'];
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                // PERUBAHAN: Ukuran partikel diperbesar (dari 2 + 0.5 ke 4 + 1)
-                this.size = Math.random() * 4 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-                // PERUBAHAN: Opacity diperbesar (dari 0.4 + 0.1 ke 0.7 + 0.2)
-                this.opacity = Math.random() * 0.7 + 0.3;
-                // PERUBAHAN: Tambahan efek glow
-                this.glow = Math.random() * 10 + 5;
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-            
-            draw() {
-                ctx.save();
-                ctx.fillStyle = this.color;
-                ctx.globalAlpha = this.opacity;
-                ctx.shadowBlur = this.glow;
-                ctx.shadowColor = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            // PERUBAHAN: Jumlah partikel ditambah (dari 60 ke 80)
-            for (let i = 0; i < 80; i++) {
-                particles.push(new Particle());
-            }
-            animateParticles();
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animateParticles);
-        }
-
-        function openInvitation() {
-            const opening = document.getElementById('opening');
-            const mainContent = document.getElementById('main-content');
-            
-            const duration = 4000;
-            const end = Date.now() + duration;
-
-            const frame = () => {
-                confetti({
-                    particleCount: 8,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0 },
-                    colors: colors
-                });
-                confetti({
-                    particleCount: 8,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1 },
-                    colors: colors
-                });
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
-            };
-            frame();
-
-            opening.style.transform = 'translateY(-100%)';
-            opening.style.transition = 'transform 1.2s cubic-bezier(0.77, 0, 0.175, 1)';
-            
-            setTimeout(() => {
-                mainContent.classList.remove('hidden');
-                initScrollSnap();
-            }, 600);
-        }
-
-        function initScrollSnap() {
-            const container = document.querySelector('.snap-container');
-            if (!container) return;
-
-            container.addEventListener('scroll', () => {
-                const scrolled = container.scrollTop;
-                const maxScroll = container.scrollHeight - container.clientHeight;
-                const progress = (scrolled / maxScroll) * 100;
-                document.getElementById('scrollProgress').style.width = progress + '%';
-            });
-        }
-
-        function updateCountdown() {
-            const weddingDate = new Date(CONFIG.event.countDownDate).getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = String(days).padStart(2, '0');
-                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        let currentGalleryIndex = 0;
-        let galleryLightboxOpen = false;
-
-        function openGalleryLightbox() {
-            const lightbox = document.getElementById('galleryLightbox');
-            const img = document.getElementById('lightboxGalleryImg');
-            const counter = document.getElementById('galleryCounter');
-            const total = document.getElementById('galleryTotal');
-            
-            currentGalleryIndex = 0;
-            img.src = CONFIG.gallery.photos[currentGalleryIndex];
-            counter.textContent = currentGalleryIndex + 1;
-            total.textContent = CONFIG.gallery.photos.length;
-            
-            lightbox.classList.add('active');
-            galleryLightboxOpen = true;
-            document.body.style.overflow = 'hidden';
-            
-            document.addEventListener('keydown', handleGalleryKeydown);
-            addSwipeListeners();
-        }
-
-        function closeGalleryLightbox() {
-            const lightbox = document.getElementById('galleryLightbox');
-            lightbox.classList.remove('active');
-            galleryLightboxOpen = false;
-            document.body.style.overflow = 'auto';
-            document.removeEventListener('keydown', handleGalleryKeydown);
-            removeSwipeListeners();
-        }
-
-        function changeGalleryImage(direction) {
-            currentGalleryIndex = (currentGalleryIndex + direction + CONFIG.gallery.photos.length) % CONFIG.gallery.photos.length;
-            const img = document.getElementById('lightboxGalleryImg');
-            const counter = document.getElementById('galleryCounter');
-            
-            img.style.opacity = '0.5';
-            img.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                img.src = CONFIG.gallery.photos[currentGalleryIndex];
-                img.onload = () => {
-                    img.style.opacity = '1';
-                    img.style.transform = 'scale(1)';
-                };
-                counter.textContent = currentGalleryIndex + 1;
-            }, 200);
-        }
-
-        function handleGalleryKeydown(e) {
-            if (!galleryLightboxOpen) return;
-            
-            if (e.key === 'Escape') closeGalleryLightbox();
-            if (e.key === 'ArrowLeft') changeGalleryImage(-1);
-            if (e.key === 'ArrowRight') changeGalleryImage(1);
-        }
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function addSwipeListeners() {
-            const lightbox = document.getElementById('galleryLightbox');
-            lightbox.addEventListener('touchstart', handleTouchStart, { passive: true });
-            lightbox.addEventListener('touchend', handleTouchEnd, { passive: true });
-        }
-
-        function removeSwipeListeners() {
-            const lightbox = document.getElementById('galleryLightbox');
-            lightbox.removeEventListener('touchstart', handleTouchStart);
-            lightbox.removeEventListener('touchend', handleTouchEnd);
-        }
-
-        function handleTouchStart(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        }
-
-        function handleTouchEnd(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    changeGalleryImage(1);
-                } else {
-                    changeGalleryImage(-1);
-                }
-            }
-        }
-
-        function openMap(type) {
-            const modal = document.getElementById('mapModal');
-            const content = document.getElementById('mapContent');
-            const title = document.getElementById('mapTitle');
-            const address = document.getElementById('mapAddress');
-            const frame = document.getElementById('mapFrame');
-            const link = document.getElementById('mapLink');
-            
-            const venue = type === 'akad' ? CONFIG.venue.akad : CONFIG.venue.resepsi;
-            
-            title.textContent = venue.name;
-            address.textContent = venue.address;
-            frame.src = venue.mapsEmbed;
-            link.href = `https://maps.google.com/?q=${venue.mapsQuery}`;
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            setTimeout(() => content.classList.remove('scale-95'), 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMap() {
-            const modal = document.getElementById('mapModal');
-            const content = document.getElementById('mapContent');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }, 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                toast.classList.remove('opacity-0', 'pointer-events-none');
-                toast.style.transform = 'translateX(-50%) translateY(0)';
-                setTimeout(() => {
-                    toast.classList.add('opacity-0', 'pointer-events-none');
-                    toast.style.transform = 'translateX(-50%) translateY(20px)';
-                }, 3000);
-            });
-        }
-
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = this.querySelector('input[type="text"]').value;
-            const attendance = this.querySelector('input[name="attendance"]:checked').value;
-            const message = this.querySelector('textarea').value;
-            
-            const container = document.getElementById('messagesContainer');
-            const newMessage = document.createElement('div');
-            newMessage.className = 'glass-pink rounded-2xl p-4 border border-pink-500/20 animate-fade-in';
-            newMessage.innerHTML = `
-                <div class="flex justify-between items-start mb-2">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white font-rsvp text-sm">${name.charAt(0)}</div>
-                        <div>
-                            <p class="font-semibold text-pink-300 text-sm">${name}</p>
-                            <p class="text-xs text-white/70">Baru saja</p>
-                        </div>
-                    </div>
-                    <span class="px-2 py-1 ${attendance === 'hadir' ? 'bg-green-500/20 text-green-400' : 'bg-white/20 text-white'} text-xs rounded-full">${attendance === 'hadir' ? 'Hadir' : 'Berhalangan'}</span>
-                </div>
-                <p class="text-white leading-relaxed text-sm">${message}</p>
-            `;
-            
-            container.insertBefore(newMessage, container.firstChild);
-            this.reset();
-            
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.8 },
-                colors: colors
-            });
-        });
-
-        document.getElementById('galleryLightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGalleryLightbox();
-            }
-        });
-    </script>
+           </div>
+
+           <div class="mb-8 glass-color rounded-3xl p-6 inline-block animate-fade-in" style="animation-delay: 1.1s;">
+               <p class="text-white text-xl mb-2">Kepada Yth.</p>
+               <p class="text-lg font-opening text-white">Bapak/Ibu/Saudara/i</p>
+               <div class="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+           </div>
+
+           <br>
+
+           <button onclick="openInvitationAndPlayMusic()" class="btn-gradient shine animate-fade-in" style="animation-delay: 1.3s;">
+               <span class="flex items-center gap-3">
+                   <span class="text-2xl">💌</span>
+                   Buka Undangan
+               </span>
+           </button>
+       </div>
+   </div>
+
+   <!-- Main Content -->
+   <main id="main-content" class="hidden snap-container">
+       
+       <!-- Hero Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="blob blob-1"></div>
+           <div class="blob blob-2"></div>
+           <div class="blob blob-3"></div>
+
+           <div class="absolute inset-0 z-0 opacity-20">
+               <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+           </div>
+
+           <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow">✨</div>
+           <div class="absolute top-48 right-20 text-purple-500 text-5xl float-medium">💖</div>
+           <div class="absolute bottom-40 left-20 text-blue-500 text-4xl float-fast">⭐</div>
+           <div class="absolute bottom-32 right-32 text-orange-500 text-5xl float-slow">🌟</div>
+
+           <div class="relative z-10 text-center text-white px-6 max-w-5xl mx-auto compact-content">
+               <div class="mb-4">
+                   <span class="section-badge">Pernikahan</span>
+               </div>
+
+               <!-- PERUBAHAN 1: Font Reren & Yadi diperbesar 1x (dari text-7xl md:text-[7rem] ke text-8xl md:text-[8rem]) -->
+               <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2;">
+                  <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
+               </h1>
+               
+               <div class="text-4xl md:text-5xl font-hero italic my-4 text-gradient-2 heart-beat" style="line-height: 1;">&</div>
+
+               <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
+                   <span class="block text-gradient-3 inline-block" id="heroGroom" style="padding: 0.05em 0;">Yadi</span>
+               </h1>
+
+               <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
+                   <!-- PERUBAHAN 1: Font hero date diubah ke font Pompiere -->
+                   <p class="font-pompiere text-3xl md:text-4xl text-white mb-2" id="heroDate">30 Mei 2028</p>
+                   <div class="flex items-center justify-center gap-4 text-white mb-2">
+                       <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
+                       <span class="text-pink-400">♥</span>
+                       <div class="h-px w-16 bg-gradient-to-l from-transparent to-purple-500"></div>
+                   </div>
+                   <p class="tracking-[0.3em] text-xs text-white uppercase">Akad & Resepsi</p>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Countdown Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-8">
+                   <!-- PERUBAHAN: "MENUKU HARI BAHAGIA" menjadi "COUNTDOWN" -->
+                   <span class="section-badge">Countdown</span>
+                   <!-- PERUBAHAN 2: Font "SISA WAKTU" diubah ke Pompiere -->
+                   <h2 class="font-pompiere text-4xl md:text-5xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
+                   <!-- PERUBAHAN: Tambahan teks "Menuju Hari Bahagia" -->
+                   <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
+               </div>
+
+               <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+                   <div class="glass-pink rounded-3xl p-4 card-glow text-center countdown-box">
+                       <!-- PERUBAHAN 2: Font angka countdown diubah ke font label seksi -->
+                       <div id="days" class="font-countdown text-4xl md:text-6xl text-gradient-1 mb-1">00</div>
+                       <div class="text-pink-300 tracking-widest text-xs uppercase">Hari</div>
+                   </div>
+                   <div class="glass-purple rounded-3xl p-4 card-glow text-center countdown-box">
+                       <div id="hours" class="font-countdown text-4xl md:text-6xl text-gradient-2 mb-1">00</div>
+                       <div class="text-purple-300 tracking-widest text-xs uppercase">Jam</div>
+                   </div>
+                   <div class="glass-blue rounded-3xl p-4 card-glow text-center countdown-box">
+                       <div id="minutes" class="font-countdown text-4xl md:text-6xl text-gradient-3 mb-1">00</div>
+                       <div class="text-blue-300 tracking-widest text-xs uppercase">Menit</div>
+                   </div>
+                   <div class="glass-color rounded-3xl p-4 card-glow text-center border-orange-500/30 countdown-box">
+                       <div id="seconds" class="font-countdown text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-1">00</div>
+                       <div class="text-orange-300 tracking-widest text-xs uppercase">Detik</div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Couple Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
+           <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
+
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-6">
+                   <span class="section-badge">Mempelai</span>
+                   <h2 class="font-couple-section text-5xl md:text-6xl text-gradient-1 mt-2" style="line-height: 1.2; padding-top: 0.1em;">
+                       Reren & Yadi
+                   </h2>
+               </div>
+               
+               <!-- MODIFIKASI: Hilang efek gradien pada photo couple (dihapus class group dan overlay gradien) -->
+               <div class="couple-frame mb-6">
+                   <img id="couplePhoto" src="couple.jpg" alt="Reren & Yadi" 
+                        onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
+               </div>
+
+               <!-- PERUBAHAN 3: Font date di couple section diubah ke font Pompiere -->
+               <div class="text-center">
+                   <p class="font-pompiere text-2xl md:text-3xl text-white/90">30 Mei 2028</p>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Bride Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="absolute top-32 left-10 text-pink-500 text-6xl float-slow opacity-30">💖</div>
+           <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
+
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-4">
+                   <span class="section-badge">Mempelai Wanita</span>
+               </div>
+
+               <div class="max-w-xs mx-auto mb-4">
+                   <div class="relative group">
+                       <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
+                       <div class="relative mx-auto flex justify-center">
+                           <div class="absolute border-2 border-pink-500/30 rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-700 photo-ring-1" style="left: 50%; transform: translateX(-50%) rotate(6deg);"></div>
+                           <div class="absolute border border-pink-500/20 rounded-full -rotate-3 group-hover:-rotate-6 transition-transform duration-700 photo-ring-2" style="left: 50%; transform: translateX(-50%) rotate(-3deg);"></div>
+                           <img id="bridePhoto" src="bride.jpg" alt="Reren" class="mempelai-photo border-pink-500/20 relative z-10">
+                       </div>
+                   </div>
+               </div>
+
+               <div class="text-center max-w-md mx-auto">
+                   <h3 id="brideName" class="font-bride text-4xl md:text-5xl text-white mb-2">Reni Pionika</h3>
+                   <p id="brideOrder" class="text-white/80 mb-3 text-base">Putri kedua dari</p>
+                   
+                   <div class="glass-pink rounded-3xl p-4 inline-block max-w-xs border border-pink-500/30">
+                       <div class="flex items-center justify-center gap-2 mb-2">
+                           <div class="h-px w-12 bg-gradient-to-r from-transparent to-pink-500"></div>
+                           <span class="text-pink-400 text-xl">❦</span>
+                           <div class="h-px w-12 bg-gradient-to-l from-transparent to-pink-500"></div>
+                       </div>
+                       <p class="text-white leading-relaxed text-sm">
+                           <span class="text-white font-semibold text-base block mt-1" id="brideFather">Almarhum Amir Hamzah</span>
+                           <span class="text-pink-400">&</span><br>
+                           <span class="text-white font-semibold text-base" id="brideMother">Maiyus Farida</span>
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Groom Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
+           <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
+
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-4">
+                   <span class="section-badge">Mempelai Pria</span>
+               </div>
+
+               <div class="max-w-xs mx-auto mb-4">
+                   <div class="relative group">
+                       <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
+                       <div class="relative mx-auto flex justify-center">
+                           <div class="absolute border-2 border-blue-500/30 rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-700 photo-ring-1" style="left: 50%; transform: translateX(-50%) rotate(-6deg);"></div>
+                           <div class="absolute border border-blue-500/20 rounded-full rotate-3 group-hover:rotate-6 transition-transform duration-700 photo-ring-2" style="left: 50%; transform: translateX(-50%) rotate(3deg);"></div>
+                           <img id="groomPhoto" src="groom.jpg" alt="Yadi" class="mempelai-photo border-blue-500/20 relative z-10">
+                       </div>
+                   </div>
+               </div>
+
+               <div class="text-center max-w-md mx-auto">
+                   <h3 id="groomName" class="font-groom text-3xl md:text-4xl text-white mb-2">Yadi Hartono</h3>
+                   <p id="groomOrder" class="text-white/80 mb-3 text-base">Putra pertama dari</p>
+                   
+                   <div class="glass-blue rounded-3xl p-4 inline-block max-w-xs border border-blue-500/30">
+                       <div class="flex items-center justify-center gap-2 mb-2">
+                           <div class="h-px w-12 bg-gradient-to-r from-transparent to-blue-500"></div>
+                           <span class="text-blue-400 text-xl">❦</span>
+                           <div class="h-px w-12 bg-gradient-to-l from-transparent to-blue-500"></div>
+                       </div>
+                       <p class="text-white leading-relaxed text-sm">
+                           <span class="text-white font-semibold text-base block mt-1" id="groomFather">Almarhum Tarlan Manaf</span>
+                           <span class="text-blue-400">&</span><br>
+                           <span class="text-white font-semibold text-base" id="groomMother">Almh. Jumiatie</span>
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Quote Section -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center max-w-4xl mx-auto">
+                   <div class="relative p-8 md:p-12 glass-color rounded-3xl border border-pink-500/20">
+                       <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-serif shadow-lg">"</div>
+                       
+                       <p id="quoteText" class="font-quote text-white mb-6 mt-4 leading-relaxed">
+                           "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya"
+                       </p>
+                       
+                       <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-4"></div>
+                       <!-- PERUBAHAN: Font QS. Ar-Rum:21 diubah ke Pompiere -->
+                       <p id="quoteSource" class="font-pompiere text-white font-semibold tracking-widest text-base md:text-lg">QS. Ar-Rum: 21</p>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- AKAD NIKAH SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-6">
+                   <span class="section-badge">Save The Date</span>
+               </div>
+
+               <div class="max-w-xl mx-auto">
+                   <div class="glass-pink rounded-3xl p-6 md:p-8 card-glow border-pink-500/20 relative overflow-hidden">
+                       <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-transparent rounded-bl-full"></div>
+                       <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-500/20 to-transparent rounded-tr-full"></div>
+                       
+                       <div class="relative z-10">
+                           <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                               <span class="text-3xl">🕌</span>
+                           </div>
+                           
+                           <!-- PERUBAHAN: Font AKAD NIKAH diubah ke Pompiere -->
+                           <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
+                           <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
+                           
+                           <div class="space-y-3">
+                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">📅</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-pink-300 font-semibold text-sm">Hari & Tanggal</p>
+                                       <p id="akadDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">⏰</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-pink-300 font-semibold text-sm">Waktu</p>
+                                       <p id="akadTime" class="text-white text-base">08:00 - 10:00 WIB</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">📍</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-pink-300 font-semibold text-sm">Tempat</p>
+                                       <p id="akadVenue" class="text-white text-base mb-1">Masjid Raya Sinuruik</p>
+                                       <p id="akadAddress" class="text-white/70 text-xs leading-relaxed">Sinuruik, Kec. Talamau, Kabupaten Pasaman Barat, Sumatera Barat 26561</p>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <button onclick="openMap('akad')" class="mt-6 w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all flex items-center justify-center gap-2 text-base">
+                               <span>🗺️</span>
+                               Lihat Lokasi Akad
+                           </button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- RESEPSI SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-6">
+                   <span class="section-badge">Save The Date</span>
+               </div>
+
+               <div class="max-w-xl mx-auto">
+                   <div class="glass-blue rounded-3xl p-6 md:p-8 card-glow border-blue-500/20 relative overflow-hidden">
+                       <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full"></div>
+                       <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-tr-full"></div>
+                       
+                       <div class="relative z-10">
+                           <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                               <span class="text-3xl">🎉</span>
+                           </div>
+                           
+                           <!-- PERUBAHAN: Font RESEPSI PERNIKAHAN diubah ke Pompiere -->
+                           <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
+                           <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
+                           
+                           <div class="space-y-3">
+                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">📅</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-blue-300 font-semibold text-sm">Hari & Tanggal</p>
+                                       <p id="resepsiDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">⏰</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-blue-300 font-semibold text-sm">Waktu</p>
+                                       <p id="resepsiTime" class="text-white text-base">11:00 - 14:00 WIB</p>
+                                   </div>
+                               </div>
+                               
+                               <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
+                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-xl">📍</span>
+                                   </div>
+                                   <div>
+                                       <p class="text-blue-300 font-semibold text-sm">Tempat</p>
+                                       <p id="resepsiVenue" class="text-white text-base mb-1">Rumah Mempelai</p>
+                                       <p id="resepsiAddress" class="text-white/70 text-xs leading-relaxed">Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat</p>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <button onclick="openMap('resepsi')" class="mt-6 w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 text-base">
+                               <span>🗺️</span>
+                               Lihat Lokasi Resepsi
+                           </button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- GALLERY SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="text-center mb-6">
+                   <span class="section-badge">Galeri</span>
+               </div>
+
+               <!-- PERUBAHAN: Overlay "Ketuk untuk melihat 👆" dipindahkan ke dalam frame sebagai overlay -->
+               <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
+                   <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
+                   <!-- Overlay dipindahkan ke sini -->
+                   <div class="gallery-overlay-text">
+                       <span>Ketuk untuk melihat</span>
+                       <span class="animate-bounce">👆</span>
+                   </div>
+               </div>
+
+               <!-- Teks "Galeri" dan "Momen Bahagia Kami" tetap di bawah photo cover -->
+               <div class="text-center mt-6">
+                   <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
+                   <p class="text-white/80 text-sm">Momen Bahagia Kami</p>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- RSVP INPUT SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="max-w-xl mx-auto">
+                   <div class="text-center mb-6">
+                       <span class="section-badge">RSVP</span>
+                       <!-- PERUBAHAN 3: Font Konfirmasi Kehadiran diubah ke Pompiere dan di-CAPS -->
+                       <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
+                       <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
+                   </div>
+
+                   <div class="glass-color rounded-3xl p-6 border border-pink-500/20">
+                       <form id="rsvpForm" class="space-y-4">
+                           <div>
+                               <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Nama Lengkap</label>
+                               <input type="text" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors placeholder-white/50" placeholder="Masukkan nama Anda">
+                           </div>
+
+                           <div>
+                               <label class="block text-pink-400 text-xs mb-2 tracking-wider uppercase">Konfirmasi</label>
+                               <div class="grid grid-cols-2 gap-2">
+                                   <label class="cursor-pointer group">
+                                       <input type="radio" name="attendance" value="hadir" class="hidden peer" checked>
+                                       <div class="px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl text-center peer-checked:bg-gradient-to-r peer-checked:from-pink-500 peer-checked:to-rose-500 peer-checked:border-pink-500 transition-all group-hover:border-pink-400">
+                                           <div class="text-lg mb-1">🎉</div>
+                                           <div class="text-xs font-semibold text-white peer-checked:text-white">Hadir</div>
+                                       </div>
+                                   </label>
+                                   <label class="cursor-pointer group">
+                                       <input type="radio" name="attendance" value="tidak" class="hidden peer">
+                                       <div class="px-3 py-2 bg-white/5 border border-white/30 rounded-xl text-center peer-checked:bg-gradient-to-r peer-checked:from-white/60 peer-checked:to-white/70 peer-checked:border-white/50 transition-all group-hover:border-white/40">
+                                           <div class="text-lg mb-1">😢</div>
+                                           <div class="text-xs font-semibold text-white peer-checked:text-white">Berhalangan</div>
+                                       </div>
+                                   </label>
+                               </div>
+                           </div>
+
+                           <div>
+                               <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Jumlah Tamu</label>
+                               <select class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors">
+                                   <option value="1" class="bg-[#0f0c29]">1 Orang</option>
+                                   <option value="2" class="bg-[#0f0c29]">2 Orang</option>
+                                   <option value="3" class="bg-[#0f0c29]">3 Orang</option>
+                                   <option value="4" class="bg-[#0f0c29]">4 Orang</option>
+                               </select>
+                           </div>
+
+                           <div>
+                               <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Ucapan & Do'a</label>
+                               <textarea rows="2" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors resize-none placeholder-white/50" placeholder="Tulis ucapan untuk Reren & Yadi..."></textarea>
+                           </div>
+
+                           <button type="submit" class="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-pink-500/30 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 text-sm">
+                               <span>💌</span>
+                               Kirim Konfirmasi
+                           </button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- RSVP RESULTS SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 compact-content">
+               <div class="max-w-xl mx-auto">
+                   <div class="text-center mb-6">
+                       <span class="section-badge">RSVP</span>
+                       <!-- PERUBAHAN 3: Font Ucapan & Do'a diubah ke Pompiere dan di-CAPS -->
+                       <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
+                       <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
+                   </div>
+
+                   <div class="glass-color rounded-3xl p-4 border border-pink-500/20">
+                       <div class="messages-scroll-box space-y-3" id="messagesContainer">
+                           <div class="glass-pink rounded-2xl p-4 border border-pink-500/20">
+                               <div class="flex justify-between items-start mb-2">
+                                   <div class="flex items-center gap-2">
+                                       <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-rsvp text-sm">K</div>
+                                       <div>
+                                           <p class="font-semibold text-pink-300 text-sm">Keluarga Besar</p>
+                                           <p class="text-xs text-white/70">2 jam yang lalu</p>
+                                       </div>
+                                   </div>
+                                   <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Hadir</span>
+                               </div>
+                               <p class="text-white leading-relaxed text-sm">Selamat menempuh hidup baru Reren & Yadi! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. 🎉✨</p>
+                           </div>
+
+                           <div class="glass-color rounded-2xl p-4 border border-white/10">
+                               <div class="flex justify-between items-start mb-2">
+                                   <div class="flex items-center gap-2">
+                                       <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-rsvp text-sm">A</div>
+                                       <div>
+                                           <p class="font-semibold text-blue-300 text-sm">Ahmad Rizky</p>
+                                           <p class="text-xs text-white/70">5 jam yang lalu</p>
+                                       </div>
+                                   </div>
+                                   <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">Hadir</span>
+                               </div>
+                               <p class="text-white leading-relaxed text-sm">Barakallah, semoga lancar sampai hari H! Mohon maaf saya datang dengan 2 orang ya. 🙏</p>
+                           </div>
+
+                           <div class="glass-color rounded-2xl p-4 border border-white/10">
+                               <div class="flex justify-between items-start mb-2">
+                                   <div class="flex items-center gap-2">
+                                       <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-rsvp text-sm">S</div>
+                                       <div>
+                                           <p class="font-semibold text-purple-300 text-sm">Siti Aminah</p>
+                                           <p class="text-xs text-white/70">1 hari yang lalu</p>
+                                       </div>
+                                   </div>
+                                   <span class="px-2 py-1 bg-white/20 text-white text-xs rounded-full">Berhalangan</span>
+                               </div>
+                               <p class="text-white leading-relaxed text-sm">Maaf ya Reren & Yadi, saya tidak bisa hadir karena ada urusan di luar kota. Selamat berbahagia! 💕</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- WEDDING GIFT - DANA SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 text-center compact-content">
+               <span class="section-badge">Wedding Gift</span>
+               <!-- PERUBAHAN 4: Font Kirim Hadiah Digital diubah ke Pompiere dan di-CAPS -->
+               <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
+               <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
+
+               <div class="max-w-sm mx-auto">
+                   <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
+                       <!-- PERUBAHAN 5: Font DANA diubah ke Pompiere dengan ukuran lebih kecil -->
+                       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                           <span class="dana-text">DANA</span>
+                       </div>
+                       <div class="space-y-1 mb-4">
+                           <p id="bankNumber" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
+                           <p id="bankName" class="text-white/80 text-xs">E-Wallet</p>
+                           <p id="bankAccount" class="text-xs text-pink-400">a.n. Reni Pionika</p>
+                       </div>
+                       <button onclick="copyToClipboard('085763410286')" class="w-full py-2 border-2 border-pink-500 text-pink-400 rounded-xl hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
+                           <span>📋</span>
+                           Salin Nomor DANA
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- WEDDING GIFT - KADO SECTION -->
+       <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 text-center compact-content">
+               <span class="section-badge">Wedding Gift</span>
+               <!-- PERUBAHAN 4: Font Kirim Hadiah Fisik diubah ke Pompiere dan di-CAPS -->
+               <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
+               <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
+
+               <div class="max-w-sm mx-auto">
+                   <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
+                       <!-- PERUBAHAN 5: Emoji gift diperbesar -->
+                       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                           <span class="gift-emoji">🎁</span>
+                       </div>
+                       <h3 class="font-gift text-xl mb-3 text-white font-semibold">Alamat Pengiriman</h3>
+                       <div class="text-left glass-color rounded-xl p-4 mb-4 border border-white/10">
+                           <p id="giftAddress" class="text-white leading-relaxed text-xs">
+                               <!-- Filled by JS -->
+                           </p>
+                       </div>
+                       <button onclick="copyToClipboard('Reni Pionika, Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat 26561')" class="w-full py-2 border-2 border-blue-500 text-blue-400 rounded-xl hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all font-semibold flex items-center justify-center gap-2 text-sm">
+                           <span>📋</span>
+                           Salin Alamat Lengkap
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <div class="section-divider"></div>
+
+       <!-- Footer -->
+       <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+           <div class="container mx-auto px-6 relative z-10 text-center compact-content">
+               <div class="inline-block p-4 rounded-full glass-pink mb-6">
+                   <span class="text-5xl md:text-6xl">💕</span>
+               </div>
+               
+               <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
+               
+               <!-- PERUBAHAN 6: Warna font 30 Mei 2028 dipercerah -->
+               <p id="footerDate" class="footer-date-bright text-lg md:text-xl mb-6">30 Mei 2028</p>
+               
+               <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
+               
+               <p class="text-white text-sm md:text-base">Made with <span class="text-pink-500">❤️</span> by <span id="footerCouple" class="text-pink-400">Reren & Yadi</span></p>
+               <p class="text-white text-sm md:text-base mt-2">© 2028 All Rights Reserved</p>
+           </div>
+       </footer>
+   </main>
+
+   <!-- Gallery Lightbox -->
+   <div id="galleryLightbox" class="lightbox-overlay">
+       <button class="lightbox-close" onclick="closeGalleryLightbox()">✕</button>
+       <button class="lightbox-nav lightbox-prev" onclick="changeGalleryImage(-1)">‹</button>
+       <button class="lightbox-nav lightbox-next" onclick="changeGalleryImage(1)">›</button>
+       
+       <div class="lightbox-content">
+           <img id="lightboxGalleryImg" src="" alt="Gallery" class="lightbox-image">
+       </div>
+       
+       <div class="lightbox-counter">
+           <span id="galleryCounter">1</span> / <span id="galleryTotal">8</span>
+       </div>
+   </div>
+
+   <!-- Map Modal -->
+   <div id="mapModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm">
+       <div class="glass-color rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300 border border-pink-500/20" id="mapContent">
+           <div class="p-4 border-b border-pink-500/20 flex justify-between items-center">
+               <div>
+                   <h3 id="mapTitle" class="font-event text-xl text-gradient-1">Lokasi</h3>
+                   <p id="mapAddress" class="text-white text-xs">Alamat</p>
+               </div>
+               <button onclick="closeMap()" class="w-8 h-8 rounded-full glass-pink flex items-center justify-center hover:bg-pink-500 transition-colors text-lg">✕</button>
+           </div>
+           <div class="h-[400px] bg-[#0f0c29]">
+               <iframe id="mapFrame" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+           </div>
+           <div class="p-4 flex gap-3 bg-[#0f0c29]">
+               <a id="mapLink" href="#" target="_blank" class="flex-1 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-center rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all text-sm">Buka di Google Maps</a>
+               <button onclick="closeMap()" class="px-4 py-2 border-2 border-white/60 text-white rounded-xl hover:border-pink-500 hover:text-pink-400 transition-colors text-sm">Tutup</button>
+           </div>
+       </div>
+   </div>
+
+   <!-- Toast -->
+   <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-pink text-white px-6 py-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-center gap-2 border-pink-500/50 text-sm">
+       <span class="text-xl">✅</span>
+       <span class="font-medium">Berhasil disalin!</span>
+   </div>
+
+   <script>
+       (function() {
+           if (document.readyState === 'loading') {
+               document.addEventListener('DOMContentLoaded', initApp);
+           } else {
+               initApp();
+           }
+       })();
+
+       function initApp() {
+           try {
+               fillContent();
+               initParticles();
+               
+               const audio = document.getElementById('bgMusic');
+               if (audio) {
+                   audio.volume = CONFIG.music.volume;
+                   audio.preload = 'metadata';
+               }
+               
+               setTimeout(hideLoader, 1000);
+               setTimeout(hideLoader, 5000);
+           } catch (e) {
+               console.error('Init error:', e);
+               hideLoader();
+           }
+       }
+
+       function hideLoader() {
+           const loader = document.getElementById('loader');
+           if (loader && !loader.classList.contains('hidden-loader')) {
+               loader.classList.add('hidden-loader');
+               setTimeout(() => {
+                   loader.style.display = 'none';
+               }, 500);
+           }
+       }
+
+       let audio = document.getElementById('bgMusic');
+       let isMusicPlaying = false;
+       let hasMusicStarted = false;
+
+       function openInvitationAndPlayMusic() {
+           playMusic();
+           openInvitation();
+       }
+
+       function playMusic() {
+           if (hasMusicStarted) return;
+           hasMusicStarted = true;
+
+           const playPromise = audio.play();
+           
+           if (playPromise !== undefined) {
+               playPromise.then(() => {
+                   isMusicPlaying = true;
+                   document.getElementById('musicIcon').textContent = '🔊';
+                   document.getElementById('musicToggle').classList.add('playing');
+                   document.getElementById('musicToggle').classList.add('visible');
+               }).catch(error => {
+                   console.log('Autoplay blocked:', error);
+                   document.getElementById('musicToggle').classList.add('visible');
+               });
+           }
+       }
+
+       function toggleMusic() {
+           if (!hasMusicStarted) {
+               playMusic();
+               return;
+           }
+
+           if (isMusicPlaying) {
+               audio.pause();
+               document.getElementById('musicIcon').textContent = '🔇';
+               document.getElementById('musicToggle').classList.remove('playing');
+           } else {
+               audio.play();
+               document.getElementById('musicIcon').textContent = '🔊';
+               document.getElementById('musicToggle').classList.add('playing');
+           }
+           isMusicPlaying = !isMusicPlaying;
+       }
+
+       const canvas = document.getElementById('particle-canvas');
+       const ctx = canvas.getContext('2d');
+       let particles = [];
+       const colors = ['#ff4d9e', '#a855f7', '#60a5fa', '#fb923c', '#fbbf24'];
+       
+       function resizeCanvas() {
+           canvas.width = window.innerWidth;
+           canvas.height = window.innerHeight;
+       }
+       resizeCanvas();
+       window.addEventListener('resize', resizeCanvas);
+
+       class Particle {
+           constructor() {
+               this.x = Math.random() * canvas.width;
+               this.y = Math.random() * canvas.height;
+               // PERUBAHAN: Ukuran partikel diperbesar (dari 2 + 0.5 ke 4 + 1)
+               this.size = Math.random() * 4 + 1;
+               this.speedX = Math.random() * 0.5 - 0.25;
+               this.speedY = Math.random() * 0.5 - 0.25;
+               this.color = colors[Math.floor(Math.random() * colors.length)];
+               // PERUBAHAN: Opacity diperbesar (dari 0.4 + 0.1 ke 0.7 + 0.2)
+               this.opacity = Math.random() * 0.7 + 0.3;
+               // PERUBAHAN: Tambahan efek glow
+               this.glow = Math.random() * 10 + 5;
+           }
+           
+           update() {
+               this.x += this.speedX;
+               this.y += this.speedY;
+               
+               if (this.x > canvas.width) this.x = 0;
+               if (this.x < 0) this.x = canvas.width;
+               if (this.y > canvas.height) this.y = 0;
+               if (this.y < 0) this.y = canvas.height;
+           }
+           
+           draw() {
+               ctx.save();
+               ctx.fillStyle = this.color;
+               ctx.globalAlpha = this.opacity;
+               ctx.shadowBlur = this.glow;
+               ctx.shadowColor = this.color;
+               ctx.beginPath();
+               ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+               ctx.fill();
+               ctx.restore();
+           }
+       }
+
+       function initParticles() {
+           particles = [];
+           // PERUBAHAN: Jumlah partikel ditambah (dari 60 ke 80)
+           for (let i = 0; i < 80; i++) {
+               particles.push(new Particle());
+           }
+           animateParticles();
+       }
+
+       function animateParticles() {
+           ctx.clearRect(0, 0, canvas.width, canvas.height);
+           particles.forEach(p => {
+               p.update();
+               p.draw();
+           });
+           requestAnimationFrame(animateParticles);
+       }
+
+       function openInvitation() {
+           const opening = document.getElementById('opening');
+           const mainContent = document.getElementById('main-content');
+           
+           const duration = 4000;
+           const end = Date.now() + duration;
+
+           const frame = () => {
+               confetti({
+                   particleCount: 8,
+                   angle: 60,
+                   spread: 55,
+                   origin: { x: 0 },
+                   colors: colors
+               });
+               confetti({
+                   particleCount: 8,
+                   angle: 120,
+                   spread: 55,
+                   origin: { x: 1 },
+                   colors: colors
+               });
+
+               if (Date.now() < end) {
+                   requestAnimationFrame(frame);
+               }
+           };
+           frame();
+
+           opening.style.transform = 'translateY(-100%)';
+           opening.style.transition = 'transform 1.2s cubic-bezier(0.77, 0, 0.175, 1)';
+           
+           setTimeout(() => {
+               mainContent.classList.remove('hidden');
+               initScrollSnap();
+           }, 600);
+       }
+
+       function initScrollSnap() {
+           const container = document.querySelector('.snap-container');
+           if (!container) return;
+
+           container.addEventListener('scroll', () => {
+               const scrolled = container.scrollTop;
+               const maxScroll = container.scrollHeight - container.clientHeight;
+               const progress = (scrolled / maxScroll) * 100;
+               document.getElementById('scrollProgress').style.width = progress + '%';
+           });
+       }
+
+       function updateCountdown() {
+           const weddingDate = new Date(CONFIG.event.countDownDate).getTime();
+           const now = new Date().getTime();
+           const distance = weddingDate - now;
+
+           if (distance > 0) {
+               const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+               const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+               const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+               const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+               document.getElementById('days').textContent = String(days).padStart(2, '0');
+               document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+               document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+               document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+           }
+       }
+       setInterval(updateCountdown, 1000);
+       updateCountdown();
+
+       let currentGalleryIndex = 0;
+       let galleryLightboxOpen = false;
+
+       function openGalleryLightbox() {
+           const lightbox = document.getElementById('galleryLightbox');
+           const img = document.getElementById('lightboxGalleryImg');
+           const counter = document.getElementById('galleryCounter');
+           const total = document.getElementById('galleryTotal');
+           
+           currentGalleryIndex = 0;
+           img.src = CONFIG.gallery.photos[currentGalleryIndex];
+           counter.textContent = currentGalleryIndex + 1;
+           total.textContent = CONFIG.gallery.photos.length;
+           
+           lightbox.classList.add('active');
+           galleryLightboxOpen = true;
+           document.body.style.overflow = 'hidden';
+           
+           document.addEventListener('keydown', handleGalleryKeydown);
+           addSwipeListeners();
+       }
+
+       function closeGalleryLightbox() {
+           const lightbox = document.getElementById('galleryLightbox');
+           lightbox.classList.remove('active');
+           galleryLightboxOpen = false;
+           document.body.style.overflow = 'auto';
+           document.removeEventListener('keydown', handleGalleryKeydown);
+           removeSwipeListeners();
+       }
+
+       function changeGalleryImage(direction) {
+           currentGalleryIndex = (currentGalleryIndex + direction + CONFIG.gallery.photos.length) % CONFIG.gallery.photos.length;
+           const img = document.getElementById('lightboxGalleryImg');
+           const counter = document.getElementById('galleryCounter');
+           
+           img.style.opacity = '0.5';
+           img.style.transform = 'scale(0.95)';
+           
+           setTimeout(() => {
+               img.src = CONFIG.gallery.photos[currentGalleryIndex];
+               img.onload = () => {
+                   img.style.opacity = '1';
+                   img.style.transform = 'scale(1)';
+               };
+               counter.textContent = currentGalleryIndex + 1;
+           }, 200);
+       }
+
+       function handleGalleryKeydown(e) {
+           if (!galleryLightboxOpen) return;
+           
+           if (e.key === 'Escape') closeGalleryLightbox();
+           if (e.key === 'ArrowLeft') changeGalleryImage(-1);
+           if (e.key === 'ArrowRight') changeGalleryImage(1);
+       }
+
+       let touchStartX = 0;
+       let touchEndX = 0;
+
+       function addSwipeListeners() {
+           const lightbox = document.getElementById('galleryLightbox');
+           lightbox.addEventListener('touchstart', handleTouchStart, { passive: true });
+           lightbox.addEventListener('touchend', handleTouchEnd, { passive: true });
+       }
+
+       function removeSwipeListeners() {
+           const lightbox = document.getElementById('galleryLightbox');
+           lightbox.removeEventListener('touchstart', handleTouchStart);
+           lightbox.removeEventListener('touchend', handleTouchEnd);
+       }
+
+       function handleTouchStart(e) {
+           touchStartX = e.changedTouches[0].screenX;
+       }
+
+       function handleTouchEnd(e) {
+           touchEndX = e.changedTouches[0].screenX;
+           handleSwipe();
+       }
+
+       function handleSwipe() {
+           const swipeThreshold = 50;
+           const diff = touchStartX - touchEndX;
+           
+           if (Math.abs(diff) > swipeThreshold) {
+               if (diff > 0) {
+                   changeGalleryImage(1);
+               } else {
+                   changeGalleryImage(-1);
+               }
+           }
+       }
+
+       function openMap(type) {
+           const modal = document.getElementById('mapModal');
+           const content = document.getElementById('mapContent');
+           const title = document.getElementById('mapTitle');
+           const address = document.getElementById('mapAddress');
+           const frame = document.getElementById('mapFrame');
+           const link = document.getElementById('mapLink');
+           
+           const venue = type === 'akad' ? CONFIG.venue.akad : CONFIG.venue.resepsi;
+           
+           title.textContent = venue.name;
+           address.textContent = venue.address;
+           frame.src = venue.mapsEmbed;
+           link.href = `https://maps.google.com/?q=${venue.mapsQuery}`;
+           
+           modal.classList.remove('hidden');
+           modal.classList.add('flex');
+           setTimeout(() => content.classList.remove('scale-95'), 10);
+           document.body.style.overflow = 'hidden';
+       }
+
+       function closeMap() {
+           const modal = document.getElementById('mapModal');
+           const content = document.getElementById('mapContent');
+           content.classList.add('scale-95');
+           setTimeout(() => {
+               modal.classList.add('hidden');
+               modal.classList.remove('flex');
+           }, 300);
+           document.body.style.overflow = 'auto';
+       }
+
+       function copyToClipboard(text) {
+           navigator.clipboard.writeText(text).then(() => {
+               const toast = document.getElementById('toast');
+               toast.classList.remove('opacity-0', 'pointer-events-none');
+               toast.style.transform = 'translateX(-50%) translateY(0)';
+               setTimeout(() => {
+                   toast.classList.add('opacity-0', 'pointer-events-none');
+                   toast.style.transform = 'translateX(-50%) translateY(20px)';
+               }, 3000);
+           });
+       }
+
+       document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+           e.preventDefault();
+           
+           const name = this.querySelector('input[type="text"]').value;
+           const attendance = this.querySelector('input[name="attendance"]:checked').value;
+           const message = this.querySelector('textarea').value;
+           
+           const container = document.getElementById('messagesContainer');
+           const newMessage = document.createElement('div');
+           newMessage.className = 'glass-pink rounded-2xl p-4 border border-pink-500/20 animate-fade-in';
+           newMessage.innerHTML = `
+               <div class="flex justify-between items-start mb-2">
+                   <div class="flex items-center gap-2">
+                       <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white font-rsvp text-sm">${name.charAt(0)}</div>
+                       <div>
+                           <p class="font-semibold text-pink-300 text-sm">${name}</p>
+                           <p class="text-xs text-white/70">Baru saja</p>
+                       </div>
+                   </div>
+                   <span class="px-2 py-1 ${attendance === 'hadir' ? 'bg-green-500/20 text-green-400' : 'bg-white/20 text-white'} text-xs rounded-full">${attendance === 'hadir' ? 'Hadir' : 'Berhalangan'}</span>
+               </div>
+               <p class="text-white leading-relaxed text-sm">${message}</p>
+           `;
+           
+           container.insertBefore(newMessage, container.firstChild);
+           this.reset();
+           
+           confetti({
+               particleCount: 100,
+               spread: 70,
+               origin: { y: 0.8 },
+               colors: colors
+           });
+       });
+
+       document.getElementById('galleryLightbox').addEventListener('click', function(e) {
+           if (e.target === this) {
+               closeGalleryLightbox();
+           }
+       });
+   </script>
 </body>
 </html>
