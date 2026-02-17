@@ -1828,11 +1828,15 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
+                // PERUBAHAN: Ukuran partikel diperbesar (dari 2 + 0.5 ke 4 + 1)
+                this.size = Math.random() * 4 + 1;
                 this.speedX = Math.random() * 0.5 - 0.25;
                 this.speedY = Math.random() * 0.5 - 0.25;
                 this.color = colors[Math.floor(Math.random() * colors.length)];
-                this.opacity = Math.random() * 0.4 + 0.1;
+                // PERUBAHAN: Opacity diperbesar (dari 0.4 + 0.1 ke 0.7 + 0.2)
+                this.opacity = Math.random() * 0.7 + 0.3;
+                // PERUBAHAN: Tambahan efek glow
+                this.glow = Math.random() * 10 + 5;
             }
             
             update() {
@@ -1846,18 +1850,22 @@
             }
             
             draw() {
+                ctx.save();
                 ctx.fillStyle = this.color;
                 ctx.globalAlpha = this.opacity;
+                ctx.shadowBlur = this.glow;
+                ctx.shadowColor = this.color;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.globalAlpha = 1;
+                ctx.restore();
             }
         }
 
         function initParticles() {
             particles = [];
-            for (let i = 0; i < 60; i++) {
+            // PERUBAHAN: Jumlah partikel ditambah (dari 60 ke 80)
+            for (let i = 0; i < 80; i++) {
                 particles.push(new Particle());
             }
             animateParticles();
