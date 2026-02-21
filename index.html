@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
    <title>Undangan Pernikahan - Reren & Yadi</title>
    <script src="https://cdn.tailwindcss.com"></script>
    
@@ -246,14 +246,22 @@
 
        html {
            scroll-behavior: smooth;
+           /* Mencegah pull-to-refresh di mobile */
+           overscroll-behavior: none;
+           height: 100%;
+           overflow: hidden;
        }
 
        body {
            font-family: 'Montserrat', sans-serif; 
            background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);
            color: #ffffff;
-           overflow-x: hidden;
-           min-height: 100vh;
+           overflow: hidden;
+           height: 100vh;
+           height: 100dvh;
+           width: 100vw;
+           position: fixed;
+           touch-action: none; /* Mencegah pull-to-refresh */
        }
        
        /* Opening Section */
@@ -305,7 +313,7 @@
        /* Quote Section */
        .font-quote {
            font-family: 'Great Vibes', cursive;
-           font-size: 3rem;
+           font-size: 2.5rem;
            line-height: 1.4;
        }
        
@@ -522,12 +530,9 @@
            z-index: 1;
        }
        
-       ::-webkit-scrollbar { width: 8px; }
-       ::-webkit-scrollbar-track { background: #0f0c29; }
-       ::-webkit-scrollbar-thumb {
-           background: linear-gradient(180deg, #ff4d9e, #a855f7, #60a5fa);
-           border-radius: 4px;
-       }
+       /* Sembunyikan scrollbar */
+       ::-webkit-scrollbar { display: none; }
+       * { scrollbar-width: none; }
        
        .heart-beat { animation: heartBeat 1.5s ease-in-out infinite; }
        
@@ -608,12 +613,12 @@
        /* PERUBAHAN: Warna label lebih cerah */
        .section-badge {
            display: inline-block;
-           padding: 6px 20px;
+           padding: 4px 16px;
            border-radius: 50px;
-           font-size: 0.7rem;
+           font-size: 0.65rem;
            letter-spacing: 0.2em;
            text-transform: uppercase;
-           margin-bottom: 1rem;
+           margin-bottom: 0.5rem;
            background: rgba(255, 77, 158, 0.15);
            border: 1px solid rgba(255, 77, 158, 0.4);
            color: #ff80b3;
@@ -621,16 +626,20 @@
            font-weight: 600;
        }
 
-       /* PERUBAHAN UTAMA: Horizontal Scroll Snap */
+       /* PERUBAHAN UTAMA: Horizontal Scroll Snap - Full Height */
        .snap-container {
            scroll-snap-type: x mandatory;
            overflow-x: scroll;
            overflow-y: hidden;
            height: 100vh;
+           height: 100dvh;
            width: 100vw;
            scroll-behavior: smooth;
            display: flex;
            flex-direction: row;
+           /* Mencegah pull-to-refresh */
+           overscroll-behavior-x: contain;
+           touch-action: pan-x;
        }
 
        .snap-section {
@@ -639,22 +648,28 @@
            min-width: 100vw;
            width: 100vw;
            height: 100vh;
+           height: 100dvh;
            position: relative;
            display: flex;
            align-items: center;
            justify-content: center;
            overflow: hidden;
            flex-shrink: 0;
+           /* Mencegah overscroll individual section */
+           overscroll-behavior: none;
        }
 
        .compact-content {
-           transform: scale(0.9);
+           transform: scale(0.85);
            transform-origin: center center;
+           width: 100%;
+           max-width: 100%;
+           padding: 0 1rem;
        }
        
        .compact-text {
-           line-height: 1.4;
-           margin-bottom: 0.5rem;
+           line-height: 1.3;
+           margin-bottom: 0.3rem;
        }
 
        .gallery-cover-container {
@@ -856,24 +871,21 @@
            .snap-section {
                min-height: 100vh;
                min-height: 100dvh;
-               height: auto;
+               height: 100vh;
+               height: 100dvh;
+           }
+
+           .compact-content {
+               transform: scale(0.8);
            }
        }
 
        #messagesContainer::-webkit-scrollbar {
-           width: 6px;
-       }
-       #messagesContainer::-webkit-scrollbar-track {
-           background: rgba(255,255,255,0.05);
-           border-radius: 3px;
-       }
-       #messagesContainer::-webkit-scrollbar-thumb {
-           background: rgba(255, 77, 158, 0.3);
-           border-radius: 3px;
+           display: none;
        }
 
        .messages-scroll-box {
-           max-height: 400px;
+           max-height: 300px;
            overflow-y: auto;
            padding-right: 8px;
        }
@@ -882,7 +894,7 @@
        .gallery-frame {
            position: relative;
            width: 100%;
-           max-width: 480px;
+           max-width: 400px;
            margin: 0 auto;
            aspect-ratio: 531/674;
            border-radius: 24px;
@@ -906,7 +918,7 @@
        .couple-frame {
            position: relative;
            width: 100%;
-           max-width: 320px;
+           max-width: 280px;
            margin: 0 auto;
            aspect-ratio: 2/3;
            border-radius: 24px;
@@ -928,8 +940,8 @@
        }
 
        .mempelai-photo {
-           width: 280px;
-           height: 280px;
+           width: 220px;
+           height: 220px;
            border-radius: 50%;
            object-fit: cover;
            border: 4px solid;
@@ -941,45 +953,45 @@
        }
 
        .photo-ring-1 {
-           width: 300px;
-           height: 300px;
+           width: 240px;
+           height: 240px;
            top: -10px;
        }
 
        .photo-ring-2 {
-           width: 320px;
-           height: 320px;
+           width: 260px;
+           height: 260px;
            top: -20px;
        }
 
        /* MODIFIKASI: Gallery frame mobile diperbesar */
        @media (max-width: 768px) {
            .gallery-frame {
-               max-width: 340px;
+               max-width: 300px;
            }
            .couple-frame {
-               max-width: 260px;
+               max-width: 220px;
            }
            .mempelai-photo {
-               width: 240px;
-               height: 240px;
+               width: 180px;
+               height: 180px;
            }
            .photo-ring-1 {
-               width: 260px;
-               height: 260px;
+               width: 200px;
+               height: 200px;
            }
            .photo-ring-2 {
-               width: 280px;
-               height: 280px;
+               width: 220px;
+               height: 220px;
            }
            .font-quote {
-               font-size: 2rem;
+               font-size: 1.5rem;
            }
            footer .text-4xl {
-               font-size: 2.5rem;
+               font-size: 2rem;
            }
            footer .text-base {
-               font-size: 1.1rem;
+               font-size: 1rem;
            }
        }
 
@@ -989,6 +1001,7 @@
            flex-direction: column;
            align-items: center;
            justify-content: center;
+           padding: 0.5rem;
        }
 
        /* Style baru untuk overlay galeri */
@@ -1040,16 +1053,9 @@
            font-weight: 600;
        }
 
-       /* PERUBAHAN: Scrollbar horizontal styling */
+       /* PERUBAHAN: Scrollbar horizontal styling - hidden */
        .snap-container::-webkit-scrollbar {
-           height: 8px;
-       }
-       .snap-container::-webkit-scrollbar-track {
-           background: #0f0c29;
-       }
-       .snap-container::-webkit-scrollbar-thumb {
-           background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
-           border-radius: 4px;
+           display: none;
        }
 
        /* PERUBAHAN: Progress bar untuk scroll horizontal */
@@ -1061,6 +1067,25 @@
            background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
            z-index: 100;
            transition: width 0.1s;
+       }
+
+       /* Utility untuk spacing yang lebih compact */
+       .compact-section {
+           padding: 0.5rem 0;
+       }
+
+       .compact-heading {
+           margin-bottom: 0.5rem;
+       }
+
+       .compact-card {
+           padding: 1rem;
+       }
+
+       @media (max-width: 768px) {
+           .compact-card {
+               padding: 0.75rem;
+           }
        }
    </style>
 </head>
@@ -1085,7 +1110,7 @@
    <canvas id="particle-canvas"></canvas>
 
    <!-- Opening Overlay -->
-   <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
+   <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%); touch-action: none;">
        <div class="blob blob-1"></div>
        <div class="blob blob-2"></div>
        <div class="blob blob-3"></div>
@@ -1095,33 +1120,33 @@
        <div class="absolute bottom-40 left-40 text-blue-500 text-5xl float-fast opacity-60">💙</div>
        <div class="absolute bottom-20 right-20 text-orange-500 text-4xl float-slow opacity-60">🧡</div>
 
-       <div class="relative z-10 text-center text-white px-6 max-w-3xl">
-           <div class="mb-6">
+       <div class="relative z-10 text-center text-white px-6 max-w-3xl compact-content">
+           <div class="mb-4">
                <div class="inline-block p-3 rounded-full glass-pink mb-4 animate-fade-in">
                    <span class="text-4xl">💍</span>
                </div>
                <p class="text-white tracking-[0.5em] text-sm mb-3 uppercase animate-fade-in" style="animation-delay: 0.3s;">Undangan Pernikahan</p>
 
-               <h1 class="font-opening text-6xl md:text-7xl mb-2 animate-fade-in" style="animation-delay: 0.5s; line-height: 1.2; padding-top: 0.1em;">
+               <h1 class="font-opening text-5xl md:text-6xl mb-2 animate-fade-in" style="animation-delay: 0.5s; line-height: 1.2; padding-top: 0.1em;">
               <span class="text-gradient-1 inline-block" style="padding: 0.05em 0;">Reren</span>
               </h1>
                
                <div class="text-4xl md:text-5xl font-opening italic my-3 text-gradient-2 animate-fade-in heart-beat" style="animation-delay: 0.7s; line-height: 1;">&</div>
                
-               <h1 class="font-opening text-6xl md:text-7xl animate-fade-in" style="animation-delay: 0.9s; line-height: 1.2; padding-top: 0.1em;">
+               <h1 class="font-opening text-5xl md:text-6xl animate-fade-in" style="animation-delay: 0.9s; line-height: 1.2; padding-top: 0.1em;">
                    <span class="text-gradient-3 inline-block" style="padding: 0.05em 0;">Yadi</span>
                </h1>
            </div>
 
-           <div class="mb-8 glass-color rounded-3xl p-6 inline-block animate-fade-in" style="animation-delay: 1.1s;">
-               <p class="text-white text-xl mb-2">Kepada Yth.</p>
-               <p class="text-lg font-opening text-white">Bapak/Ibu/Saudara/i</p>
+           <div class="mb-6 glass-color rounded-3xl p-4 inline-block animate-fade-in" style="animation-delay: 1.1s;">
+               <p class="text-white text-lg mb-2">Kepada Yth.</p>
+               <p class="text-base font-opening text-white">Bapak/Ibu/Saudara/i</p>
                <div class="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
            </div>
 
            <br>
 
-           <button onclick="openInvitationAndPlayMusic()" class="btn-gradient shine animate-fade-in" style="animation-delay: 1.3s;">
+           <button onclick="openInvitationAndPlayMusic()" class="btn-gradient shine animate-fade-in" style="animation-delay: 1.3s; padding: 12px 32px; font-size: 0.9rem;">
                <span class="flex items-center gap-3">
                    <span class="text-2xl">💌</span>
                    Buka Undangan
@@ -1149,22 +1174,22 @@
            <div class="absolute bottom-32 right-32 text-orange-500 text-5xl float-slow">🌟</div>
 
            <div class="relative z-10 text-center text-white px-6 max-w-5xl mx-auto compact-content">
-               <div class="mb-4">
+               <div class="mb-2">
                    <span class="section-badge">Pernikahan</span>
                </div>
 
-               <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2;">
+               <h1 class="font-hero text-6xl md:text-7xl mb-2 leading-tight" style="line-height: 1.2;">
                   <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
                </h1>
                
-               <div class="text-4xl md:text-5xl font-hero italic my-4 text-gradient-2 heart-beat" style="line-height: 2;">&</div>
+               <div class="text-3xl md:text-4xl font-hero italic my-2 text-gradient-2 heart-beat" style="line-height: 2;">&</div>
 
-               <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
+               <h1 class="font-hero text-6xl md:text-7xl mb-2 leading-tight" style="line-height: 1.2; padding-top: 0.1em;">
                    <span class="block text-gradient-3 inline-block" id="heroGroom" style="padding: 0.05em 0;">Yadi</span>
                </h1>
 
-               <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
-                   <p class="font-pompiere text-3xl md:text-4xl text-white mb-2" id="heroDate">30 Mei 2028</p>
+               <div class="mt-4 glass-color rounded-3xl p-4 md:p-6 inline-block max-w-2xl">
+                   <p class="font-pompiere text-2xl md:text-3xl text-white mb-2" id="heroDate">30 Mei 2028</p>
                    <div class="flex items-center justify-center gap-4 text-white mb-2">
                        <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
                        <span class="text-pink-400">♥</span>
@@ -1178,27 +1203,27 @@
        <!-- Countdown Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-8">
+               <div class="text-center mb-4">
                    <span class="section-badge">Countdown</span>
-                   <h2 class="font-pompiere text-4xl md:text-5xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
-                   <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
+                   <h2 class="font-pompiere text-3xl md:text-4xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
+                   <p class="text-white/80 text-xs tracking-widest mt-2">Menuju Hari Bahagia</p>
                </div>
 
-               <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
-                   <div class="glass-pink rounded-3xl p-4 card-glow text-center countdown-box">
-                       <div id="days" class="font-countdown text-4xl md:text-6xl text-gradient-1 mb-1">00</div>
+               <div class="grid grid-cols-4 gap-2 max-w-3xl mx-auto">
+                   <div class="glass-pink rounded-2xl p-2 card-glow text-center countdown-box">
+                       <div id="days" class="font-countdown text-3xl md:text-5xl text-gradient-1 mb-1">00</div>
                        <div class="text-pink-300 tracking-widest text-xs uppercase">Hari</div>
                    </div>
-                   <div class="glass-purple rounded-3xl p-4 card-glow text-center countdown-box">
-                       <div id="hours" class="font-countdown text-4xl md:text-6xl text-gradient-2 mb-1">00</div>
+                   <div class="glass-purple rounded-2xl p-2 card-glow text-center countdown-box">
+                       <div id="hours" class="font-countdown text-3xl md:text-5xl text-gradient-2 mb-1">00</div>
                        <div class="text-purple-300 tracking-widest text-xs uppercase">Jam</div>
                    </div>
-                   <div class="glass-blue rounded-3xl p-4 card-glow text-center countdown-box">
-                       <div id="minutes" class="font-countdown text-4xl md:text-6xl text-gradient-3 mb-1">00</div>
+                   <div class="glass-blue rounded-2xl p-2 card-glow text-center countdown-box">
+                       <div id="minutes" class="font-countdown text-3xl md:text-5xl text-gradient-3 mb-1">00</div>
                        <div class="text-blue-300 tracking-widest text-xs uppercase">Menit</div>
                    </div>
-                   <div class="glass-color rounded-3xl p-4 card-glow text-center border-orange-500/30 countdown-box">
-                       <div id="seconds" class="font-countdown text-4xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-1">00</div>
+                   <div class="glass-color rounded-2xl p-2 card-glow text-center border-orange-500/30 countdown-box">
+                       <div id="seconds" class="font-countdown text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400 mb-1">00</div>
                        <div class="text-orange-300 tracking-widest text-xs uppercase">Detik</div>
                    </div>
                </div>
@@ -1211,20 +1236,20 @@
            <div class="absolute bottom-40 left-10 text-purple-500 text-6xl float-medium opacity-20">💜</div>
 
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-6">
+               <div class="text-center mb-4">
                    <span class="section-badge">Mempelai</span>
-                   <h2 class="font-couple-section text-5xl md:text-6xl text-gradient-1 mt-2" style="line-height: 1.2; padding-top: 0.1em;">
+                   <h2 class="font-couple-section text-4xl md:text-5xl text-gradient-1 mt-2" style="line-height: 1.2; padding-top: 0.1em;">
                        Reren & Yadi
                    </h2>
                </div>
                
-               <div class="couple-frame mb-6">
+               <div class="couple-frame mb-4">
                    <img id="couplePhoto" src="couple.png" alt="Reren & Yadi" 
                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
                </div>
 
                <div class="text-center">
-                   <p class="font-pompiere text-2xl md:text-3xl text-white/90">30 Mei 2028</p>
+                   <p class="font-pompiere text-xl md:text-2xl text-white/90">30 Mei 2028</p>
                </div>
            </div>
        </section>
@@ -1235,11 +1260,11 @@
            <div class="absolute bottom-20 right-20 text-rose-500 text-5xl float-medium opacity-30">🌸</div>
 
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-4">
+               <div class="text-center mb-2">
                    <span class="section-badge">Mempelai Wanita</span>
                </div>
 
-               <div class="max-w-xs mx-auto mb-4">
+               <div class="max-w-xs mx-auto mb-3">
                    <div class="relative group">
                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
                        <div class="relative mx-auto flex justify-center">
@@ -1251,10 +1276,10 @@
                </div>
 
                <div class="text-center max-w-md mx-auto">
-                   <h3 id="brideName" class="font-bride text-4xl md:text-5xl text-white mb-2">Reni Pionika</h3>
-                   <p id="brideOrder" class="text-white/80 mb-3 text-base">Putri kedua dari</p>
+                   <h3 id="brideName" class="font-bride text-3xl md:text-4xl text-white mb-1">Reni Pionika</h3>
+                   <p id="brideOrder" class="text-white/80 mb-2 text-sm">Putri kedua dari</p>
                    
-                   <div class="glass-pink rounded-3xl p-4 inline-block max-w-xs border border-pink-500/30">
+                   <div class="glass-pink rounded-2xl p-3 inline-block max-w-xs border border-pink-500/30">
                        <div class="flex items-center justify-center gap-2 mb-2">
                            <div class="h-px w-12 bg-gradient-to-r from-transparent to-pink-500"></div>
                            <span class="text-pink-400 text-xl">❦</span>
@@ -1276,11 +1301,11 @@
            <div class="absolute bottom-32 left-20 text-cyan-500 text-5xl float-medium opacity-30">🤵</div>
 
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-4">
+               <div class="text-center mb-2">
                    <span class="section-badge">Mempelai Pria</span>
                </div>
 
-               <div class="max-w-xs mx-auto mb-4">
+               <div class="max-w-xs mx-auto mb-3">
                    <div class="relative group">
                        <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-20 group-hover:opacity-40 transition-all duration-700 blur-2xl"></div>
                        <div class="relative mx-auto flex justify-center">
@@ -1292,10 +1317,10 @@
                </div>
 
                <div class="text-center max-w-md mx-auto">
-                   <h3 id="groomName" class="font-groom text-3xl md:text-4xl text-white mb-2">Yadi Hartono</h3>
-                   <p id="groomOrder" class="text-white/80 mb-3 text-base">Putra pertama dari</p>
+                   <h3 id="groomName" class="font-groom text-2xl md:text-3xl text-white mb-1">Yadi Hartono</h3>
+                   <p id="groomOrder" class="text-white/80 mb-2 text-sm">Putra pertama dari</p>
                    
-                   <div class="glass-blue rounded-3xl p-4 inline-block max-w-xs border border-blue-500/30">
+                   <div class="glass-blue rounded-2xl p-3 inline-block max-w-xs border border-blue-500/30">
                        <div class="flex items-center justify-center gap-2 mb-2">
                            <div class="h-px w-12 bg-gradient-to-r from-transparent to-blue-500"></div>
                            <span class="text-blue-400 text-xl">❦</span>
@@ -1314,11 +1339,11 @@
        <!-- Quote Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center max-w-4xl mx-auto">
-                   <div class="relative p-8 md:p-12 glass-color rounded-3xl border border-pink-500/20">
+               <div class="text-center max-w-3xl mx-auto">
+                   <div class="relative p-6 md:p-8 glass-color rounded-3xl border border-pink-500/20">
                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-serif shadow-lg">"</div>
                        
-                       <p id="quoteText" class="font-quote text-white mb-6 mt-4 leading-relaxed">
+                       <p id="quoteText" class="font-quote text-white mb-4 mt-4 leading-relaxed">
                            "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya"
                        </p>
                        
@@ -1332,57 +1357,57 @@
        <!-- AKAD NIKAH SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-6">
+               <div class="text-center mb-4">
                    <span class="section-badge">Save The Date</span>
                </div>
 
-               <div class="max-w-xl mx-auto">
-                   <div class="glass-pink rounded-3xl p-6 md:p-8 card-glow border-pink-500/20 relative overflow-hidden">
+               <div class="max-w-lg mx-auto">
+                   <div class="glass-pink rounded-3xl p-4 md:p-6 card-glow border-pink-500/20 relative overflow-hidden">
                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-transparent rounded-bl-full"></div>
                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-500/20 to-transparent rounded-tr-full"></div>
                        
                        <div class="relative z-10">
-                           <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                               <span class="text-3xl">🕌</span>
+                           <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                               <span class="text-2xl">🕌</span>
                            </div>
                            
-                           <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
-                           <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
+                           <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
+                           <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-4 rounded-full"></div>
                            
-                           <div class="space-y-3">
-                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">📅</span>
+                           <div class="space-y-2">
+                               <div class="flex items-center gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">📅</span>
                                    </div>
                                    <div>
-                                       <p class="text-pink-300 font-semibold text-sm">Hari & Tanggal</p>
-                                       <p id="akadDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
+                                       <p class="text-pink-300 font-semibold text-xs">Hari & Tanggal</p>
+                                       <p id="akadDate" class="text-white text-sm">Selasa, 30 Mei 2028</p>
                                    </div>
                                </div>
                                
-                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">⏰</span>
+                               <div class="flex items-center gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">⏰</span>
                                    </div>
                                    <div>
-                                       <p class="text-pink-300 font-semibold text-sm">Waktu</p>
-                                       <p id="akadTime" class="text-white text-base">08:00 - 10:00 WIB</p>
+                                       <p class="text-pink-300 font-semibold text-xs">Waktu</p>
+                                       <p id="akadTime" class="text-white text-sm">08:00 - 10:00 WIB</p>
                                    </div>
                                </div>
                                
-                               <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-pink flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">📍</span>
+                               <div class="flex items-start gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-pink flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">📍</span>
                                    </div>
                                    <div>
-                                       <p class="text-pink-300 font-semibold text-sm">Tempat</p>
-                                       <p id="akadVenue" class="text-white text-base mb-1">Masjid Raya Sinuruik</p>
+                                       <p class="text-pink-300 font-semibold text-xs">Tempat</p>
+                                       <p id="akadVenue" class="text-white text-sm mb-1">Masjid Raya Sinuruik</p>
                                        <p id="akadAddress" class="text-white/70 text-xs leading-relaxed">Sinuruik, Kec. Talamau, Kabupaten Pasaman Barat, Sumatera Barat 26561</p>
                                    </div>
                                </div>
                            </div>
 
-                           <button onclick="openMap('akad')" class="mt-6 w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all flex items-center justify-center gap-2 text-base">
+                           <button onclick="openMap('akad')" class="mt-4 w-full py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all flex items-center justify-center gap-2 text-sm">
                                <span>🗺️</span>
                                Lihat Lokasi Akad
                            </button>
@@ -1395,57 +1420,57 @@
        <!-- RESEPSI SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-6">
+               <div class="text-center mb-4">
                    <span class="section-badge">Save The Date</span>
                </div>
 
-               <div class="max-w-xl mx-auto">
-                   <div class="glass-blue rounded-3xl p-6 md:p-8 card-glow border-blue-500/20 relative overflow-hidden">
+               <div class="max-w-lg mx-auto">
+                   <div class="glass-blue rounded-3xl p-4 md:p-6 card-glow border-blue-500/20 relative overflow-hidden">
                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full"></div>
                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-tr-full"></div>
                        
                        <div class="relative z-10">
-                           <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                               <span class="text-3xl">🎉</span>
+                           <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                               <span class="text-2xl">🎉</span>
                            </div>
                            
-                           <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
-                           <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
+                           <h3 class="font-event text-2xl md:text-3xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
+                           <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-4 rounded-full"></div>
                            
-                           <div class="space-y-3">
-                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">📅</span>
+                           <div class="space-y-2">
+                               <div class="flex items-center gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">📅</span>
                                    </div>
                                    <div>
-                                       <p class="text-blue-300 font-semibold text-sm">Hari & Tanggal</p>
-                                       <p id="resepsiDate" class="text-white text-base">Selasa, 30 Mei 2028</p>
+                                       <p class="text-blue-300 font-semibold text-xs">Hari & Tanggal</p>
+                                       <p id="resepsiDate" class="text-white text-sm">Selasa, 30 Mei 2028</p>
                                    </div>
                                </div>
                                
-                               <div class="flex items-center gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">⏰</span>
+                               <div class="flex items-center gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">⏰</span>
                                    </div>
                                    <div>
-                                       <p class="text-blue-300 font-semibold text-sm">Waktu</p>
-                                       <p id="resepsiTime" class="text-white text-base">11:00 - 14:00 WIB</p>
+                                       <p class="text-blue-300 font-semibold text-xs">Waktu</p>
+                                       <p id="resepsiTime" class="text-white text-sm">11:00 - 14:00 WIB</p>
                                    </div>
                                </div>
                                
-                               <div class="flex items-start gap-3 p-3 glass-color rounded-2xl">
-                                   <div class="w-10 h-10 rounded-xl glass-blue flex items-center justify-center flex-shrink-0">
-                                       <span class="text-xl">📍</span>
+                               <div class="flex items-start gap-3 p-2 glass-color rounded-xl">
+                                   <div class="w-8 h-8 rounded-lg glass-blue flex items-center justify-center flex-shrink-0">
+                                       <span class="text-lg">📍</span>
                                    </div>
                                    <div>
-                                       <p class="text-blue-300 font-semibold text-sm">Tempat</p>
-                                       <p id="resepsiVenue" class="text-white text-base mb-1">Rumah Mempelai</p>
+                                       <p class="text-blue-300 font-semibold text-xs">Tempat</p>
+                                       <p id="resepsiVenue" class="text-white text-sm mb-1">Rumah Mempelai</p>
                                        <p id="resepsiAddress" class="text-white/70 text-xs leading-relaxed">Kp. Marapak Jorong Benteng Nagari Sinuruik, Kec. Talamau, Kab. Pasaman Barat, Sumatera Barat</p>
                                    </div>
                                </div>
                            </div>
 
-                           <button onclick="openMap('resepsi')" class="mt-6 w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 text-base">
+                           <button onclick="openMap('resepsi')" class="mt-4 w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 text-sm">
                                <span>🗺️</span>
                                Lihat Lokasi Resepsi
                            </button>
@@ -1458,7 +1483,7 @@
        <!-- GALLERY SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="text-center mb-6">
+               <div class="text-center mb-4">
                    <span class="section-badge">Galeri</span>
                </div>
 
@@ -1470,8 +1495,8 @@
                    </div>
                </div>
 
-               <div class="text-center mt-6">
-                   <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
+               <div class="text-center mt-4">
+                   <h2 class="font-gallery text-3xl md:text-4xl text-white mb-2">Galeri</h2>
                    <p class="text-white/80 text-sm">Momen Bahagia Kami</p>
                </div>
            </div>
@@ -1480,15 +1505,15 @@
        <!-- RSVP INPUT SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="max-w-xl mx-auto">
-                   <div class="text-center mb-6">
+               <div class="max-w-lg mx-auto">
+                   <div class="text-center mb-4">
                        <span class="section-badge">RSVP</span>
-                       <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
+                       <h2 class="font-rsvp text-2xl md:text-3xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
                    </div>
 
-                   <div class="glass-color rounded-3xl p-6 border border-pink-500/20">
-                       <form id="rsvpForm" class="space-y-4">
+                   <div class="glass-color rounded-3xl p-4 border border-pink-500/20">
+                       <form id="rsvpForm" class="space-y-3">
                            <div>
                                <label class="block text-pink-400 text-xs mb-1 tracking-wider uppercase">Nama Lengkap</label>
                                <input type="text" required class="w-full px-3 py-2 bg-white/5 border border-pink-500/30 rounded-xl focus:border-pink-500 text-white text-sm focus:outline-none transition-colors placeholder-white/50" placeholder="Masukkan nama Anda">
@@ -1542,16 +1567,16 @@
        <!-- RSVP RESULTS SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
-               <div class="max-w-xl mx-auto">
-                   <div class="text-center mb-6">
+               <div class="max-w-lg mx-auto">
+                   <div class="text-center mb-4">
                        <span class="section-badge">RSVP</span>
-                       <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
+                       <h2 class="font-rsvp text-2xl md:text-3xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
                    </div>
 
-                   <div class="glass-color rounded-3xl p-4 border border-pink-500/20">
-                       <div class="messages-scroll-box space-y-3" id="messagesContainer">
-                           <div class="glass-pink rounded-2xl p-4 border border-pink-500/20">
+                   <div class="glass-color rounded-3xl p-3 border border-pink-500/20">
+                       <div class="messages-scroll-box space-y-2" id="messagesContainer">
+                           <div class="glass-pink rounded-2xl p-3 border border-pink-500/20">
                                <div class="flex justify-between items-start mb-2">
                                    <div class="flex items-center gap-2">
                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-rsvp text-sm">K</div>
@@ -1565,7 +1590,7 @@
                                <p class="text-white leading-relaxed text-sm">Selamat menempuh hidup baru Reren & Yadi! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. 🎉✨</p>
                            </div>
 
-                           <div class="glass-color rounded-2xl p-4 border border-white/10">
+                           <div class="glass-color rounded-2xl p-3 border border-white/10">
                                <div class="flex justify-between items-start mb-2">
                                    <div class="flex items-center gap-2">
                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-rsvp text-sm">A</div>
@@ -1579,7 +1604,7 @@
                                <p class="text-white leading-relaxed text-sm">Barakallah, semoga lancar sampai hari H! Mohon maaf saya datang dengan 2 orang ya. 🙏</p>
                            </div>
 
-                           <div class="glass-color rounded-2xl p-4 border border-white/10">
+                           <div class="glass-color rounded-2xl p-3 border border-white/10">
                                <div class="flex justify-between items-start mb-2">
                                    <div class="flex items-center gap-2">
                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-rsvp text-sm">S</div>
@@ -1602,16 +1627,16 @@
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 text-center compact-content">
                <span class="section-badge">Wedding Gift</span>
-               <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
-               <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
+               <h2 class="font-gift text-2xl md:text-3xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
+               <p class="text-white mb-6 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
 
                <div class="max-w-sm mx-auto">
-                   <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
-                       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                   <div class="glass-pink rounded-3xl p-4 border border-pink-500/20 card-glow">
+                       <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                            <span class="dana-text">DANA</span>
                        </div>
                        <div class="space-y-1 mb-4">
-                           <p id="bankNumber" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
+                           <p id="bankNumber" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wider">085763410286</p>
                            <p id="bankName" class="text-white/80 text-xs">E-Wallet</p>
                            <p id="bankAccount" class="text-xs text-pink-400">a.n. Reni Pionika</p>
                        </div>
@@ -1628,16 +1653,16 @@
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 text-center compact-content">
                <span class="section-badge">Wedding Gift</span>
-               <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
-               <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
+               <h2 class="font-gift text-2xl md:text-3xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
+               <p class="text-white mb-6 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
 
                <div class="max-w-sm mx-auto">
-                   <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
-                       <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                   <div class="glass-blue rounded-3xl p-4 border border-blue-500/20 card-glow">
+                       <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                            <span class="gift-emoji">🎁</span>
                        </div>
-                       <h3 class="font-gift text-xl mb-3 text-white font-semibold">Alamat Pengiriman</h3>
-                       <div class="text-left glass-color rounded-xl p-4 mb-4 border border-white/10">
+                       <h3 class="font-gift text-lg mb-3 text-white font-semibold">Alamat Pengiriman</h3>
+                       <div class="text-left glass-color rounded-xl p-3 mb-4 border border-white/10">
                            <p id="giftAddress" class="text-white leading-relaxed text-xs">
                                <!-- Filled by JS -->
                            </p>
@@ -1654,15 +1679,15 @@
        <!-- Footer -->
        <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 text-center compact-content">
-               <div class="inline-block p-4 rounded-full glass-pink mb-6">
-                   <span class="text-5xl md:text-6xl">💕</span>
+               <div class="inline-block p-3 rounded-full glass-pink mb-4">
+                   <span class="text-4xl md:text-5xl">💕</span>
                </div>
                
-               <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
+               <h3 id="footerNames" class="font-footer text-4xl md:text-5xl mb-2 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
                
-               <p id="footerDate" class="footer-date-bright text-lg md:text-xl mb-6">30 Mei 2028</p>
+               <p id="footerDate" class="footer-date-bright text-base md:text-lg mb-4">30 Mei 2028</p>
                
-               <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
+               <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-4"></div>
                
                <p class="text-white text-sm md:text-base">Made with <span class="text-pink-500">❤️</span> by <span id="footerCouple" class="text-pink-400">Reren & Yadi</span></p>
                <p class="text-white text-sm md:text-base mt-2">© 2028 All Rights Reserved</p>
@@ -2077,7 +2102,7 @@
            
            const container = document.getElementById('messagesContainer');
            const newMessage = document.createElement('div');
-           newMessage.className = 'glass-pink rounded-2xl p-4 border border-pink-500/20 animate-fade-in';
+           newMessage.className = 'glass-pink rounded-2xl p-3 border border-pink-500/20 animate-fade-in';
            newMessage.innerHTML = `
                <div class="flex justify-between items-start mb-2">
                    <div class="flex items-center gap-2">
@@ -2108,6 +2133,13 @@
                closeGalleryLightbox();
            }
        });
+
+       // Mencegah pull-to-refresh di mobile
+       document.body.addEventListener('touchmove', function(e) {
+           if (e.target.closest('.snap-container')) {
+               // Izinkan scroll horizontal tapi cegah overscroll vertical
+           }
+       }, { passive: true });
    </script>
 </body>
 </html>
