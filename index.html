@@ -259,7 +259,6 @@
            height: 100dvh;
            width: 100vw;
            position: fixed;
-           touch-action: none;
        }
        
        .font-opening {
@@ -608,10 +607,10 @@
            font-weight: 600;
        }
 
-       /* PERBAIKAN: Snap container dengan overflow hidden */
+       /* PERBAIKAN: Snap container dengan scroll horizontal yang berfungsi */
        .snap-container {
            scroll-snap-type: x mandatory;
-           overflow-x: scroll;
+           overflow-x: auto;
            overflow-y: hidden;
            height: 100vh;
            height: 100dvh;
@@ -619,8 +618,7 @@
            scroll-behavior: smooth;
            display: flex;
            flex-direction: row;
-           overscroll-behavior-x: contain;
-           touch-action: pan-x;
+           /* Hapus touch-action yang memblokir scroll */
        }
 
        .snap-section {
@@ -636,7 +634,6 @@
            justify-content: center;
            overflow: hidden;
            flex-shrink: 0;
-           overscroll-behavior: none;
        }
 
        .gallery-cover-container {
@@ -1042,7 +1039,7 @@
    <canvas id="particle-canvas"></canvas>
 
    <!-- Opening Overlay -->
-   <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%); touch-action: none;">
+   <div id="opening" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
        <div class="blob blob-1"></div>
        <div class="blob blob-2"></div>
        <div class="blob blob-3"></div>
