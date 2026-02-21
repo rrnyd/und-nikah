@@ -621,24 +621,30 @@
            font-weight: 600;
        }
 
+       /* PERUBAHAN UTAMA: Horizontal Scroll Snap */
        .snap-container {
-           scroll-snap-type: y mandatory;
-           overflow-y: scroll;
+           scroll-snap-type: x mandatory;
+           overflow-x: scroll;
+           overflow-y: hidden;
            height: 100vh;
+           width: 100vw;
            scroll-behavior: smooth;
+           display: flex;
+           flex-direction: row;
        }
 
        .snap-section {
            scroll-snap-align: start;
            scroll-snap-stop: always;
-           min-height: 100vh;
+           min-width: 100vw;
+           width: 100vw;
            height: 100vh;
-           width: 100%;
            position: relative;
            display: flex;
            align-items: center;
            justify-content: center;
            overflow: hidden;
+           flex-shrink: 0;
        }
 
        .compact-content {
@@ -1033,6 +1039,29 @@
            color: #ff80b3 !important; /* Warna pink yang lebih cerah */
            font-weight: 600;
        }
+
+       /* PERUBAHAN: Scrollbar horizontal styling */
+       .snap-container::-webkit-scrollbar {
+           height: 8px;
+       }
+       .snap-container::-webkit-scrollbar-track {
+           background: #0f0c29;
+       }
+       .snap-container::-webkit-scrollbar-thumb {
+           background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
+           border-radius: 4px;
+       }
+
+       /* PERUBAHAN: Progress bar untuk scroll horizontal */
+       .scroll-progress-horizontal {
+           position: fixed;
+           bottom: 0;
+           left: 0;
+           height: 3px;
+           background: linear-gradient(90deg, #ff4d9e, #a855f7, #60a5fa);
+           z-index: 100;
+           transition: width 0.1s;
+       }
    </style>
 </head>
 <body>
@@ -1051,7 +1080,8 @@
        <p class="text-xl text-white">Memuat undangan...</p>
    </div>
 
-   <div class="scroll-progress" id="scrollProgress"></div>
+   <!-- PERUBAHAN: Progress bar horizontal di bawah -->
+   <div class="scroll-progress-horizontal" id="scrollProgress"></div>
    <canvas id="particle-canvas"></canvas>
 
    <!-- Opening Overlay -->
@@ -1100,7 +1130,7 @@
        </div>
    </div>
 
-   <!-- Main Content -->
+   <!-- Main Content - Horizontal Scroll -->
    <main id="main-content" class="hidden snap-container">
        
        <!-- Hero Section -->
@@ -1123,7 +1153,6 @@
                    <span class="section-badge">Pernikahan</span>
                </div>
 
-               <!-- PERUBAHAN 1: Font Reren & Yadi diperbesar 1x (dari text-7xl md:text-[7rem] ke text-8xl md:text-[8rem]) -->
                <h1 class="font-hero text-8xl md:text-[8rem] mb-2 leading-tight" style="line-height: 1.2;">
                   <span class="block text-gradient-1" id="heroBride" style="display: inline-block; padding: 0.05em 0;">Reren</span>
                </h1>
@@ -1135,7 +1164,6 @@
                </h1>
 
                <div class="mt-8 glass-color rounded-3xl p-6 md:p-8 inline-block max-w-2xl">
-                   <!-- PERUBAHAN 1: Font hero date diubah ke font Pompiere -->
                    <p class="font-pompiere text-3xl md:text-4xl text-white mb-2" id="heroDate">30 Mei 2028</p>
                    <div class="flex items-center justify-center gap-4 text-white mb-2">
                        <div class="h-px w-16 bg-gradient-to-r from-transparent to-pink-500"></div>
@@ -1147,23 +1175,17 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- Countdown Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
                <div class="text-center mb-8">
-                   <!-- PERUBAHAN: "MENUKU HARI BAHAGIA" menjadi "COUNTDOWN" -->
                    <span class="section-badge">Countdown</span>
-                   <!-- PERUBAHAN 2: Font "SISA WAKTU" diubah ke Pompiere -->
                    <h2 class="font-pompiere text-4xl md:text-5xl text-gradient-1 mb-2 tracking-wider">SISA WAKTU</h2>
-                   <!-- PERUBAHAN: Tambahan teks "Menuju Hari Bahagia" -->
                    <p class="text-white/80 text-sm tracking-widest mt-2">Menuju Hari Bahagia</p>
                </div>
 
                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
                    <div class="glass-pink rounded-3xl p-4 card-glow text-center countdown-box">
-                       <!-- PERUBAHAN 2: Font angka countdown diubah ke font label seksi -->
                        <div id="days" class="font-countdown text-4xl md:text-6xl text-gradient-1 mb-1">00</div>
                        <div class="text-pink-300 tracking-widest text-xs uppercase">Hari</div>
                    </div>
@@ -1183,8 +1205,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- Couple Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="absolute top-20 right-10 text-pink-500 text-8xl float-slow opacity-20">💕</div>
@@ -1198,20 +1218,16 @@
                    </h2>
                </div>
                
-               <!-- MODIFIKASI: Hilang efek gradien pada photo couple (dihapus class group dan overlay gradien) -->
                <div class="couple-frame mb-6">
                    <img id="couplePhoto" src="couple.png" alt="Reren & Yadi" 
                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%23ff4d9e%22 width=%22400%22 height=%22600%22/><text fill=%22white%22 font-family=%22serif%22 font-size=%22100%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22>💑</text></svg>'">
                </div>
 
-               <!-- PERUBAHAN 3: Font date di couple section diubah ke font Pompiere -->
                <div class="text-center">
                    <p class="font-pompiere text-2xl md:text-3xl text-white/90">30 Mei 2028</p>
                </div>
            </div>
        </section>
-
-       <div class="section-divider"></div>
 
        <!-- Bride Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
@@ -1254,8 +1270,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- Groom Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="absolute top-20 right-10 text-blue-500 text-6xl float-slow opacity-30">💙</div>
@@ -1297,8 +1311,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- Quote Section -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
@@ -1311,14 +1323,11 @@
                        </p>
                        
                        <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mb-4"></div>
-                       <!-- PERUBAHAN: Font QS. Ar-Rum:21 diubah ke Pompiere -->
                        <p id="quoteSource" class="font-pompiere text-white font-semibold tracking-widest text-base md:text-lg">QS. Ar-Rum: 21</p>
                    </div>
                </div>
            </div>
        </section>
-
-       <div class="section-divider"></div>
 
        <!-- AKAD NIKAH SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
@@ -1337,7 +1346,6 @@
                                <span class="text-3xl">🕌</span>
                            </div>
                            
-                           <!-- PERUBAHAN: Font AKAD NIKAH diubah ke Pompiere -->
                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-1 text-center uppercase tracking-wider">Akad Nikah</h3>
                            <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto mb-6 rounded-full"></div>
                            
@@ -1384,8 +1392,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- RESEPSI SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
@@ -1403,7 +1409,6 @@
                                <span class="text-3xl">🎉</span>
                            </div>
                            
-                           <!-- PERUBAHAN: Font RESEPSI PERNIKAHAN diubah ke Pompiere -->
                            <h3 class="font-event text-3xl md:text-4xl mb-2 text-gradient-3 text-center uppercase tracking-wider">Resepsi Pernikahan</h3>
                            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
                            
@@ -1450,8 +1455,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- GALLERY SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
@@ -1459,17 +1462,14 @@
                    <span class="section-badge">Galeri</span>
                </div>
 
-               <!-- PERUBAHAN: Overlay "Ketuk untuk melihat 👆" dipindahkan ke dalam frame sebagai overlay -->
                <div class="gallery-frame group cursor-pointer" onclick="openGalleryLightbox()">
                    <img id="galleryCover" src="" alt="Galeri Reren & Yadi">
-                   <!-- Overlay dipindahkan ke sini -->
                    <div class="gallery-overlay-text">
                        <span>Ketuk untuk melihat</span>
                        <span class="animate-bounce">👆</span>
                    </div>
                </div>
 
-               <!-- Teks "Galeri" dan "Momen Bahagia Kami" tetap di bawah photo cover -->
                <div class="text-center mt-6">
                    <h2 class="font-gallery text-4xl md:text-5xl text-white mb-2">Galeri</h2>
                    <p class="text-white/80 text-sm">Momen Bahagia Kami</p>
@@ -1477,15 +1477,12 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- RSVP INPUT SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
                <div class="max-w-xl mx-auto">
                    <div class="text-center mb-6">
                        <span class="section-badge">RSVP</span>
-                       <!-- PERUBAHAN 3: Font Konfirmasi Kehadiran diubah ke Pompiere dan di-CAPS -->
                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-1 mb-2">KONFIRMASI KEHADIRAN</h2>
                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu</p>
                    </div>
@@ -1542,15 +1539,12 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- RSVP RESULTS SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 compact-content">
                <div class="max-w-xl mx-auto">
                    <div class="text-center mb-6">
                        <span class="section-badge">RSVP</span>
-                       <!-- PERUBAHAN 3: Font Ucapan & Do'a diubah ke Pompiere dan di-CAPS -->
                        <h2 class="font-rsvp text-3xl md:text-4xl font-bold text-gradient-2 mb-2">UCAPAN & DO'A</h2>
                        <p class="text-white max-w-lg mx-auto text-xs mt-2">Terima kasih atas konfirmasi dan doa restunya</p>
                    </div>
@@ -1604,19 +1598,15 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- WEDDING GIFT - DANA SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 text-center compact-content">
                <span class="section-badge">Wedding Gift</span>
-               <!-- PERUBAHAN 4: Font Kirim Hadiah Digital diubah ke Pompiere dan di-CAPS -->
                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-2 mb-2">KIRIM HADIAH DIGITAL</h2>
                <p class="text-white mb-8 max-w-lg mx-auto text-xs">Bagi keluarga dan sahabat yang ingin mengirimkan hadiah melalui DANA</p>
 
                <div class="max-w-sm mx-auto">
                    <div class="glass-pink rounded-3xl p-6 border border-pink-500/20 card-glow">
-                       <!-- PERUBAHAN 5: Font DANA diubah ke Pompiere dengan ukuran lebih kecil -->
                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                            <span class="dana-text">DANA</span>
                        </div>
@@ -1634,19 +1624,15 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- WEDDING GIFT - KADO SECTION -->
        <section class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 text-center compact-content">
                <span class="section-badge">Wedding Gift</span>
-               <!-- PERUBAHAN 4: Font Kirim Hadiah Fisik diubah ke Pompiere dan di-CAPS -->
                <h2 class="font-gift text-3xl md:text-4xl font-bold text-gradient-3 mb-2">KIRIM HADIAH FISIK</h2>
                <p class="text-white mb-8 max-w-lg mx-auto text-xs">Alamat pengiriman kado untuk Reren & Yadi</p>
 
                <div class="max-w-sm mx-auto">
                    <div class="glass-blue rounded-3xl p-6 border border-blue-500/20 card-glow">
-                       <!-- PERUBAHAN 5: Emoji gift diperbesar -->
                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
                            <span class="gift-emoji">🎁</span>
                        </div>
@@ -1665,8 +1651,6 @@
            </div>
        </section>
 
-       <div class="section-divider"></div>
-
        <!-- Footer -->
        <footer class="snap-section relative overflow-hidden" style="background: linear-gradient(180deg, #0f0c29 0%, #000000 100%);">
            <div class="container mx-auto px-6 relative z-10 text-center compact-content">
@@ -1676,7 +1660,6 @@
                
                <h3 id="footerNames" class="font-footer text-5xl md:text-7xl mb-3 text-gradient-1" style="line-height: 1.5; padding-top: 0.3em; padding-bottom: 0.2em;">Reren & Yadi</h3>
                
-               <!-- PERUBAHAN 6: Warna font 30 Mei 2028 dipercerah -->
                <p id="footerDate" class="footer-date-bright text-lg md:text-xl mb-6">30 Mei 2028</p>
                
                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto rounded-full mb-6"></div>
@@ -1828,14 +1811,11 @@
            constructor() {
                this.x = Math.random() * canvas.width;
                this.y = Math.random() * canvas.height;
-               // PERUBAHAN: Ukuran partikel diperbesar (dari 2 + 0.5 ke 4 + 1)
                this.size = Math.random() * 4 + 1;
                this.speedX = Math.random() * 0.5 - 0.25;
                this.speedY = Math.random() * 0.5 - 0.25;
                this.color = colors[Math.floor(Math.random() * colors.length)];
-               // PERUBAHAN: Opacity diperbesar (dari 0.4 + 0.1 ke 0.7 + 0.2)
                this.opacity = Math.random() * 0.7 + 0.3;
-               // PERUBAHAN: Tambahan efek glow
                this.glow = Math.random() * 10 + 5;
            }
            
@@ -1864,7 +1844,6 @@
 
        function initParticles() {
            particles = [];
-           // PERUBAHAN: Jumlah partikel ditambah (dari 60 ke 80)
            for (let i = 0; i < 80; i++) {
                particles.push(new Particle());
            }
@@ -1922,9 +1901,10 @@
            const container = document.querySelector('.snap-container');
            if (!container) return;
 
+           // PERUBAHAN: Update progress bar untuk scroll horizontal
            container.addEventListener('scroll', () => {
-               const scrolled = container.scrollTop;
-               const maxScroll = container.scrollHeight - container.clientHeight;
+               const scrolled = container.scrollLeft;
+               const maxScroll = container.scrollWidth - container.clientWidth;
                const progress = (scrolled / maxScroll) * 100;
                document.getElementById('scrollProgress').style.width = progress + '%';
            });
